@@ -63,14 +63,14 @@ if (isset($_POST['add_to_cart'])) {
     <div class="banner">
         <div class="detail">
             <h1>SHOP</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, tenetur.</p>
-            <a href="">home</a>/<span>shop</span>
+            <p>Products of honey project house dedicated quality and best value</p>
+            <a href="index.php">HOME</a>/<span>SHOP</span>
         </div>
     </div>
     <div class="line"></div>
     <!-- about us -->
     <section class="shop">
-        <h1 class="title">shop best sellers</h1>
+        <h1 class="title">SHOP BEST SELLERS</h1>
         <?php
         if (isset($message)) {
             foreach ($message as $message) {

@@ -34,8 +34,8 @@ if (isset($_POST['logout'])) {
     <div class="banner">
         <div class="detail">
             <h1>ABOUT US</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, tenetur.</p>
-            <a href="../index.php">home</a>/<span>about us</span>
+            <p>This is all the information and orientation of the current and future shop</p>
+            <a href="index.php">home</a>/<span>about us</span>
         </div>
     </div>
     <div class="line"></div>
@@ -44,11 +44,10 @@ if (isset($_POST['logout'])) {
         <div class="row">
             <div class="box">
                 <div class="title">
-                    <span>ABOUT OUR ONLINE SRORY</span>
-                    <h1>Lorem ipsum dolor sit amet.</h1>
+                    <span>ABOUT OUR ONLINE STORY</span>
+                    <h1>Pure and natural honey</h1>
                 </div>
-                <p>Lorem, ipsum dolor sit amet consectetur
-                    adipisicing elit. Possimus porro alias quis, quidem nam eum!</p>
+                <p>Our desire is nothing more than to serve the best quality honey products to consumers</p>
             </div>
             <div class="img-box">
                 <img src="../hinh/doi_tac.jpg" alt="">
@@ -96,11 +95,11 @@ if (isset($_POST['logout'])) {
         <div class="row">
             <div class="box">
                 <div class="img-box">
-                    <img src="../hinh/profile.jpg" alt="">
+                    <img src="../hinh/profile3.jpg" alt="">
                 </div>
                 <div class="detail">
-                    <span>Finace Manager</span>
-                    <h4>Miguel Rodrigez</h4>
+                    <span>Leader</span>
+                    <h4>Nguyễn Hoàng Minh</h4>
                     <div class="social-link">
                         <i class="bi bi-instagram"></i>
                         <i class="bi bi-youtube"></i>
@@ -115,8 +114,8 @@ if (isset($_POST['logout'])) {
                     <img src="../hinh/profile1.jpg" alt="">
                 </div>
                 <div class="detail">
-                    <span>Finace Manager</span>
-                    <h4>Miguel Rodrigez</h4>
+                    <span>Member</span>
+                    <h4>Nguyễn Minh Vương</h4>
                     <div class="social-link">
                         <i class="bi bi-instagram"></i>
                         <i class="bi bi-youtube"></i>
@@ -131,8 +130,8 @@ if (isset($_POST['logout'])) {
                     <img src="../hinh/profile2.jpg" alt="">
                 </div>
                 <div class="detail">
-                    <span>Finace Manager</span>
-                    <h4>Miguel Rodrigez</h4>
+                    <span>Member</span>
+                    <h4>Phạm Duy Khang</h4>
                     <div class="social-link">
                         <i class="bi bi-instagram"></i>
                         <i class="bi bi-youtube"></i>
@@ -144,11 +143,11 @@ if (isset($_POST['logout'])) {
             </div>
             <div class="box">
                 <div class="img-box">
-                    <img src="../hinh/profile3.jpg" alt="">
+                    <img src="../hinh/profile.jpg" alt="">
                 </div>
                 <div class="detail">
-                    <span>Finace Manager</span>
-                    <h4>Miguel Rodrigez</h4>
+                    <span>Member</span>
+                    <h4>Nguyễn Khánh Huy</h4>
                     <div class="social-link">
                         <i class="bi bi-instagram"></i>
                         <i class="bi bi-youtube"></i>
@@ -178,7 +177,7 @@ if (isset($_POST['logout'])) {
     <div class="line"></div>
     <div class="ideas">
         <div class="title">
-            <h1>Lorem ipsum dolor sit amet.</h1>
+            <h1>Stories about the journey to form</h1>
             <span>Our features</span>
         </div>
         <div class="row">
@@ -186,24 +185,21 @@ if (isset($_POST['logout'])) {
                 <i class="bi bi-stack"></i>
                 <div class="detail">
                     <h2>What We Realy Do</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo quasi ve
-                        ro debitis rerum iste animi error cum aperiam ducimus at.</p>
+                    <p>We really want to bring quality honey sources to consumers</p>
                 </div>
             </div>
             <div class="box">
                 <i class="bi bi-grid-1x2-fill"></i>
                 <div class="detail">
                     <h2>History of Beginning</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo quasi ve
-                        ro debitis rerum iste animi error cum aperiam ducimus at.</p>
+                    <p>With that dedication, we cherish projects and today have implemented to bring a good source of honey to consumers.</p>
                 </div>
             </div>
             <div class="box">
                 <i class="bi bi-tropical-storm"></i>
                 <div class="detail">
                     <h2>Our Vision</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo quasi ve
-                        ro debitis rerum iste animi error cum aperiam ducimus at.</p>
+                    <p>In the future, we want to be a brand that will bring clean honey to consumers</p>
                 </div>
             </div>
         </div>

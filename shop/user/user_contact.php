@@ -46,7 +46,7 @@ if (isset($_POST['submit-btn'])) {
     <div class="banner">
         <div class="detail">
             <h1>CONTACT</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, tenetur.</p>
+            <p>Please contact us if you have any questions about these products please contact</p>
             <a href="">home</a>/<span>contact</span>
         </div>
     </div>
@@ -57,21 +57,21 @@ if (isset($_POST['submit-btn'])) {
                 <img src="../hinh/shipping.jpg" alt="">
                 <div>
                     <h1>Free Shipping Fast</h1>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                    <p>Free shipping with orders within Saigon city</p>
                 </div>
             </div>
             <div class="box">
                 <img src="../hinh/money.jpg" alt="">
                 <div>
                     <h1>Money Back $ Guarantee</h1>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                    <p>Refund if the product is defective or does not match the product introduced</p>
                 </div>
             </div>
             <div class="box">
                 <img src="../hinh/online_support.jpg" alt="">
                 <div>
                     <h1>Online Support 24/24</h1>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                    <p>Always support 24/7 for customers</p>
                 </div>
             </div>
         </div>

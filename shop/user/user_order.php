@@ -49,15 +49,15 @@ if (isset($_POST['logout'])) {
 
             ?>
                     <div class="box">
-                        <p>planced on: <span><?php echo $fetch_orders['place_on']; ?></span> </p>
-                        <p>name: <span><?php echo $fetch_orders['name']; ?></span> </p>
-                        <p>number: <span><?php echo $fetch_orders['number']; ?></span> </p>
-                        <p>email: <span><?php echo $fetch_orders['email']; ?></span> </p>
-                        <p>address: <span><?php echo $fetch_orders['address']; ?></span> </p>
-                        <p>payment method: <span><?php echo $fetch_orders['method']; ?></span> </p>
-                        <p>your order: <span><?php echo $fetch_orders['total_product']; ?></span> </p>
-                        <p>total price: <span><?php echo $fetch_orders['total_price']; ?></span> </p>
-                        <p>payment ststus: <span><?php echo $fetch_orders['payment_status']; ?></span> </p>
+                        <p class="order">planced on: <span><?php echo $fetch_orders['place_on']; ?></span> </p>
+                        <p class="order">name: <span><?php echo $fetch_orders['name']; ?></span> </p>
+                        <p class="order">number: <span><?php echo $fetch_orders['number']; ?></span> </p>
+                        <p class="order">email: <span><?php echo $fetch_orders['email']; ?></span> </p>
+                        <p class="order">address: <span><?php echo $fetch_orders['address']; ?></span> </p>
+                        <p class="order">payment method: <span><?php echo $fetch_orders['method']; ?></span> </p>
+                        <p class="order">your order: <span><?php echo $fetch_orders['total_product']; ?></span> </p>
+                        <p class="order">total price: <span><?php echo $fetch_orders['total_price']; ?></span> </p>
+                        <p class="order">payment ststus: <span><?php echo $fetch_orders['payment_status']; ?></span> </p>
                     </div>
             <?php
                 }

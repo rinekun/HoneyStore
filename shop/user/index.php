@@ -95,21 +95,21 @@ if(mysqli_num_rows($cart_number)>0){
                 <img src="../hinh/shipping.jpg" alt="">
                 <div>
                     <h1>Free Shipping Fast</h1>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                    <p>Free shipping with orders within Saigon city</p>
                 </div>
             </div>
             <div class="box">
                 <img src="../hinh/money.jpg" alt="">
                 <div>
                     <h1>Money Back $ Guarantee</h1>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                    <p>Refund if the product is defective or does not match the product introduced</p>
                 </div>
             </div>
             <div class="box">
                 <img src="../hinh/online_support.jpg" alt="">
                 <div>
                     <h1>Online Support 24/24</h1>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                    <p>Always support 24/7 for customers</p>
                 </div>
             </div>
         </div>
@@ -120,7 +120,7 @@ if(mysqli_num_rows($cart_number)>0){
             <div class="box">
                 <span>our story</span>
                 <h1>Production of natural honey since 2003</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, explicabo.</p>
+                <p>Pure natural honey contains many nutrients to nourish consumers</p>
                 <a href="shop.php" class="btn">shop now</a>
             </div>
             <div class="box">
@@ -137,37 +137,33 @@ if(mysqli_num_rows($cart_number)>0){
             <div class="testimonial-item">
                 <img src="../hinh/profile.jpg" alt="">
                 <div class="testimonial-caption">
-                    <span>Test The Quality</span>
+                    <span>Member</span>
                     <h1>Organic Premium Honey</h1>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam alias recusandae laudantium
-                        molestiae ipsum quibusdam praesentium nemo provident suscipit ex?</p>
+                    <p>Supply chain management and product preservation</p>
                 </div>
             </div>
             <div class="testimonial-item">
                 <img src="../hinh/profile1.jpg" alt="">
                 <div class="testimonial-caption">
-                    <span>Test The Quality</span>
+                    <span>Member</span>
                     <h1>Organic Premium Honey</h1>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam alias recusandae laudantium
-                        molestiae ipsum quibusdam praesentium nemo provident suscipit ex?</p>
+                    <p>Taking care of customers and managing orders to consumers</p>
                 </div>
             </div>
             <div class="testimonial-item">
                 <img src="../hinh/profile2.jpg" alt="">
                 <div class="testimonial-caption">
-                    <span>Test The Quality</span>
+                    <span>Member</span>
                     <h1>Organic Premium Honey</h1>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam alias recusandae laudantium
-                        molestiae ipsum quibusdam praesentium nemo provident suscipit ex?</p>
+                    <p>Website administration and system maintenance</p>
                 </div>
             </div>
             <div class="testimonial-item">
                 <img src="../hinh/profile3.jpg" alt="">
                 <div class="testimonial-caption">
-                    <span>Test The Quality</span>
+                    <span>Leader</span>
                     <h1>Organic Premium Honey</h1>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam alias recusandae laudantium
-                        molestiae ipsum quibusdam praesentium nemo provident suscipit ex?</p>
+                    <p>Leader manages and operates the product chain from the producer</p>
                 </div>
             </div>
         </div>
@@ -179,8 +175,8 @@ if(mysqli_num_rows($cart_number)>0){
     <?php include './user_homeshop.php'; ?>
     <div class="line2"></div>
     <div class="newslatter">
-        <h1 class="title">Join Our to Newslatter</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, similique! </p>
+        <h1 class="title">Join Our to Newsletter</h1>
+        <p>Please contact us if you have questions about the problems you have with the product</p>
         <input type="text" name="" placeholder="your email address...">
         <button>subscribe now</button>
     </div>
