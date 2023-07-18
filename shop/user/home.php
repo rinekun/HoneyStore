@@ -141,10 +141,10 @@ if (isset($_POST['add_to_cart'])) {
     <div class="story">
         <div class="row">
             <div class="box">
-                <span>our story</span>
+                <span>Our Story</span>
                 <h1>Production of natural honey since 2003</h1>
                 <p>Pure natural honey contains many nutrients to nourish consumers</p>
-                <a href="" class="btn">shop now</a>
+                <a href="" class="btn">SHOP NOW</a>
             </div>
             <div class="box">
                 <img src="../hinh/0.png" alt="">
