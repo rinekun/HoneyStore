@@ -11,7 +11,7 @@ if (!isset($admin_id)) {
 }
 if (isset($_POST['logout'])) {
     session_destroy();
-    header('location:./dang_xuat.php');
+    header('location:./dang_nhap.php');
 }
 
 ?>
@@ -62,8 +62,9 @@ if (isset($_POST['logout'])) {
                                 <?php
                                 }
                                 ?>
-
-                                <a href="#">Log Out <i class="ti-shift-left"></i></a>
+                                <form action="" method="post">
+                                   <a href="../../dang_nhap.php"> <input type="submit" value="Log Out" name="logout"> <i class="ti-shift-left"></i></a>
+                                </form>
                             </div>
                         </div>
                     </div>

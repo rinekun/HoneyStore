@@ -1,3 +1,3 @@
-<?php
-$conn=mysqli_connect('localhost','root','','shop_dbb') or die('mysqli_error');
-?>
+ <?php
+$conn=mysqli_connect('localhost:3307','root','','shop_db') or die('mysqli_error');
+?> 
