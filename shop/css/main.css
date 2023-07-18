@@ -237,15 +237,16 @@ header {
 
 .navmenu a {
     color: #2c2c2c;
-    font-size: 16px;
+    font-size: 24px;
     text-transform: capitalize;
     padding: 10px 20px;
-    font-weight: 400;
+    font-weight: 600;
     transition: all .42s ease;
 }
 
 .navmenu a:hover {
-    color: #EE1C47;
+    font-weight: 600;
+    color: #8B4513	;
 }
 
 .nav-icon {
@@ -257,13 +258,14 @@ header {
     margin-right: 20px;
     color: #2c2c2c;
     font-size: 30px;
-    font-weight: 400;
+    font-weight: 500;
     transition: all .42s ease;
 }
 
 .nav-icon i:hover {
+    font-weight: 600;
     transform: scale(1.1);
-    color: #EE1C47;
+    color: #8B4513;
 }
 
 #menu-btn {
