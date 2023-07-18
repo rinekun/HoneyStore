@@ -1,3 +1,3 @@
 <?php 
-    header('location:../shop/user/matong.php')
+    header('location:../Honeystore/shop/user/matong.php');
 ?>
