@@ -1,13 +1,13 @@
 <?php
-include_once '../config/config.php';
+include_once '../../config/config.php';
 session_start();
 $user_id = $_SESSION['user_id'];
 if (!isset($user_id)) {
-    header('location:./dang_nhap.php');
+    header('location:../dang_nhap.php');
 }
-if (isset($_POST['logout'])) {
+if (isset($_POST['logout-btn'])) {
     session_destroy();
-    header('location:./dang_nhap.php');
+    header('location:../../dang_nhap.php');
 }
 if (isset($_POST['submit-btn'])) {
     $name = mysqli_real_escape_string($conn, $_POST['name']);

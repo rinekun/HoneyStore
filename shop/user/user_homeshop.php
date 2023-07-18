@@ -1,7 +1,3 @@
-<style>
-    
-</style>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,10 +9,10 @@
     <!-- html-slick-slider -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <!-- slick slider css -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <!-- <link rel="stylesheet" href="../css/main.css"> -->
-
+    <link rel="stylesheet" href="../css/main.css">
 </head>
 
 <body>
@@ -32,9 +28,9 @@
             if (mysqli_num_rows($select_products) > 0) {
                 while ($fetch_products = mysqli_fetch_assoc($select_products)) { ?>
                     <form method="post" class="card" >
-                        <div class="price">$<?php echo $fetch_products['price'] ?></div>
-                        <img src="../../hinh/<?php echo $fetch_products['image'] ?>" alt="">
+                        <img src="../hinh/<?php echo $fetch_products['image'] ?>" alt="">
                         <div class="name"><?php echo $fetch_products['name'] ?></div>
+                        <div class="price">$<?php echo $fetch_products['price'] ?></div>
                         <input type="hidden" name="product_id" value="<?php echo $fetch_products['id'] ?>">
                         <input type="hidden" name="product_name" value="<?php echo $fetch_products['name'] ?>">
                         <input type="hidden" name="product_price" value="<?php echo $fetch_products['price'] ?>">
@@ -58,7 +54,7 @@
     <script type="text/javascript">
         $('.popular-brands-content').slick({
             lazyLoad: 'ondemand',
-            slidesToShow: 5,
+            slidesToShow: 4,
             slidesToScroll: 1,
             nextArrow: $('.left'),
             prevArrow: $('.right'),

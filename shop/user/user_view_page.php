@@ -1,13 +1,13 @@
 <?php
-include_once '../config/config.php';
+include_once '../../config/config.php';
 session_start();
 $user_id = $_SESSION['user_id'];
 if (!isset($user_id)) {
-    header('location:./dang_nhap.php');
+    header('location:../dang_nhap.php');
 }
-if (isset($_POST['logout'])) {
+if (isset($_POST['logout-btn'])) {
     session_destroy();
-    header('location:./dang_nhap.php');
+    header('location:../../dang_nhap.php');
 }
 //adding product in wishlist
 if (isset($_POST['add_to_wishlist'])) {
@@ -99,8 +99,8 @@ if (isset($_POST['add_to_cart'])) {
                         <form method="post">
                             <img src="../hinh/<?php echo $fetch_products['image'] ?>" alt="">
                             <div class="detail">
-                                <div class="price">$<?php echo $fetch_products['price'] ?></div>
                                 <div class="name"><?php echo $fetch_products['name'] ?></div>
+                                <div class="price">$<?php echo $fetch_products['price'] ?></div>
                                 <div class="detail"><?php echo $fetch_products['product_detail'] ?></div>
                                 <input type="hidden" name="product_id" value="<?php echo $fetch_products['id'] ?>">
                                 <input type="hidden" name="product_name" value="<?php echo $fetch_products['name'] ?>">
