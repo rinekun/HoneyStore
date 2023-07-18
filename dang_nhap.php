@@ -22,7 +22,7 @@ if (isset($_POST['submit-btn'])) {
             $_SESSION['user_name'] = $row['name'];
             $_SESSION['user_email'] = $row['email'];
             $_SESSION['user_id'] = $row['id'];
-            header('location:../shop/user/index.php');
+            header('location:../HoneyStore/shop/user/index.php');
         } else {
             $message[] = 'incorrect email or password';
         }
