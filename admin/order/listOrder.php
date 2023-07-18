@@ -96,7 +96,7 @@ if (isset($_POST['update_order'])) {
 
                                     $select_orders = mysqli_query($conn, "SELECT * FROM `order` WHERE `id` = $order_id");
                                 }
-                                $select_orders = mysqli_query($conn, "SELECT * FROM `order`");
+                                $select_orders = mysqli_query($conn, "SELECT * FROM `order` ");
                                 if (mysqli_num_rows($select_orders) > 0) {
                                     while ($fetch_orders = mysqli_fetch_assoc($select_orders)) {
 
