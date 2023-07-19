@@ -3,11 +3,11 @@ include '../config/config.php';
 session_start();
 $admin_id = $_SESSION['admin_name'];
 if (!isset($admin_id)) {
-   header('location:../dang_nhap.php');
+   header('location:../../dang_nhap.php');
 }
 if (isset($_POST['logout'])) {
    session_destroy();
-   header('location:../dang_nhap.php');
+   header('location:../../dang_nhap.php');
 }
 
 ?>

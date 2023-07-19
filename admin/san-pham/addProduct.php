@@ -93,7 +93,7 @@ if (isset($_POST['add_product'])) {
 
                                 <div class="mb-12 col-lg-12 ">
                                     <label class="form-label" for="exampleFormControlInput1">Chi Tiết</label><br>
-                                    <textarea name="detail" required rows="4" cols="106"></textarea>
+                                    <textarea name="detail" rows="4" cols="106"></textarea>
 
                                 </div>
 

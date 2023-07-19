@@ -9,9 +9,9 @@ $admin_id = $_SESSION['admin_name'];
 if (!isset($admin_id)) {
     header('location:./dang_nhap.php');
 }
-if (isset($_POST['logout'])) {
+if (isset($_POST['logouts'])) {
     session_destroy();
-    header('location:./dang_nhap.php');
+    header('location:../../dang_nhap.php');
 }
 
 ?>
@@ -63,7 +63,7 @@ if (isset($_POST['logout'])) {
                                 }
                                 ?>
                                 <form action="" method="post">
-                                   <a href="../../dang_nhap.php"> <input type="submit" value="Log Out" name="logout"> <i class="ti-shift-left"></i></a>
+                                   <a href="../../dang_nhap.php"> <input type="submit" value="Log Out" name="logouts"> <i class="ti-shift-left"></i></a>
                                 </form>
                             </div>
                         </div>
