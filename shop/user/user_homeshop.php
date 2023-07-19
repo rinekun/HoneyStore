@@ -30,7 +30,7 @@
                     <form method="post" class="card" >
                         <img src="../hinh/<?php echo $fetch_products['image'] ?>" alt="">
                         <div class="name"><?php echo $fetch_products['name'] ?></div>
-                        <div class="price">$<?php echo $fetch_products['price'] ?></div>
+                        <div class="price"><?php echo $fetch_products['price'] ?> đ</div>
                         <input type="hidden" name="product_id" value="<?php echo $fetch_products['id'] ?>">
                         <input type="hidden" name="product_name" value="<?php echo $fetch_products['name'] ?>">
                         <input type="hidden" name="product_price" value="<?php echo $fetch_products['price'] ?>">
