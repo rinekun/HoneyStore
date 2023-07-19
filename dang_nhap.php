@@ -1,5 +1,5 @@
 <?php
-include './config/config.php';
+include_once './config/config.php';
 session_start();
 
 if (isset($_POST['submit-btn'])) {
@@ -9,29 +9,24 @@ if (isset($_POST['submit-btn'])) {
     $filter_password = filter_var($_POST['password'], FILTER_SANITIZE_STRING);
     $password = mysqli_real_escape_string($conn, $filter_password);
 
-
-    $select_user = mysqli_query($conn, "SELECT * FROM `users` WHERE email = '$email'") or die('query failed');
+    $select_user = mysqli_query($conn, "SELECT*FROM `users` WHERE email = '$email'") or die('query failed');
 
     if (mysqli_num_rows($select_user) > 0) {
         $row = mysqli_fetch_assoc($select_user);
-        if ($row['email'] == $email  && $row['password'] == $password) {
-            if ($row['user_type'] == 'admin') {
-                $_SESSION['admin_name'] = $row['name'];
-                $_SESSION['admin_email'] = $row['email'];
-                $_SESSION['admin_id'] = $row['id'];
-                header('location:./admin/index.php');
-                exit;
-            } else if ($row['user_type'] == 'user') {
-                $_SESSION['user_name'] = $row['name'];
-                $_SESSION['user_email'] = $row['email'];
-                $_SESSION['user_id'] = $row['id'];
-                header('location:./shop/user/index.php');
-                exit;
-            }
+        if ($row['password'] == $password && $row['user_type'] == 'admin') {
+            $_SESSION['admin_name'] = $row['name'];
+            $_SESSION['admin_email'] = $row['email'];
+            $_SESSION['admin_id'] = $row['id'];
+            header('location:./admin/index.php');
+        } else if ($row['password'] == $password && $row['user_type'] == 'user') {
+            $_SESSION['user_name'] = $row['name'];
+            $_SESSION['user_email'] = $row['email'];
+            $_SESSION['user_id'] = $row['id'];
+            header('location:../shop/user/index.php');
+        } else {
+            $message[] = 'incorrect email or password';
         }
     }
-
-    $message[] = 'Incorrect email or password';
 }
 ?>
 <!DOCTYPE html>
@@ -57,7 +52,7 @@ if (isset($_POST['submit-btn'])) {
                <span>
                  ' . $message . '
                </span>
-               <i class="bi bi-x-circle" onclick="this.parentElement.remove()"></i>
+               <i class="bx bx-x-circle" onclick="this.parentElement.remove()"></i>
               </div>
             ';
             }

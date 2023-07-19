@@ -1,13 +1,13 @@
 <?php
-include_once '../config/config.php';
+include_once '../../config/config.php';
 session_start();
 $user_id = $_SESSION['user_id'];
 if (!isset($user_id)) {
-    header('location:./dang_nhap.php');
+    header('location:../dang_nhap.php');
 }
-if (isset($_POST['logout'])) {
+if (isset($_POST['logout-btn'])) {
     session_destroy();
-    header('location:./dang_nhap.php');
+    header('location:../dang_nhap.php');
 }
 
 
@@ -42,29 +42,31 @@ if (isset($_POST['logout'])) {
     <!-- pay -->
     <div class="order-section">
         <div class="box-container">
-            <?php
-            $select_orders = mysqli_query($conn, "SELECT * FROM `order` WHERE user_id ='$user_id'") or die('query failed');
-            if (mysqli_num_rows($select_orders) > 0) {
-                while ($fetch_orders = mysqli_fetch_assoc($select_orders)) {
+            <div class="sanpham">
+                <?php
+                $select_orders = mysqli_query($conn, "SELECT * FROM `order` WHERE user_id ='$user_id'") or die('query failed');
+                if (mysqli_num_rows($select_orders) > 0) {
+                    while ($fetch_orders = mysqli_fetch_assoc($select_orders)) {
 
-            ?>
-                    <div class="box">
-                        <p class="order">planced on: <span><?php echo $fetch_orders['place_on']; ?></span> </p>
-                        <p class="order">name: <span><?php echo $fetch_orders['name']; ?></span> </p>
-                        <p class="order">number: <span><?php echo $fetch_orders['number']; ?></span> </p>
-                        <p class="order">email: <span><?php echo $fetch_orders['email']; ?></span> </p>
-                        <p class="order">address: <span><?php echo $fetch_orders['address']; ?></span> </p>
-                        <p class="order">payment method: <span><?php echo $fetch_orders['method']; ?></span> </p>
-                        <p class="order">your order: <span><?php echo $fetch_orders['total_product']; ?></span> </p>
-                        <p class="order">total price: <span><?php echo $fetch_orders['total_price']; ?></span> </p>
-                        <p class="order">payment ststus: <span><?php echo $fetch_orders['payment_status']; ?></span> </p>
-                    </div>
-            <?php
+                ?>
+                        <div class="box">
+                            <p style="text-align:left;font-size:13px"><b>planced on:</b> <span><?php echo $fetch_orders['place_on']; ?></span> </p >
+                            <p style="text-align:left;font-size:13px"><b>name:</b> <span><?php echo $fetch_orders['name']; ?></span> </p >
+                            <p style="text-align:left;font-size:13px"><b>number: </b><span><?php echo $fetch_orders['number']; ?></span> </p >
+                            <p style="text-align:left;font-size:13px"><b>email:</b> <span><?php echo $fetch_orders['email']; ?></span> </p >
+                            <p style="text-align:left;font-size:13px"><b>address:</b> <span><?php echo $fetch_orders['address']; ?></span> </p >
+                            <p style="text-align:left;font-size:13px"><b>payment method:</b> <span><?php echo $fetch_orders['method']; ?></span> </p >
+                            <!-- <p style="text-align:left;font-size:13px"><b>your order:</b> <span><?php echo $fetch_orders['total_product']; ?></span> </p > -->
+                            <p style="text-align:left;font-size:13px"><b>total price: </b><span><?php echo $fetch_orders['total_price']; ?></span> </p >
+                            <p style="text-align:left;font-size:13px"><b>payment ststus: </b><span><?php echo $fetch_orders['payment_status']; ?></span> </p>
+                        </div>
+                <?php
+                    }
+                } else {
+                    echo '<p class="empty">no products added yet!</p>';
                 }
-            } else {
-                echo '<p class="empty">no products added yet!</p>';
-            }
-            ?>
+                ?>
+            </div>
         </div>
     </div>
     <div class="line"></div>

@@ -1,7 +1,5 @@
-
-
 <?php
-include_once '../config/config.php';
+include_once '../../config/config.php';
 session_start();
 $user_id = $_SESSION['user_id'];
 if (!isset($user_id)) {
@@ -9,40 +7,40 @@ if (!isset($user_id)) {
 }
 if (isset($_POST['logout-btn'])) {
     session_destroy();
-    header('location:../dang_nhap.php');
+    header('location:../../dang_nhap.php');
 }
 //adding product in wishlist
-if(isset($_POST['add_to_wishlist'])){
+if (isset($_POST['add_to_wishlist'])) {
     $product_id = $_POST['product_id'];
     $product_name = $_POST['product_name'];
     $product_price = $_POST['product_price'];
     $product_image = $_POST['product_image'];
 
-$wishlist_number = mysqli_query($conn, "SELECT * FROM `wishlist` WHERE name ='$product_name' AND user_id ='$user_id'") or die('query failed');
-$cart_number = mysqli_query($conn, "SELECT * FROM `cart` WHERE name ='$product_name' AND user_id ='$user_id'") or die('query failed');
-if(mysqli_num_rows($wishlist_number)>0){
-    $message[] = 'product alreary in wishlist';
-}else if(mysqli_num_rows($cart_number)>0){
-    $message[] = 'product alreary in cart';
-}else{
-    mysqli_query($conn,"INSERT INTO `wishlist`( `user_id`, `pid`, `name`, `price`, `image`) VALUES ('$user_id','$product_id','$product_name','$product_price','$product_image')");
-    $message[] = 'product successfuly added in your wishlist';
-}
+    $wishlist_number = mysqli_query($conn, "SELECT * FROM `wishlist` WHERE name ='$product_name' AND user_id ='$user_id'") or die('query failed');
+    $cart_number = mysqli_query($conn, "SELECT * FROM `cart` WHERE name ='$product_name' AND user_id ='$user_id'") or die('query failed');
+    if (mysqli_num_rows($wishlist_number) > 0) {
+        $message[] = 'product alreary in wishlist';
+    } else if (mysqli_num_rows($cart_number) > 0) {
+        $message[] = 'product alreary in cart';
+    } else {
+        mysqli_query($conn, "INSERT INTO `wishlist`( `user_id`, `pid`, `name`, `price`, `image`) VALUES ('$user_id','$product_id','$product_name','$product_price','$product_image')");
+        $message[] = 'product successfuly added in your wishlist';
+    }
 }
 //adding product in cart
-if(isset($_POST['add_to_cart'])){
+if (isset($_POST['add_to_cart'])) {
     $product_id = $_POST['product_id'];
     $product_name = $_POST['product_name'];
     $product_price = $_POST['product_price'];
     $product_image = $_POST['product_image'];
     $product_quantity = $_POST['product_quantity'];
-$cart_number = mysqli_query($conn, "SELECT * FROM `cart` WHERE name ='$product_name' AND user_id ='$user_id'") or die('query failed');
-if(mysqli_num_rows($cart_number)>0){
-    $message[] = 'product alreary in cart';
-}else{
-    mysqli_query($conn,"INSERT INTO `cart`( `user_id`, `pid`, `name`, `price`, `quantity`,`image`) VALUES ('$user_id','$product_id','$product_name','$product_price','$product_quantity','$product_image')");
-    $message[] = 'product successfuly added in your cart';
-}
+    $cart_number = mysqli_query($conn, "SELECT * FROM `cart` WHERE name ='$product_name' AND user_id ='$user_id'") or die('query failed');
+    if (mysqli_num_rows($cart_number) > 0) {
+        $message[] = 'product alreary in cart';
+    } else {
+        mysqli_query($conn, "INSERT INTO `cart`( `user_id`, `pid`, `name`, `price`, `quantity`,`image`) VALUES ('$user_id','$product_id','$product_name','$product_price','$product_quantity','$product_image')");
+        $message[] = 'product successfuly added in your cart';
+    }
 }
 
 ?>
@@ -71,15 +69,6 @@ if(mysqli_num_rows($cart_number)>0){
     <!--home slider -->
     <div class="container-fluid">
         <div class="hero-slider">
-            <!-- <div class="slider-item">
-                <img src="../hinh/banner1.jpg" alt="">
-                <div class="slider-caption">
-                    <span>Test The Quality</span>
-                    <h1>Onbfrnfb <br>Honey </h1>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicin <br> xbvcgdvcgv</p>
-                    <a href="./user_shop.php" class="btn">shop now</a>
-                </div>
-            </div> -->
             <div class="slider-item">
                 <img src="../hinh/banner3.jpg" alt="">
             </div>
@@ -121,7 +110,7 @@ if(mysqli_num_rows($cart_number)>0){
                 <span>our story</span>
                 <h1>Production of natural honey since 2003</h1>
                 <p>Pure natural honey contains many nutrients to nourish consumers</p>
-                <a href="shop.php" class="btn">shop now</a>
+                <a href="./user_shop.php" class="btn">shop now</a>
             </div>
             <div class="box">
                 <img src="../hinh/0.png" alt="">

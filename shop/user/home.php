@@ -1,5 +1,5 @@
 <?php
-include_once '../config/config.php';
+include_once '../../config/config.php';
 if (isset($_POST['dangky'])) {
     header('location:../../dang_ki.php');
 }
@@ -41,11 +41,7 @@ if (isset($_POST['add_to_cart'])) {
 }
 
 ?>
-<style type="text/css">
-    <?php
-    // include './shop/';
-    ?>
-</style>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -56,48 +52,51 @@ if (isset($_POST['add_to_cart'])) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
     <!--  -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        header .user-box {
+            margin-left: 100rem;
+        }
+    </style>
     <link rel="stylesheet" href="../css/main.css">
     <title>Home page</title>
 </head>
 
+
 <body>
     <header class="header">
-        <div class="flex">
-            <a href="./matong.php" class="logo">
-                <img src="../hinh/logo.png" alt="" width="30%">
-            </a>
 
-            <nav class="navbar">
-                <a href="./index.php">Home</a>
-                <a href="./user_shop.php">shop</a>
-                <a href="./user_about.php">about us</a>
-                <a href="./user_order.php">order</a>
-                <a href="./user_contact.php">contact</a>
-            </nav>
+        <a href="./home.php" class="logo">
+            <img src="../hinh/logo.png" alt="" width="30%">
+        </a>
 
-            <div class="icons">
-                <i class="bi bi-person" id="user-btn"></i>
+        <nav class="navmenu">
+            <a href="">Home</a>
+            <a href="">shop</a>
+            <a href="">about us</a>
+            <a href="">order</a>
+            <a href="">contact</a>
+        </nav>
 
-                <a href="./user_wishlist.php"><i class="bi bi-heart"></i></a>
-
-                <a href="./user_cart.php"><i class="bi bi-cart"></i><sup>
-                    </sup></a>
-                <i class="bi bi-list" id="menu-btn"></i>
-            </div>
-
-            <div class="user-box">
-
-                <form method="post">
-                    <button type="submit" class="logout-btn" name="dangky">
-                        Đăng ký
-                    </button>
-
-                    <button type="submit" class="logout-btn" name="dangnhap">
-                        Đăng nhập
-                    </button>
-                </form>
-            </div>
+        <div class="nav-icon">
+            <i class="bi bi-person" id="user-btn"></i>
+            <a href=""><i class="bi bi-heart"></i></a>
+            <a href=""><i class="bi bi-cart"></i></a>
+            <i class="bi bi-list" id="menu-btn"></i>
         </div>
+
+        <div class="user-box">
+
+            <form method="post">
+                <button type="submit" class="logout-btn" name="dangky">
+                    Đăng ký
+                </button>
+
+                <button type="submit" class="logout-btn" name="dangnhap">
+                    Đăng nhập
+                </button>
+            </form>
+        </div>
+
 
     </header>
 
@@ -142,17 +141,16 @@ if (isset($_POST['add_to_cart'])) {
     <div class="story">
         <div class="row">
             <div class="box">
-                <span>our story</span>
+                <span>Our Story</span>
                 <h1>Production of natural honey since 2003</h1>
                 <p>Pure natural honey contains many nutrients to nourish consumers</p>
-                <a href="shop.php" class="btn">shop now</a>
+                <a href="" class="btn">SHOP NOW</a>
             </div>
             <div class="box">
                 <img src="../hinh/0.png" alt="">
             </div>
         </div>
     </div>
-    <!-- <div class="line2"></div> -->
     <!-- testimonial lời chứng thực -->
     <div class="line3"></div>
     <div class="testimonial-fluid">
@@ -197,14 +195,14 @@ if (isset($_POST['add_to_cart'])) {
         </div>
     </div>
     <?php include './user_homeshop.php'; ?>
-    <div class="line2"></div>
+    <div class="line"></div>
     <div class="newslatter">
         <h1 class="title">Join Our to Newsletter</h1>
         <p>Please contact us if you have questions about the problems you have with the product</p>
         <input type="text" name="" placeholder="your email address...">
         <button>subscribe now</button>
     </div>
-
+    <div class="line"></div>
     <div class="client">
         <div class="box">
             <img src="../hinh/client1.png" alt="">

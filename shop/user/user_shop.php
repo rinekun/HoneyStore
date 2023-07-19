@@ -1,13 +1,13 @@
 <?php
-include_once '../config/config.php';
+include_once '../../config/config.php';
 session_start();
 $user_id = $_SESSION['user_id'];
 if (!isset($user_id)) {
-    header('location:./dang_nhap.php');
+    header('location:../dang_nhap.php');
 }
-if (isset($_POST['logout'])) {
+if (isset($_POST['logout-btn'])) {
     session_destroy();
-    header('location:./dang_nhap.php');
+    header('location:../../dang_nhap.php');
 }
 //adding product in wishlist
 if (isset($_POST['add_to_wishlist'])) {
@@ -80,7 +80,7 @@ if (isset($_POST['add_to_cart'])) {
                <span>
                  ' . $message . '
                </span>
-               <i class="bi bi-x-circle" onclick="this.parentElement.remove()"></i>
+               <i class="bx bx-x-circle" onclick="this.parentElement.remove()"></i>
               </div>
             ';
             }
@@ -94,9 +94,9 @@ if (isset($_POST['add_to_cart'])) {
             if (mysqli_num_rows($select_products) > 0) {
                 while ($fetch_products = mysqli_fetch_assoc($select_products)) { ?>
                     <form method="post" class="box" enctype="multipart/form-data">
-                        <div class="price">$<?php echo $fetch_products['price'] ?></div>
-                        <img src="../../hinh/<?php echo $fetch_products['image'] ?>" alt="">
+                        <img src="../hinh/<?php echo $fetch_products['image'] ?>" alt="">
                         <div class="name"><?php echo $fetch_products['name'] ?></div>
+                        <div class="price"><?php echo $fetch_products['price'] ?> đ</div>
                         <input type="hidden" name="product_id" value="<?php echo $fetch_products['id'] ?>">
                         <input type="hidden" name="product_name" value="<?php echo $fetch_products['name'] ?>">
                         <input type="hidden" name="product_price" value="<?php echo $fetch_products['price'] ?>">

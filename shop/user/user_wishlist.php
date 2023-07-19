@@ -1,16 +1,16 @@
 <style>
-    
+
 </style>
 <?php
-include_once '../config/config.php';
+include_once '../../config/config.php';
 session_start();
 $user_id = $_SESSION['user_id'];
 if (!isset($user_id)) {
-    header('location:./dang_nhap.php');
+    header('location:../dang_nhap.php');
 }
-if (isset($_POST['logout'])) {
+if (isset($_POST['logout-btn'])) {
     session_destroy();
-    header('location:./dang_nhap.php');
+    header('location:../../dang_nhap.php');
 }
 //adding product in wishlist
 if (isset($_POST['add_to_wishlist'])) {
@@ -85,7 +85,7 @@ if (isset($_GET['delete_all'])) {
     </div>
     <div class="line"></div>
     <!-- about us -->
-    <section class="shop"> 
+    <section class="shop">
         <h1 class="title">products added in wishlist</h1>
         <?php
         if (isset($message)) {
@@ -96,7 +96,7 @@ if (isset($_GET['delete_all'])) {
                <span>
                  ' . $message . '
                </span>
-               <i class="bi bi-x-circle" onclick="this.parentElement.remove()"></i>
+               <i class="bx bx-x-circle" onclick="this.parentElement.remove()"></i>
               </div>
             ';
             }
@@ -104,37 +104,37 @@ if (isset($_GET['delete_all'])) {
 
         ?>
         <div class="box-container">
-           <div class="sanpham">
-           <?php
-            $grand_total = 0;
-            $select_wishlist = mysqli_query($conn, "SELECT * FROM `wishlist`") or die('query failed');
-            if (mysqli_num_rows($select_wishlist) > 0) {
-                while ($fetch_wishlist = mysqli_fetch_assoc($select_wishlist)) { ?>
-                    <form method="post" class="box">
-                        <div class="price">$<?php echo $fetch_wishlist['price'] ?></div>
-                        <img src="../hinh/<?php echo $fetch_wishlist['image'] ?>" alt="">
-                        <div class="name"><?php echo $fetch_wishlist['name'] ?></div>
-                        <input type="hidden" name="product_id" value="<?php echo $fetch_wishlist['id'] ?>">
-                        <input type="hidden" name="product_name" value="<?php echo $fetch_wishlist['name'] ?>">
-                        <input type="hidden" name="product_price" value="<?php echo $fetch_wishlist['price'] ?>">
-                        <input type="hidden" name="product_image" value="<?php echo $fetch_wishlist['image']; ?>">
-                        <div class="icon">
-                            <a href="./user_view_page.php?pid=<?php echo $fetch_wishlist['id']; ?>" class="bi bi-eye-fill"></a>
-                            <a href="user_wishlist.php?delete=<?php echo $fetch_wishlist['id']; ?>" class="bi bi-x" onclick="return confirm('do you want to delete?')"></a>
-                            <button type="submit" name="add_to_cart" class="bi bi-cart"></button>
-                        </div>
-                    </form>
-            <?php
-                    $grand_total += $fetch_wishlist['price'];
+            <div class="sanpham">
+                <?php
+                $grand_total = 0;
+                $select_wishlist = mysqli_query($conn, "SELECT * FROM `wishlist`") or die('query failed');
+                if (mysqli_num_rows($select_wishlist) > 0) {
+                    while ($fetch_wishlist = mysqli_fetch_assoc($select_wishlist)) { ?>
+                        <form method="post" class="box">
+                            <img src="../hinh/<?php echo $fetch_wishlist['image'] ?>" alt="">
+                            <div class="name"><?php echo $fetch_wishlist['name'] ?></div>
+                            <div class="price"><?php echo $fetch_wishlist['price'] ?> đ</div>
+                            <input type="hidden" name="product_id" value="<?php echo $fetch_wishlist['id'] ?>">
+                            <input type="hidden" name="product_name" value="<?php echo $fetch_wishlist['name'] ?>">
+                            <input type="hidden" name="product_price" value="<?php echo $fetch_wishlist['price'] ?>">
+                            <input type="hidden" name="product_image" value="<?php echo $fetch_wishlist['image']; ?>">
+                            <div class="icon">
+                                <!-- <a href="user_view_page.php?pid=<?php echo $fetch_products['id']; ?>" class="bi bi-eye-fill"></a> -->
+                                <a href="user_wishlist.php?delete=<?php echo $fetch_wishlist['id']; ?>" class="bi bi-x" onclick="return confirm('do you want to delete?')"></a>
+                                <button type="submit" name="add_to_cart" class="bi bi-cart"></button>
+                            </div>
+                        </form>
+                <?php
+                        $grand_total += $fetch_wishlist['price'];
+                    }
+                } else {
+                    echo '<p class="empty">no products added yet!</p>';
                 }
-            } else {
-                echo '<p class="empty">no products added yet!</p>';
-            }
-            ?>
-           </div>
+                ?>
+            </div>
         </div>
         <div class="wishlist_total">
-            <p>total amount payable: <span>$<?php echo $grand_total; ?>/-</span> </p>
+            <p>total amount payable: <span><?php echo $grand_total; ?> đ/-</span> </p>
             <a href="./user_shop.php" class="btn">continue shopping</a>
             <a href="./user_wishlist.php?delete_all=<?php echo ($grand_total) ? '' : 'disabled' ?> onclick=" return confirm('do you want to delete all product?')">delete all</a>
         </div>
