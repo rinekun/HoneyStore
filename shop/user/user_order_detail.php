@@ -91,7 +91,7 @@ if (isset($_POST['logout-btn'])) {
                             <thead style="margin:auto;text-align:center">
                                 <tr>
                                     <th>Stt</th>
-                                    <th class="text-center">HÌNH</th>
+                                    <!-- <th class="text-center">HÌNH</th> -->
                                     <th class="text-center">TÊN SẢN PHẨM</th>
                                     <th class="text-center">SỐ LƯỢNG</th>
                                     <!-- <th class="text-center">THANH TOÁN</th> -->
@@ -106,14 +106,15 @@ if (isset($_POST['logout-btn'])) {
                                     while ($fetch_orders = mysqli_fetch_assoc($select_orders)) { ?>
                                         <tr>
                                             <td class="col-sm-1 col-md-1">
-                                                <div class="media">
-                                                    <span class="thumbnail pull-left" href="#"><?php $STT++?> </span>
-                                                </div>
+                                                <?php echo $STT++?> </span>
+                                                
                                             </td>
-
+<!-- 
                                             <td class="col-sm-1 col-md-1" style="text-align: center">
-                                                <h4 class="media-heading"><img src="../hinh/<?php echo $fetch_orders['image_product']  ?>" alt=""></h4>
-                                            </td>
+                                                <h4 class="media-heading"><img src="../hinh/<?php 
+                                                // echo $fetch_orders['image_product']  
+                                                ?>" alt=""></h4>
+                                            </td> -->
 
                                             <td class="col-sm-1 col-md-2 text-center">
                                                 <strong><?php echo $fetch_orders['name'] ?></strong>
@@ -132,7 +133,11 @@ if (isset($_POST['logout-btn'])) {
 
                                 </tr>
                             </tbody>
+
                         </table>
+                       <a href="./user_order.php">
+                        <input type="submit" value="Quay lại">
+                       </a>
                     </div>
                 </div>
         <?php
