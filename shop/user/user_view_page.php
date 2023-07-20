@@ -62,9 +62,9 @@ if (isset($_POST['add_to_cart'])) {
     include './user_header.php'; ?>
     <div class="banner">
         <div class="detail">
-            <h1>Product detail</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, tenetur.</p>
-            <a href="">home</a>/<span>view_page</span>
+            <h1>Chi tiết sản phẩm</h1>
+            <p>Nơi hiển thị các thông tin về mặt hàng và giá cả chi tiết</p>
+            <a href="">Trang chủ</a>/<span>Xem_trang</span>
         </div>
     </div>
     <div class="line"></div>

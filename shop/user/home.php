@@ -58,7 +58,7 @@ if (isset($_POST['add_to_cart'])) {
         }
     </style>
     <link rel="stylesheet" href="../css/main.css">
-    <title>Home page</title>
+    <title>Trang chủ</title>
 </head>
 
 
@@ -70,11 +70,11 @@ if (isset($_POST['add_to_cart'])) {
         </a>
 
         <nav class="navmenu">
-            <a href="">Home</a>
-            <a href="">shop</a>
-            <a href="">about us</a>
-            <a href="">order</a>
-            <a href="">contact</a>
+            <a href="">Trang chủ</a>
+            <a href="./user_shop.php">Shop</a>
+            <a href="./user_about.php">Về chúng tôi</a>
+            <a href="./user_order.php">Đơn thanh toán</a>
+            <a href="./user_contact.php">Liên hệ</a>
         </nav>
 
         <div class="nav-icon">
@@ -117,22 +117,22 @@ if (isset($_POST['add_to_cart'])) {
             <div class="box">
                 <img src="../hinh/shipping.jpg" alt="">
                 <div>
-                    <h1>Free Shipping Fast</h1>
-                    <p>Free shipping with orders within Saigon city</p>
+                    <h1>Free ship nhanh</h1>
+                    <p>Miễn phí vận chuyển với đơn hàng nội thành Sài Gòn</p>
                 </div>
             </div>
             <div class="box">
                 <img src="../hinh/money.jpg" alt="">
                 <div>
-                    <h1>Money Back $ Guarantee</h1>
-                    <p>Refund if the product is defective or does not match the product introduced</p>
+                    <h1>Đảm bảo hoàn lại tiền $</h1>
+                    <p>Hoàn tiền nếu sản phẩm bị lỗi hoặc không đúng với sản phẩm đã giới thiệu</p>
                 </div>
             </div>
             <div class="box">
                 <img src="../hinh/online_support.jpg" alt="">
                 <div>
-                    <h1>Online Support 24/24</h1>
-                    <p>Always support 24/7 for customers</p>
+                    <h1>Online hỗ trợ 24/24</h1>
+                    <p>Luôn hỗ trợ 24/7 cho khách hàng</p>
                 </div>
             </div>
         </div>
@@ -141,9 +141,9 @@ if (isset($_POST['add_to_cart'])) {
     <div class="story">
         <div class="row">
             <div class="box">
-                <span>Our Story</span>
-                <h1>Production of natural honey since 2003</h1>
-                <p>Pure natural honey contains many nutrients to nourish consumers</p>
+                <span>Câu chuyện chúng tôi</span>
+                <h1>Sản xuất mật ong tự nhiên từ năm 2003</h1>
+                <p>Mật ong thiên nhiên nguyên chất chứa nhiều dưỡng chất bồi bổ cho người tiêu dùng</p>
                 <a href="" class="btn">SHOP NOW</a>
             </div>
             <div class="box">
@@ -154,38 +154,38 @@ if (isset($_POST['add_to_cart'])) {
     <!-- testimonial lời chứng thực -->
     <div class="line3"></div>
     <div class="testimonial-fluid">
-        <h1 class="title">What Our Customes Say's</h1>
+        <h1 class="title">Thông tin về chúng tôi</h1>
         <div class="testimonial-slider">
             <div class="testimonial-item">
                 <img src="../hinh/profile.jpg" alt="">
                 <div class="testimonial-caption">
-                    <span>Member</span>
+                    <span>Thành viên</span>
                     <h1>Organic Premium Honey</h1>
-                    <p>Supply chain management and product preservation</p>
+                    <p>Quản lý chuỗi cung ứng và bảo quản sản phẩm</p>
                 </div>
             </div>
             <div class="testimonial-item">
                 <img src="../hinh/profile1.jpg" alt="">
                 <div class="testimonial-caption">
-                    <span>Member</span>
+                    <span>Thành viên</span>
                     <h1>Organic Premium Honey</h1>
-                    <p>Taking care of customers and managing orders to consumers</p>
+                    <p>Chăm sóc khách hàng và quản lý đơn hàng đến tay người tiêu dùng</p>
                 </div>
             </div>
             <div class="testimonial-item">
                 <img src="../hinh/profile2.jpg" alt="">
                 <div class="testimonial-caption">
-                    <span>Member</span>
+                    <span>Thành viên</span>
                     <h1>Organic Premium Honey</h1>
-                    <p>Website administration and system maintenance</p>
+                    <p>Quản trị website và bảo trì hệ thống</p>
                 </div>
             </div>
             <div class="testimonial-item">
                 <img src="../hinh/profile3.jpg" alt="">
                 <div class="testimonial-caption">
-                    <span>Leader</span>
+                    <span>Nhóm trưởng</span>
                     <h1>Organic Premium Honey</h1>
-                    <p>Leader manages and operates the product chain from the producer</p>
+                    <p>Leader quản lý và điều hành chuỗi sản phẩm từ nhà sản xuất</p>
                 </div>
             </div>
         </div>
@@ -197,10 +197,10 @@ if (isset($_POST['add_to_cart'])) {
     <?php include './user_homeshop.php'; ?>
     <div class="line"></div>
     <div class="newslatter">
-        <h1 class="title">Join Our to Newsletter</h1>
-        <p>Please contact us if you have questions about the problems you have with the product</p>
+        <h1 class="title">Tham gia bản tin của chúng tôi</h1>
+        <p>Vui lòng liên hệ với chúng tôi nếu bạn có thắc mắc về các vấn đề bạn gặp phải với sản phẩm</p>
         <input type="text" name="" placeholder="your email address...">
-        <button>subscribe now</button>
+        <button>Theo dõi ngay</button>
     </div>
     <div class="line"></div>
     <div class="client">
@@ -227,5 +227,4 @@ if (isset($_POST['add_to_cart'])) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script type="text/javascript" src="../js/script2.js"></script>
 </body>
-
 </html>

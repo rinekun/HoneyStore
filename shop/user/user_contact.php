@@ -45,9 +45,9 @@ if (isset($_POST['submit-btn'])) {
     include './user_header.php'; ?>
     <div class="banner">
         <div class="detail">
-            <h1>CONTACT</h1>
-            <p>Please contact us if you have any questions about these products please contact</p>
-            <a href="">home</a>/<span>contact</span>
+            <h1>Liên hệ</h1>
+            <p>Vui lòng liên hệ với chúng tôi nếu bạn có bất kỳ câu hỏi nào về các sản phẩm này vui lòng liên hệ</p>
+            <a href="">Trang chủ</a>/<span>Liên hệ</span>
         </div>
     </div>
     <!-- service -->
@@ -56,22 +56,22 @@ if (isset($_POST['submit-btn'])) {
             <div class="box">
                 <img src="../hinh/shipping.jpg" alt="">
                 <div>
-                    <h1>Free Shipping Fast</h1>
-                    <p>Free shipping with orders within Saigon city</p>
+                    <h1>Free ship nhanh</h1>
+                    <p>Miễn phí vận chuyển với đơn hàng nội thành Sài Gòn</p>
                 </div>
             </div>
             <div class="box">
                 <img src="../hinh/money.jpg" alt="">
                 <div>
-                    <h1>Money Back $ Guarantee</h1>
-                    <p>Refund if the product is defective or does not match the product introduced</p>
+                    <h1>Đảm bảo hoàn lại tiền $</h1>
+                    <p>Hoàn tiền nếu sản phẩm bị lỗi hoặc không đúng với sản phẩm đã giới thiệu</p>
                 </div>
             </div>
             <div class="box">
                 <img src="../hinh/online_support.jpg" alt="">
                 <div>
-                    <h1>Online Support 24/24</h1>
-                    <p>Always support 24/7 for customers</p>
+                    <h1>Online hỗ trợ 24/24</h1>
+                    <p>Luôn hỗ trợ 24/7 cho khách hàng</p>
                 </div>
             </div>
         </div>
@@ -101,27 +101,27 @@ if (isset($_POST['submit-btn'])) {
     </div>
     <div class="line"></div>
     <div class="address">
-        <h1 class="title">our contact</h1>
+        <h1 class="title">Liên hệ với chúng tôi</h1>
         <div class="row">
             <div class="box">
                 <i class="bi bi-map-fill"></i>
                 <div>
-                    <h4>address</h4>
+                    <h4>Địa chỉ</h4>
                     <p>To Ky,<br>street</p>
                 </div>
             </div>
             <div class="box">
                 <i class="bi bi-telephone-fill"></i>
                 <div>
-                    <h4>phonr number</h4>
+                    <h4>Số điện thoại</h4>
                     <p>090526447</p>
                 </div>
             </div>
             <div class="box">
                 <i class="bi bi-envelope-fill"></i>
                 <div>
-                    <h4>email</h4>
-                    <p>anhem@gmail.com</p>
+                    <h4>Email</h4>
+                    <p>HoneyStore@gmail.com</p>
                 </div>
             </div>
         </div>
@@ -134,5 +134,4 @@ if (isset($_POST['submit-btn'])) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script type="text/javascript" src="../js/script.js"></script>
 </body>
-
 </html>
