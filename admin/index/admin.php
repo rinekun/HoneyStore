@@ -1,12 +1,16 @@
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
 
 <?php
 
-include_once './index/head.php';
+include 'head.php';
 
 // Gộp tệp nav.php
-include_once './index/nav.php';
+include 'nav.php';
 ?>
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+
+
+
 
 
 
@@ -14,7 +18,7 @@ include_once './index/nav.php';
 <section class="main_content dashboard_part">
 
     <?php
-    include './index/userAdmin.php';
+    include 'userAdmin.php';
 
     ?>
 
@@ -385,7 +389,7 @@ include_once './index/nav.php';
 
 
     <?php
-    include './index/footer.php';
+    include 'footer.php';
     ?>
 
 

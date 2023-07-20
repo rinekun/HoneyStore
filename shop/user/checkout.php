@@ -18,20 +18,33 @@ if (isset($_POST['order-btn'])) {
     $placed_on = date('d-M-Y');
     $cart_total = 0;
     $cart_product[] = '';
+    $id_cart = array();
     $cart_query = mysqli_query($conn, "SELECT * FROM `cart` WHERE user_id ='$user_id'") or die('query failed');
     if (mysqli_num_rows($cart_query) > 0) {
         while ($cart_item = mysqli_fetch_assoc($cart_query)) {
+            $id_cart[$cart_item['id']] = $cart_item;
             $cart_product[] = $cart_item['name'] . '(' . $cart_item['quantity'] . ')';
             $sub_total = ($cart_item['price'] * $cart_item['quantity']);
             $cart_total += $sub_total;
         }
     }
+    $id_order =  $_POST['id_order'];
+
+    $id_order+=1;
+    foreach ($id_cart as $key => $value) {
+
+        $product_select = '';
+        $product_select .= "('NULL', '$id_order', '$user_id','" . $value['name'] . "','" . $value['quantity'] . "','" . $value['price'] . "', '" . $value['image'] . "','" . date('Y-m-02') . "')";
+
+        mysqli_query($conn, "INSERT INTO `order_pay`(`id`,`id_order`,`id_user`,`name`,`quantity`,`price`, `image_product`,`dates`) VALUES " . $product_select . ";");
+    }
+
     $total_products = implode(',', $cart_product);
 
     mysqli_query($conn, "INSERT INTO `order`( `user_id`, `name`, `number`, `email`, `method`, `address`, `total_product`, `total_price`, `place_on`) VALUES ('$user_id','$name','$number','$email','$method','$address','$total_product','$cart_total','$placed_on')");
     mysqli_query($conn, "DELETE FROM `cart` WHERE user_id='$user_id'") or die('query failed');
-        $message[] = 'order placed successfully';
-   
+    $message[] = 'order placed successfully';
+
     header('location:checkout.php');
 }
 
@@ -110,6 +123,20 @@ if (isset($_POST['order-btn'])) {
         <div class="large-5 col" style="width:59%">
             <div class="checkout-form">
                 <form method="post">
+
+                    <?php
+
+                    $id_order_FP = null;
+                    $id_order = mysqli_query($conn, "SELECT * FROM `order`") or die('query failed');
+
+                    while ($id_orders = mysqli_fetch_assoc($id_order)) {
+                        $id_order_FP = $id_orders['id'];
+                        echo '<input type="hidden" name="id_order" value="' . $id_order_FP . '">';
+                    }
+
+                    ?>
+
+
                     <div class="input-field">
                         <label for="">your name</label>
                         <input type="text" name="name" placeholder="enter your name">
@@ -180,6 +207,15 @@ if (isset($_POST['order-btn'])) {
                                 $total_price = ($fetch_cart['price'] * $fetch_cart['quantity']);
                                 $grand_total = $total += $total_price;
                         ?>
+
+                                <!-- <input type="hidden" name="name_pay">
+                             <input type="hidden" name="quantity_pay">
+                             <input type="hidden" name="price_pay">
+                             <input type="hidden" name="img_pay">
+                             <input type="hidden" name="img_pay">    -->
+
+
+
                                 <tr>
                                     <td class="col-sm-8 col-md-6">
                                         <div class="media">

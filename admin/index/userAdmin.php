@@ -1,5 +1,5 @@
 <?php
-include '../config/config.php';
+include '../../config/config.php';
 
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
