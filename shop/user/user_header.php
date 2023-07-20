@@ -16,11 +16,11 @@
         </a>
 
         <nav class="navmenu">
-            <a href="./index.php">Home</a>
-            <a href="./user_shop.php">shop</a>
-            <a href="./user_about.php">about us</a>
-            <a href="./user_order.php">order</a>
-            <a href="./user_contact.php">contact</a>
+            <a href="./index.php">Trang chủ</a>
+            <a href="./user_shop.php">Shop</a>
+            <a href="./user_about.php">Về chúng tôi</a>
+            <a href="./user_order.php">Đơn thanh toán</a>
+            <a href="./user_contact.php">Liên hệ</a>
         </nav>
 
         <div class="nav-icon">

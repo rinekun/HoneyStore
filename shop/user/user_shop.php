@@ -63,8 +63,8 @@ if (isset($_POST['add_to_cart'])) {
     <div class="banner">
         <div class="detail">
             <h1>SHOP</h1>
-            <p>Products of honey project house dedicated quality and best value</p>
-            <a href="index.php">HOME</a>/<span>SHOP</span>
+            <p>Sản phẩm mật ong nhà dự án tận tâm chất lượng và giá trị tốt nhất</p>
+            <a href="index.php">Trang chủ</a>/<span>SHOP</span>
         </div>
     </div>
     <div class="line"></div>
