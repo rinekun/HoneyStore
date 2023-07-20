@@ -143,7 +143,7 @@ if (isset($_POST['logout-btn'])) {
                                         <strong> <?php echo $fetch_orders['total_price'] ?></strong>
                                     </td>
                                     <td class="col-sm-1 col-md-1">
-                                        <a href="./user_order_detail.php?detail=<?php echo $fetch_orders['id'] ?>">Xem Chi Tiết</a>
+                                        <a href="./user_order_detail.php?detail=<?php echo $fetch_orders['id']-1?>">Xem Chi Tiết</a>
                                     </td>
                                 </tr>
                         <?php

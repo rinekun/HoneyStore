@@ -19,7 +19,7 @@ if (isset($_POST['order-btn'])) {
     $cart_total = 0;
     $cart_product[] = '';
     $id_cart = array();
-    $cart_query = mysqli_query($conn, "SELECT * FROM `cart` WHERE user_id ='$user_id'") or die('query failed');
+    $cart_query = mysqli_query($conn, "SELECT * FROM `cart` WHERE user_id ='$user_id'");
     if (mysqli_num_rows($cart_query) > 0) {
         while ($cart_item = mysqli_fetch_assoc($cart_query)) {
             $id_cart[$cart_item['id']] = $cart_item;
@@ -28,9 +28,10 @@ if (isset($_POST['order-btn'])) {
             $cart_total += $sub_total;
         }
     }
+
     $id_order =  $_POST['id_order'];
 
-    $id_order+=1;
+
     foreach ($id_cart as $key => $value) {
 
         $product_select = '';
@@ -126,13 +127,14 @@ if (isset($_POST['order-btn'])) {
 
                     <?php
 
-                    $id_order_FP = null;
-                    $id_order = mysqli_query($conn, "SELECT * FROM `order`") or die('query failed');
+                    $id_order_pay = mysqli_query($conn, "SELECT * FROM `order`") or die('query failed');
 
-                    while ($id_orders = mysqli_fetch_assoc($id_order)) {
+                    while ($id_orders = mysqli_fetch_assoc($id_order_pay)) {
                         $id_order_FP = $id_orders['id'];
-                        echo '<input type="hidden" name="id_order" value="' . $id_order_FP . '">';
-                    }
+
+                    ?>
+                        <input type="hidden" name="id_order" value=" <?php echo $id_order_FP ?>">';
+                    <?php   }
 
                     ?>
 

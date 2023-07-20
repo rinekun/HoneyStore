@@ -78,73 +78,70 @@ if (isset($_POST['logout-btn'])) {
     ?>
     <div class="order-section">
         <h1 class="title">CHI TIẾT ĐẶT HÀNG</h1>
-        <?php
-        $STT = 1 ;
-        $select_orders = mysqli_query($conn, "SELECT * FROM `order` WHERE user_id ='$user_id'") or die('query failed');
-        if (mysqli_num_rows($select_orders) > 0) {
-            while ($fetch_orders = mysqli_fetch_assoc($select_orders)) {
 
-        ?>
-                <div class="row" style="margin-left:20rem">
-                    <div class="col-sm-8 col-md-7 col-md-offset-1">
-                        <table class="table table-hover" style="border:1px solid black;">
-                            <thead style="margin:auto;text-align:center">
-                                <tr>
-                                    <th>Stt</th>
-                                    <!-- <th class="text-center">HÌNH</th> -->
-                                    <th class="text-center">TÊN SẢN PHẨM</th>
-                                    <th class="text-center">SỐ LƯỢNG</th>
-                                    <!-- <th class="text-center">THANH TOÁN</th> -->
 
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                
-                                $select_orders = mysqli_query($conn, "SELECT * FROM `order_pay`") or die('query failed');
-                                if (mysqli_num_rows($select_orders) > 0) {
-                                    while ($fetch_orders = mysqli_fetch_assoc($select_orders)) { ?>
-                                        <tr>
-                                            <td class="col-sm-1 col-md-1">
-                                                <?php echo $STT++?> </span>
-                                                
-                                            </td>
-<!-- 
+        <div class="row" style="margin-left:20rem">
+            <div class="col-sm-8 col-md-7 col-md-offset-1">
+                <table class="table table-hover" style="border:1px solid black;">
+                    <thead style="margin:auto;text-align:center">
+                        <tr>
+                            <th>Stt</th>
+                            <!-- <th class="text-center">HÌNH</th> -->
+                            <th class="text-center">TÊN SẢN PHẨM</th>
+                            <th class="text-center">SỐ LƯỢNG</th>
+                            <!-- <th class="text-center">THANH TOÁN</th> -->
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+
+                        $STT = 1;
+                        if (isset($_GET['detail'])) {
+                            $order_id_pay = $_GET['detail'];
+                            $select_orders = mysqli_query($conn, "SELECT*FROM `order_pay` WHERE id_order= '$order_id_pay'") or die('query failed');
+                            if (mysqli_num_rows($select_orders) > 0) {
+                                while ($fetch_orders = mysqli_fetch_assoc($select_orders)) { ?>
+                                    <tr>
+                                        <td class="col-sm-1 col-md-1">
+                                            <?php echo $STT++ ?> </span>
+
+                                        </td>
+                                        <!-- 
                                             <td class="col-sm-1 col-md-1" style="text-align: center">
-                                                <h4 class="media-heading"><img src="../hinh/<?php 
-                                                // echo $fetch_orders['image_product']  
-                                                ?>" alt=""></h4>
+                                                <h4 class="media-heading"><img src="../hinh/<?php
+                                                                                            // echo $fetch_orders['image_product']  
+                                                                                            ?>" alt=""></h4>
                                             </td> -->
 
-                                            <td class="col-sm-1 col-md-2 text-center">
-                                                <strong><?php echo $fetch_orders['name'] ?></strong>
-                                            </td>
+                                        <td class="col-sm-1 col-md-2 text-center">
+                                            <strong><?php echo $fetch_orders['name'] ?></strong>
+                                        </td>
 
-                                            <td class="col-sm-1 col-md-1 text-center">
-                                                <strong> <?php echo $fetch_orders['quantity'] ?></strong>
-                                            </td>
-                                        </tr>
-                                <?php
-                                    }
-                                } else {
-                                    echo '<p class="empty">no products added yet!</p>';
+                                        <td class="col-sm-1 col-md-1 text-center">
+                                            <strong> <?php echo $fetch_orders['quantity'] ?></strong>
+                                        </td>
+                                    </tr>
+                        <?php
                                 }
-                                ?>
+                            } else {
+                                echo '<p class="empty">no products added yet!</p>';
+                            }
+                        }
+                        ?>
 
-                                </tr>
-                            </tbody>
+                        </tr>
+                    </tbody>
 
-                        </table>
-                       <a href="./user_order.php">
-                        <input type="submit" value="Quay lại">
-                       </a>
-                    </div>
-                </div>
+                </table>
+                <a href="./user_order.php">
+                    <input type="submit" value="Quay lại">
+                </a>
+            </div>
+        </div>
         <?php
-            }
-        } else {
-            echo '<p class="empty">no products added yet!</p>';
-        }
+
+
         ?>
     </div>
     <div class="line"></div>
