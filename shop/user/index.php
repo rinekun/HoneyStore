@@ -72,6 +72,9 @@ if (isset($_POST['add_to_cart'])) {
             <div class="slider-item">
                 <img src="../hinh/banner3.jpg" alt="">
             </div>
+            <!-- <div class="slider-item">
+                <img src="../hinh/slide.jpg" alt="">
+            </div> -->
         </div>
         <div class="controls">
             <i class="bi bi-chevron-left prev"></i>

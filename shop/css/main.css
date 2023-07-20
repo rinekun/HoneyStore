@@ -1375,7 +1375,7 @@ footer .bottom-footer {
 }
 
 .checkout-form form {
-    width: 50vw;
+    width: 40vw;
     box-shadow: var(--box-shadow2);
     margin: 2rem auto;
     padding: 2rem;

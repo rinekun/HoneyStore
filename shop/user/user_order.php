@@ -22,11 +22,30 @@ if (isset($_POST['logout-btn'])) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
     <!--  -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="../css/main.css">
     <title>Home page</title>
 </head>
 <style>
+    sup {
+        margin-top: 6.6rem;
+        margin-left: -3rem;
+    }
 
+    .row {
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
+
+    .banner .detail {
+        position: absolute;
+        padding: 7rem 0;
+        top: 4%;
+        left: 35%;
+        text-align: center;
+        z-index: 200;
+    }
 </style>
 
 <body>
@@ -36,38 +55,94 @@ if (isset($_POST['logout-btn'])) {
         <div class="detail">
             <h1>ORDER</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, tenetur.</p>
-            <a href="">home</a>/<span>order</span>
+            <a href="">home</a>/<span> order</span>
         </div>
     </div>
+    <div class="line"></div>
     <!-- pay -->
-    <div class="order-section">
-        <div class="box-container">
-            <div class="sanpham">
-                <?php
-                $select_orders = mysqli_query($conn, "SELECT * FROM `order` WHERE user_id ='$user_id'") or die('query failed');
-                if (mysqli_num_rows($select_orders) > 0) {
-                    while ($fetch_orders = mysqli_fetch_assoc($select_orders)) {
+    <?php
+    if (isset($message)) {
+        foreach ($message as $message) {
+            echo
+            '
+              <div class="message">
+               <span>
+                 ' . $message . '
+               </span>
+               <i class="bi bi-x-circle" onclick="this.parentElement.remove()"></i>
+              </div>
+            ';
+        }
+    }
 
-                ?>
-                        <div class="box">
-                            <p style="text-align:left;font-size:13px"><b>planced on:</b> <span><?php echo $fetch_orders['place_on']; ?></span> </p >
-                            <p style="text-align:left;font-size:13px"><b>name:</b> <span><?php echo $fetch_orders['name']; ?></span> </p >
-                            <p style="text-align:left;font-size:13px"><b>number: </b><span><?php echo $fetch_orders['number']; ?></span> </p >
-                            <p style="text-align:left;font-size:13px"><b>email:</b> <span><?php echo $fetch_orders['email']; ?></span> </p >
-                            <p style="text-align:left;font-size:13px"><b>address:</b> <span><?php echo $fetch_orders['address']; ?></span> </p >
-                            <p style="text-align:left;font-size:13px"><b>payment method:</b> <span><?php echo $fetch_orders['method']; ?></span> </p >
-                            <!-- <p style="text-align:left;font-size:13px"><b>your order:</b> <span><?php echo $fetch_orders['total_product']; ?></span> </p > -->
-                            <p style="text-align:left;font-size:13px"><b>total price: </b><span><?php echo $fetch_orders['total_price']; ?></span> </p >
-                            <p style="text-align:left;font-size:13px"><b>payment ststus: </b><span><?php echo $fetch_orders['payment_status']; ?></span> </p>
-                        </div>
-                <?php
-                    }
-                } else {
-                    echo '<p class="empty">no products added yet!</p>';
-                }
-                ?>
-            </div>
-        </div>
+    ?>
+    <div class="order-section">
+        <h1 class="title">SHOP ORDER</h1>
+        <?php
+        $select_orders = mysqli_query($conn, "SELECT * FROM `order` WHERE user_id ='$user_id'") or die('query failed');
+        if (mysqli_num_rows($select_orders) > 0) {
+            while ($fetch_orders = mysqli_fetch_assoc($select_orders)) {
+
+        ?>
+                <div class="row" style="margin-left:20rem">
+                    <div class="col-sm-8 col-md-7 col-md-offset-1">
+                        <table class="table table-hover" style="border:1px solid black;">
+                            <thead style="margin:auto;text-align:center">
+                                <tr>
+                                    <th>Product</th>
+                                    <th class="text-center">Date</th>
+                                    <th class="text-center">payment</th>
+                                    <th class="text-center">Total</th>
+                                    <th class="text-center">Options</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                $select_orders = mysqli_query($conn, "SELECT * FROM `order` WHERE user_id ='$user_id'") or die('query failed');
+                                if (mysqli_num_rows($select_orders) > 0) {
+                                    while ($fetch_orders = mysqli_fetch_assoc($select_orders)) { ?>
+                                        <tr>
+                                            <td class="col-sm-1 col-md-1">
+                                                <div class="media">
+                                                    <a class="thumbnail pull-left" href="#"><?php echo $fetch_orders['id'] ?> </a>
+                                                </div>
+                                            </td>
+
+                                            <td class="col-sm-1 col-md-1" style="text-align: center">
+                                                <h4 class="media-heading"><a href="#"><?php echo $fetch_orders['place_on']  ?></a></h4>
+                                            </td>
+
+                                            <td class="col-sm-1 col-md-2 text-center">
+                                                <strong><?php echo $fetch_orders['method'] ?></strong>
+                                            </td>
+
+                                            <td class="col-sm-1 col-md-1 text-center">
+                                                <strong> <?php echo $fetch_orders['total_price'] ?> đ</strong>
+                                            </td>
+
+                                            <td class="col-sm-1 col-md-1">
+                                                <a href="user_cart.php?delete=<?php echo $fetch_cart['id']; ?>"> Xem</a>
+                                            </td>
+                                        </tr>
+                                <?php
+                                    }
+                                } else {
+                                    echo '<p class="empty">no products added yet!</p>';
+                                }
+                                ?>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        <?php
+            }
+        } else {
+            echo '<p class="empty">no products added yet!</p>';
+        }
+        ?>
     </div>
     <div class="line"></div>
     <?php include '../user/user_footer.php'; ?>

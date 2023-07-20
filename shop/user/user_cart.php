@@ -16,7 +16,8 @@ if (isset($_POST['update_qty_btn'])) {
 
     $update_query = mysqli_query($conn, "UPDATE `cart` SET `quantity` ='$update_value' WHERE id='$update_qty_id'") or die('query failed');
     if ($update_query) {
-        header('location:user_cart.php');
+        // $grand_total += $total_amt;
+        $update_value++;
     }
 }
 // delete product from cart
@@ -80,7 +81,7 @@ if (isset($_GET['delete_all'])) {
     </div>
     <div class="line"></div>
     <!-- about us -->
-    
+
     <h1 class="title">products added in cart</h1>
     <?php
     if (isset($message)) {
@@ -131,18 +132,18 @@ if (isset($_GET['delete_all'])) {
                                     <td class="col-sm-1 col-md-1" style="text-align: center">
                                         <form method="post">
                                             <input type="hidden" name="update_qty_id" value="<?php echo $fetch_cart['id']; ?>">
-                                            <div class="qty">
-                                                <input class="form-control" id="exampleInputEmail1" type="number" min="1" name="update_qty" value="<?php echo $fetch_cart['quantity']; ?>">
-                                                <input type="submit" name="update_qty_btn" value="update">
+                                            <div class="qty" style="display:flex">
+                                                <input class="cart-quantity-input" id="" type="number" min="0" max="9999" name="update_qty" value="<?php echo $fetch_cart['quantity']; ?>">
+                                                <!-- <input type="submit" name="update_qty_btn" value="update"> -->
                                             </div>
                                         </form>
 
                                     </td>
-                                    <td class="col-sm-1 col-md-2 text-center"><strong ><?php echo $fetch_cart['price'] ?> đ</strong></td>
+                                    <td class="col-sm-1 col-md-2 text-center"><strong><?php echo $fetch_cart['price'] ?> đ</strong></td>
                                     <td class="col-sm-1 col-md-1 text-center"><strong> <?php echo $total_amt = ($fetch_cart['price'] * $fetch_cart['quantity']) ?> đ</strong></td>
                                     <td class="col-sm-1 col-md-1">
                                         <button type="button" class="btn btn-danger">
-                                            <a style=" text-decoration: none;" class="glyphicon glyphicon-remove" href="user_cart.php?delete=<?php echo $fetch_cart['id']; ?>" onclick="return confirm('do you want to delete?')"> Remove</a>
+                                            <a style=" text-decoration: none;" class="glyphicon glyphicon-remove" href="user_cart.php?delete=<?php echo $fetch_cart['id']; ?>"> Remove</a>
                                         </button>
                                     </td>
                                 </tr>
@@ -190,7 +191,7 @@ if (isset($_GET['delete_all'])) {
                                 </button>
                             </td>
                             <td>
-                                <a href="./checkout.php" class="btn" <?php echo ($grand_total > 1) ? '' : 'disabled' ?> onclick="return confirm('do you want to checkout to pay?')">procced to checkout</a>
+                                <a href="./checkout.php" class="btn" <?php echo ($grand_total > 1) ? '' : 'disabled' ?>>procced to checkout</a>
                             </td>
                         </tr>
                     </tbody>

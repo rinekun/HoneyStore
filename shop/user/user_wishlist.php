@@ -31,20 +31,20 @@ if (isset($_POST['add_to_wishlist'])) {
     }
 }
 //adding product in cart
-if (isset($_POST['add_to_cart'])) {
-    $product_id = $_POST['product_id'];
-    $product_name = $_POST['product_name'];
-    $product_price = $_POST['product_price'];
-    $product_image = $_POST['product_image'];
-    $product_quantity = 1;
-    $cart_number = mysqli_query($conn, "SELECT * FROM `cart` WHERE name ='$product_name' AND user_id ='$user_id'") or die('query failed');
-    if (mysqli_num_rows($cart_number) > 0) {
-        $message[] = 'product alreary in cart';
-    } else {
-        mysqli_query($conn, "INSERT INTO `cart`( `user_id`, `pid`, `name`, `price`, `quantity`,`image`) VALUES ('$user_id','$product_id','$product_name','$product_price','$product_quantity','$product_image')");
-        $message[] = 'product successfuly added in your cart';
-    }
-}
+// if (isset($_POST['add_to_cart'])) {
+//     $product_id = $_POST['product_id'];
+//     $product_name = $_POST['product_name'];
+//     $product_price = $_POST['product_price'];
+//     $product_image = $_POST['product_image'];
+//     $cart_number = mysqli_query($conn, "SELECT * FROM `cart` WHERE name ='$product_name' AND user_id ='$user_id'") or die('query failed');
+//     if (mysqli_num_rows($cart_number) > 0) {
+//         $message[] = 'product alreary in cart';
+//     } else {
+//         mysqli_query($conn, "INSERT INTO `cart`( `user_id`, `pid`, `name`, `price`,`image`) VALUES ('$user_id','$product_id','$product_name','$product_price','$product_image')");
+//         $message[] = 'product successfuly added in your cart';
+//     }
+// }
+
 // delete product from wishlist
 if (isset($_GET['delete'])) {
     $delete_id = $_GET['delete'];
@@ -120,13 +120,14 @@ if (isset($_GET['delete_all'])) {
                             <input type="hidden" name="product_image" value="<?php echo $fetch_wishlist['image']; ?>">
                             <div class="icon">
                                 <!-- <a href="user_view_page.php?pid=<?php echo $fetch_products['id']; ?>" class="bi bi-eye-fill"></a> -->
-                                <a href="user_wishlist.php?delete=<?php echo $fetch_wishlist['id']; ?>" class="bi bi-x" onclick="return confirm('do you want to delete?')"></a>
-                                <button type="submit" name="add_to_cart" class="bi bi-cart"></button>
+                                <a href="user_wishlist.php?delete=<?php echo $fetch_wishlist['id']; ?>" class="bi bi-x"></a>
+                                <!-- <button type="submit" name="add_to_cart" class="bi bi-cart"></button> -->
                             </div>
                         </form>
                 <?php
                         $grand_total += $fetch_wishlist['price'];
                     }
+                
                 } else {
                     echo '<p class="empty">no products added yet!</p>';
                 }

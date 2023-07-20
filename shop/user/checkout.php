@@ -27,9 +27,11 @@ if (isset($_POST['order-btn'])) {
         }
     }
     $total_products = implode(',', $cart_product);
+
     mysqli_query($conn, "INSERT INTO `order`( `user_id`, `name`, `number`, `email`, `method`, `address`, `total_product`, `total_price`, `place_on`) VALUES ('$user_id','$name','$number','$email','$method','$address','$total_product','$cart_total','$placed_on')");
     mysqli_query($conn, "DELETE FROM `cart` WHERE user_id='$user_id'") or die('query failed');
-    $message[] = 'order placed successfully';
+        $message[] = 'order placed successfully';
+   
     header('location:checkout.php');
 }
 
@@ -64,6 +66,15 @@ if (isset($_POST['order-btn'])) {
     header .user-box {
         margin-left: 108rem;
     }
+
+    .container {
+        width: 100%;
+        -js-display: flex;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
+    }
 </style>
 
 <body>
@@ -76,16 +87,10 @@ if (isset($_POST['order-btn'])) {
             <a href="">home</a>/<span>checkout</span>
         </div>
     </div>
-    <!-- pay -->
-    <div class="order-section">
-        <div class="box-container">
-
-        </div>
-    </div>
-    <div class="line"></div>
     <!-- checkout form -->
-    <div class="checkout-form">
-        <h1 class="title">payment process</h1>
+    <h1 class="title">payment</h1>
+    <div class="container">
+
         <?php
         if (isset($message)) {
             foreach ($message as $message) {
@@ -102,154 +107,119 @@ if (isset($_POST['order-btn'])) {
         }
 
         ?>
-
-        <!-- <div class="display-order">
-            <div class="box-container">
-                <?php
-                $select_cart = mysqli_query($conn, "SELECT * FROM `cart`") or die('query failed');
-                $total = 0;
-                $grand_total = 0;
-                if (mysqli_num_rows($select_cart) > 0) {
-                    while ($fetch_cart = mysqli_fetch_assoc($select_cart)) {
-                        $total_price = ($fetch_cart['price'] * $fetch_cart['quantity']);
-                        $grand_total = $total += $total_price;
-                ?>
-                        <div class="box">
-                            <img src="../hinh/<?php echo $fetch_cart['image']; ?>" alt="">
-                            <span><?= $fetch_cart['name']; ?>(<?= $fetch_cart['quantity']; ?>)</span>
-                        </div>
-
-                <?php
-                    }
-                }
-                ?>
+        <div class="large-5 col" style="width:59%">
+            <div class="checkout-form">
+                <form method="post">
+                    <div class="input-field">
+                        <label for="">your name</label>
+                        <input type="text" name="name" placeholder="enter your name">
+                    </div>
+                    <div class="input-field">
+                        <label for="">your number</label>
+                        <input type="number" name="number" placeholder="enter your number">
+                    </div>
+                    <div class="input-field">
+                        <label for="">your email</label>
+                        <input type="email" name="email" placeholder="enter your email">
+                    </div>
+                    <div class="input-field">
+                        <label for="">select payment method</label>
+                        <select name="method">
+                            <option selected disabled>select payment method</option>
+                            <option value="cash on delivery"> cash on delivery</option>
+                            <option value="cradit card">cradit card</option>
+                            <option value="paytm">paytm</option>
+                            <option value="paypal">paypal</option>
+                        </select>
+                    </div>
+                    <div class="input-field">
+                        <label for="">address line 1</label>
+                        <input type="text" name="flate" placeholder="e.g flate no.">
+                    </div>
+                    <div class="input-field">
+                        <label for="">address line 2</label>
+                        <input type="text" name="flate" placeholder="e.g street name">
+                    </div>
+                    <div class="input-field">
+                        <label for="">city</label>
+                        <input type="text" name="city" placeholder="e.g delhi">
+                    </div>
+                    <div class="input-field">
+                        <label for="">state</label>
+                        <input type="text" name="state" placeholder="e.g new delhi">
+                    </div>
+                    <div class="input-field">
+                        <label for="">country</label>
+                        <input type="text" name="country" placeholder="e.g India">
+                    </div>
+                    <div class="input-field">
+                        <label for="">pin code</label>
+                        <input type="text" name="flate" placeholder="e.g 110012">
+                    </div>
+                    <input type="submit" name="order-btn" class="btn" value="order now">
+                </form>
             </div>
-            <span class="grand-total">Total Amount Payable: $<?= $grand_total; ?></span>
-        </div> -->
-        <div class="container" style="border:1px solid black;">
-            <?php
-            if (isset($message)) {
-                foreach ($message as $message) {
-                    echo
-                    '
-              <div class="message">
-               <span>
-                 ' . $message . '
-               </span>
-               <i class="bi bi-x-circle" onclick="this.parentElement.remove()"></i>
-              </div>
-            ';
-                }
-            }
-
-            ?>
-            <div class="row">
-                <div class="col-sm-12 col-md-10 col-md-offset-1">
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th>Product</th>
-                                <th class="text-center">Number</th>
-                                <th class="text-center">Total</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            $select_cart = mysqli_query($conn, "SELECT * FROM `cart`") or die('query failed');
-                            $total = 0;
-                            $grand_total = 0;
-                            if (mysqli_num_rows($select_cart) > 0) {
-                                while ($fetch_cart = mysqli_fetch_assoc($select_cart)) {
-                                    $total_price = ($fetch_cart['price'] * $fetch_cart['quantity']);
-                                    $grand_total = $total += $total_price;
-                            ?>
-                                    <tr>
-                                        <td class="col-sm-8 col-md-6">
-                                            <div class="media">
-                                                <a class="thumbnail pull-left" href="#"><img class="media-object" src="../hinh/<?php echo $fetch_cart['image'] ?>" style="width: 72px; height: 72px;"> </a>
-                                                <div class="media-body">
-                                                    <h4 class="media-heading"><a href="#"><?php echo $fetch_cart['name'] ?></a></h4>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="col-sm-1 col-md-1 text-center"><strong><?php echo $fetch_cart['quantity'] ?></strong></td>
-                                        <td class="col-sm-1 col-md-1 text-center"><strong> <?= $total_price; ?> đ</strong></td>
-                                <?php
-                                }
-                            }
-                                ?>
-
-                                    </tr>
-                                    <tr>
-                                        <td>   </td>
-                                        <td>
-                                            <h3>Total</h3>
-                                        </td>
-                                        <td class="text-right">
-                                            <h3><strong><?php echo $grand_total; ?> đ</strong></h3>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>   </td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            
         </div>
-        <form method="post">
-            <div class="input-field">
-                <label for="">your name</label>
-                <input type="text" name="name" placeholder="enter your name">
+        <div class="large-7 col" style="width:41%;">
+            <div class="col-sm-12 col-md-10 col-md-offset-1">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th class="text-center">Number</th>
+                            <th class="text-center">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        $select_cart = mysqli_query($conn, "SELECT * FROM `cart`") or die('query failed');
+                        $total = 0;
+                        $grand_total = 0;
+                        if (mysqli_num_rows($select_cart) > 0) {
+                            while ($fetch_cart = mysqli_fetch_assoc($select_cart)) {
+                                $total_price = ($fetch_cart['price'] * $fetch_cart['quantity']);
+                                $grand_total = $total += $total_price;
+                        ?>
+                                <tr>
+                                    <td class="col-sm-8 col-md-6">
+                                        <div class="media">
+                                            <a class="thumbnail pull-left" href="#"><img class="media-object" src="../hinh/<?php echo $fetch_cart['image'] ?>" style="width: 72px; height: 72px;"> </a>
+                                            <div class="media-body">
+                                                <h4 class="media-heading"><a href="#"><?php echo $fetch_cart['name'] ?></a></h4>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="col-sm-1 col-md-1 text-center"><strong><?php echo $fetch_cart['quantity'] ?></strong></td>
+                                    <td class="col-sm-1 col-md-1 text-center"><strong> <?= $total_price; ?> đ</strong></td>
+                            <?php
+                            }
+                        }
+                            ?>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h3>Total</h3>
+                                    </td>
+                                    <td>   </td>
+                                    <td class="text-right">
+                                        <h3><strong><?php echo $grand_total; ?>đ</strong></h3>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>   </td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                    </tbody>
+                </table>
             </div>
-            <div class="input-field">
-                <label for="">your number</label>
-                <input type="number" name="number" placeholder="enter your number">
-            </div>
-            <div class="input-field">
-                <label for="">your email</label>
-                <input type="email" name="email" placeholder="enter your email">
-            </div>
-            <div class="input-field">
-                <label for="">select payment method</label>
-                <select name="method">
-                    <option selected disabled>select payment method</option>
-                    <option value="cash on delivery"> cash on delivery</option>
-                    <option value="cradit card">cradit card</option>
-                    <option value="paytm">paytm</option>
-                    <option value="paypal">paypal</option>
-                </select>
-            </div>
-            <div class="input-field">
-                <label for="">address line 1</label>
-                <input type="text" name="flate" placeholder="e.g flate no.">
-            </div>
-            <div class="input-field">
-                <label for="">address line 2</label>
-                <input type="text" name="flate" placeholder="e.g street name">
-            </div>
-            <div class="input-field">
-                <label for="">city</label>
-                <input type="text" name="city" placeholder="e.g delhi">
-            </div>
-            <div class="input-field">
-                <label for="">state</label>
-                <input type="text" name="state" placeholder="e.g new delhi">
-            </div>
-            <div class="input-field">
-                <label for="">country</label>
-                <input type="text" name="country" placeholder="e.g India">
-            </div>
-            <div class="input-field">
-                <label for="">pin code</label>
-                <input type="text" name="flate" placeholder="e.g 110012">
-            </div>
-            <input type="submit" name="order-btn" class="btn" value="order now">
-        </form>
+        </div>
     </div>
+
+
+
     <div class="line"></div>
     <?php include '../user/user_footer.php'; ?>
 
