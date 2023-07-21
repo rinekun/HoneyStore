@@ -29,9 +29,10 @@ if (isset($_POST['order-btn'])) {
         }
     }
 
+
+    $total_products = implode(',', $cart_product);
+    mysqli_query($conn, "INSERT INTO `order`( `user_id`, `name`, `number`, `email`, `method`, `address`, `total_product`, `total_price`, `place_on`) VALUES ('$user_id','$name','$number','$email','$method','$address','$total_product','$cart_total','$placed_on')");
     $id_order =  $_POST['id_order'];
-
-
     foreach ($id_cart as $key => $value) {
 
         $product_select = '';
@@ -40,9 +41,8 @@ if (isset($_POST['order-btn'])) {
         mysqli_query($conn, "INSERT INTO `order_pay`(`id`,`id_order`,`id_user`,`name`,`quantity`,`price`, `image_product`,`dates`) VALUES " . $product_select . ";");
     }
 
-    $total_products = implode(',', $cart_product);
+ 
 
-    mysqli_query($conn, "INSERT INTO `order`( `user_id`, `name`, `number`, `email`, `method`, `address`, `total_product`, `total_price`, `place_on`) VALUES ('$user_id','$name','$number','$email','$method','$address','$total_product','$cart_total','$placed_on')");
     mysqli_query($conn, "DELETE FROM `cart` WHERE user_id='$user_id'") or die('query failed');
     $message[] = 'order placed successfully';
 
@@ -108,19 +108,19 @@ if (isset($_POST['order-btn'])) {
     <div class="container">
 
         <?php
-        if (isset($message)) {
-            foreach ($message as $message) {
-                echo
-                '
-              <div class="message">
-               <span>
-                 ' . $message . '
-               </span>
-               <i class="bi bi-x-circle" onclick="this.parentElement.remove()"></i>
-              </div>
-            ';
-            }
-        }
+        // if (isset($message)) {
+        //     foreach ($message as $message) {
+        //         echo
+        //         '
+        //       <div class="message">
+        //        <span>
+        //          ' . $message . '
+        //        </span>
+        //        <i class="bi bi-x-circle" onclick="this.parentElement.remove()"></i>
+        //       </div>
+        //     ';
+        //     }
+        // }
 
         ?>
         <div class="large-5 col" style="width:59%">
