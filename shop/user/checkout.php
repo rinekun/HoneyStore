@@ -53,6 +53,7 @@ if (isset($_POST['order-btn'])) {
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -92,6 +93,7 @@ if (isset($_POST['order-btn'])) {
 </style>
 
 <body>
+    
     <?php
     include './user_header.php'; ?>
     <div class="banner">
@@ -126,7 +128,7 @@ if (isset($_POST['order-btn'])) {
                 <form method="post">
 
                     <?php
-
+$id_order_FP = null; 
                     $id_order_pay = mysqli_query($conn, "SELECT * FROM `order`") or die('query failed');
 
                     while ($id_orders = mysqli_fetch_assoc($id_order_pay)) {

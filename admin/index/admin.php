@@ -127,7 +127,7 @@ include 'nav.php';
 
                                         <div class="single_quick_activity">
                                             <?php
-                                            $select_message = mysqli_query($conn, "SELECT*FROM `message`") or die('query failed');
+                                            $select_message = mysqli_query($conn, "SELECT * FROM `message`") or die('query failed');
                                             $num_of_message = mysqli_num_rows($select_message);
                                             ?>
                                             <h4>TỔNG TIN NHẮN</h4>
