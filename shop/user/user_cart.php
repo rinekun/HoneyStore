@@ -72,6 +72,7 @@ if (isset($_GET['delete_all'])) {
 </style>
 
 <body>
+    
     <?php
     include './user_header.php'; ?>
     <div class="banner">

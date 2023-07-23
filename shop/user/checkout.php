@@ -29,24 +29,35 @@ if (isset($_POST['order-btn'])) {
         }
     }
 
-
+    $message[] = 'order placed successfully';
     $total_products = implode(',', $cart_product);
     mysqli_query($conn, "INSERT INTO `order`( `user_id`, `name`, `number`, `email`, `method`, `address`, `total_product`, `total_price`, `place_on`) VALUES ('$user_id','$name','$number','$email','$method','$address','$total_product','$cart_total','$placed_on')");
+    mysqli_query($conn, "DELETE FROM `cart` WHERE user_id='$user_id'") or die('query failed');
+    header('location:checkout.php');
+
+
+
+    /**
+     *   $id_order = lấy id  của phần order để biết id của order của người đặt  
+     *  
+     */
     $id_order =  $_POST['id_order'];
     foreach ($id_cart as $key => $value) {
-
+        // $lấy value là lấy tât giá trị của nó ví dụ : name : 'mật ông', price : 2000;  key => name ; value : mật ông 
+        // $product_select => lấy giá trị rỗng để trc
         $product_select = '';
-        $product_select .= "('NULL', '$id_order', '$user_id','" . $value['name'] . "','" . $value['quantity'] . "','" . $value['price'] . "', '" . $value['image'] . "','" . date('Y-m-02') . "')";
 
+        // $product_select .= có nghĩa lấy sản phẩm bao gồm id_order , user_id của user , $value['name'] tên sản phẩm , $value['quantity'] số lượng sản phẩm.....
+        $product_select .= "('NULL', '$id_order', '$user_id','" . $value['name'] . "','" . $value['quantity'] . "','" . $value['price'] . "', '" . $value['image'] . "','" . date('Y-m-02') . "')";
+        // khi lấy xong để vào VALUE ('.$product_select.') TƯƠNG ỨNG TỪ VỊ TRÍ
         mysqli_query($conn, "INSERT INTO `order_pay`(`id`,`id_order`,`id_user`,`name`,`quantity`,`price`, `image_product`,`dates`) VALUES " . $product_select . ";");
     }
 
+
+
+
+
  
-
-    mysqli_query($conn, "DELETE FROM `cart` WHERE user_id='$user_id'") or die('query failed');
-    $message[] = 'order placed successfully';
-
-    header('location:checkout.php');
 }
 
 ?>
@@ -93,7 +104,7 @@ if (isset($_POST['order-btn'])) {
 </style>
 
 <body>
-    
+
     <?php
     include './user_header.php'; ?>
     <div class="banner">
@@ -128,14 +139,16 @@ if (isset($_POST['order-btn'])) {
                 <form method="post">
 
                     <?php
-$id_order_FP = null; 
+                    $id_order_FP = null;
                     $id_order_pay = mysqli_query($conn, "SELECT * FROM `order`") or die('query failed');
 
                     while ($id_orders = mysqli_fetch_assoc($id_order_pay)) {
                         $id_order_FP = $id_orders['id'];
+                        //$id_order_FP tìm kiếm  id ở vị trí nào 
 
                     ?>
-                        <input type="hidden" name="id_order" value=" <?php echo $id_order_FP ?>">';
+                        <input type="hidden" name="id_order" value=" <?php echo $id_order_FP // lấy id thành công để chuyển về database 
+                                                                        ?>">';
                     <?php   }
 
                     ?>
