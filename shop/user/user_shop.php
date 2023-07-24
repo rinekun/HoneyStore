@@ -59,6 +59,8 @@ if (isset($_POST['add_to_cart'])) {
     <title>Home page</title>
 </head>
 
+</style>
+
 <body>
     <?php
     include './user_header.php'; ?>
@@ -119,10 +121,11 @@ if (isset($_POST['add_to_cart'])) {
             <form action="" method="GET">
                 <div class="input-group">
                     <div id="search-autocomplete" class="form-outline">
-                        <input type="search" id="form1" name='name' class="form-control" value="<?=isset($_GET['name']) ? $_GET['name']:''?>"/>
+                        <input type="search" id="form1" name='name' class="form-search" placeholder="Tìm Kiếm..." value="<?=isset($_GET['name']) ? $_GET['name']:''?>"/>
                     </div>
 
-                    <input type="submit" class="form-outline" value="tim kiem"><i class='fas fa-search'></i>
+                    <button type="submit" class="form-tim"><img src="../../hinh/timkiem.png" alt=""></button>
+                  
                 </div>
             </form>
             <div class="sanpham">
