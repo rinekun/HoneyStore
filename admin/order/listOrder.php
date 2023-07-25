@@ -115,7 +115,7 @@ if (isset($_POST['update_order'])) {
 
                                                 <td>
                                                     <a href="listOrder.php?delete=<?php echo $fetch_orders['id']; ?>" class="status_btn" style="background-color: red;">Xóa</a>
-                                                    <a href="detail.php?delail=<?php echo $fetch_orders['id']-1?>" class="status_btn" style="background-color: blue;">Chi Tiết</a>
+                                                    <a href="detail.php?delail=<?php echo $fetch_orders['id']?>" class="status_btn" style="background-color: blue;">Chi Tiết</a>
                                                 </td>
                                             </tr>
                                         </tbody>

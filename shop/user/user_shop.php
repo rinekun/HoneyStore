@@ -48,6 +48,7 @@ if (isset($_POST['add_to_cart'])) {
 
 <head>
     <meta charset="UTF-8">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- slick slider link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
@@ -58,7 +59,20 @@ if (isset($_POST['add_to_cart'])) {
     <link rel="stylesheet" href="../css/main.css">
     <title>Home page</title>
 </head>
+<style>
+    /* .app-logo {
+  animation: app-logo-spin infinite 1s linear
+}
 
+@keyframes app-logo-spin {
+  from {
+    transform: rotate(0deg)
+  }
+  to {
+    transform: rotate(360deg)
+  }
+} */
+</style>
 <body>
     <?php
     include './user_header.php'; ?>
@@ -125,12 +139,12 @@ if (isset($_POST['add_to_cart'])) {
                     <input type="submit" class="form-outline" value="tim kiem"><i class='fas fa-search'></i>
                 </div>
             </form>
-            <div class="sanpham">
+            <div class="sanpham ">
                 <?php
 
             
                     while ($fetch_products = mysqli_fetch_assoc($select_products)) { ?>
-                        <form method="post" class="box" enctype="multipart/form-data">
+                        <form method="post" class="box app-logo" enctype="multipart/form-data">
                             <img src="../hinh/<?php echo $fetch_products['image'] ?>" alt="">
                             <div class="name"><?php echo $fetch_products['name'] ?></div>
                             <div class="price"><?php echo $fetch_products['price'] ?> đ</div>
@@ -162,7 +176,7 @@ if (isset($_POST['add_to_cart'])) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script type="text/javascript" src="../js/script.js"></script>
 
-    <script>
+    <!-- <script>
         const basicAutocomplete = document.querySelector('#search-autocomplete');
         const data = ['One', 'Two', 'Three', 'Four', 'Five'];
         const dataFilter = (value) => {
@@ -174,7 +188,7 @@ if (isset($_POST['add_to_cart'])) {
         new mdb.Autocomplete(basicAutocomplete, {
             filter: dataFilter
         });
-    </script>
+    </script> -->
 </body>
 
 </html>
