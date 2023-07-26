@@ -69,6 +69,10 @@ if (isset($_GET['delete_all'])) {
     header .user-box {
         margin-left: 94rem;
     }
+    .input-group{
+    display: flex;
+    width: 88%;
+    }
 </style>
 
 <body>
@@ -258,7 +262,7 @@ if (isset($_GET['delete_all'])) {
                                                             <input type="hidden" name="update_qty_id" value="<?php echo $fetch_cart['id']; ?>">
 
                                                             <!-- <button class="btn btn-default bootstrap-touchspin-down" id="tru" type="button">-</button> -->
-                                                            <input type="submit" name="update_qty_btn" class="btn btn-default bootstrap-touchspin-down" id="tru" value="-">
+                                                            <input type="submit" name="update_qty_btn" class="btn btn-default bootstrap-touchspin-down form-tru" id="tru" value="-">
                                                         </span>
                                                         <span class="input-group-addon bootstrap-touchspin-prefix" style="display: none;"></span>
                                                         <input type="text" name="update_qty" value="<?php echo $fetch_cart['quantity'] ?>" class="input-qty form-control text-center" id="soluong" style="display: block;">

@@ -78,7 +78,7 @@ sup {
     display: flex;
   
 }   
-.input-group .form-outline .form-search{
+.input-group>.form-outline>.form-search{
     width: 100%;
     border: 1px solid #f5b90f;
     margin-left: 830px;
@@ -105,6 +105,7 @@ sup {
 .form-tim:hover{
     background: #FF8C00;
 }
+
 
 
 .line,
