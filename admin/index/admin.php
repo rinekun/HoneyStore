@@ -44,7 +44,7 @@ include 'nav.php';
                                             }
                                             ?>
                                             <h4>TỔNG SỐ TIỀN ĐÃ THÀNH CÔNG</h4>
-                                            <h3><span class="counter"><?php echo  $total_complete; ?>Đ</span> </h3>
+                                            <h3><span class="counter"><?php echo  $total_complete; ?></span>Đ</h3>
                                             <!-- <p>Saved 25%</p> -->
                                         </div>
 
@@ -63,7 +63,7 @@ include 'nav.php';
                                             // $tt=$total_complete + $total_pendings;
                                             ?>
                                             <h4>TỔNG SỐ TIỀN ĐANG CHỜ XỬ LÝ</h4>
-                                            <h3><span class="counter"><?php echo $total_pendings; ?>Đ</span> </h3>
+                                            <h3><span class="counter"><?php echo $total_pendings; ?></span>Đ</h3>
                                             <!-- <p>Saved 25%</p> -->
                                         </div>
 
@@ -91,7 +91,7 @@ include 'nav.php';
                                             $num_of_products = mysqli_num_rows($select_products);
                                             ?>
                                             <h4>TỔNG SẢN PHẨM</h4>
-                                            <h3><span class="counter"><?php echo $num_of_products; ?></span>Sản phẩm</h3>
+                                            <h3><span class="counter"><?php echo $num_of_products; ?></span> Sản phẩm</h3>
                                             <!-- <p>Saved 65%</p> -->
                                         </div>
 
@@ -111,7 +111,7 @@ include 'nav.php';
                                             $num_of_admin = mysqli_num_rows($select_admin);
                                             ?>
                                             <h4>TỔNG QUẢN TRỊ VIÊN</h4>
-                                            <h3><span class="counter"> <?php echo $num_of_admin; ?></span>Người</h3>
+                                            <h3><span class="counter"> <?php echo $num_of_admin; ?></span> Người</h3>
                                             <!-- <p>Saved 65%</p> -->
                                         </div>
 
@@ -121,7 +121,7 @@ include 'nav.php';
                                             $num_of_users = mysqli_num_rows($select_users);
                                             ?>
                                             <h4>TỔNG SỐ NGƯỜI ĐÃ ĐĂNG KÝ</h4>
-                                            <h3><span class="counter"><?php echo $num_of_users; ?></span>Người</h3>
+                                            <h3><span class="counter"><?php echo $num_of_users; ?></span> Người</h3>
                                             <!-- <p>Saved 65%</p> -->
                                         </div>
 
@@ -131,7 +131,7 @@ include 'nav.php';
                                             $num_of_message = mysqli_num_rows($select_message);
                                             ?>
                                             <h4>TỔNG TIN NHẮN</h4>
-                                            <h3><span class="counter"><?php echo $num_of_admin; ?></span>Tin    </h3>
+                                            <h3><span class="counter"><?php echo $num_of_admin; ?></span> Tin</h3>
                                             <!-- <p>Saved 65%</p> -->
                                         </div>
                                     </div>
