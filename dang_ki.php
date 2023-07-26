@@ -40,7 +40,7 @@ if (isset($_POST['submit-btn'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <!-- <link rel="stylesheet" href="./admin/css/style.css"> -->
-    <link rel="stylesheet" href="../shop//css/style.css">
+    <link rel="stylesheet" href="./shop/css/style.css">
 
     <title>Đăng kí</title>
 </head>
