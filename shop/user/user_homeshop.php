@@ -27,7 +27,7 @@
             $select_products = mysqli_query($conn, "SELECT * FROM `product`") or die('query failed');
             if (mysqli_num_rows($select_products) > 0) {
                 while ($fetch_products = mysqli_fetch_assoc($select_products)) { ?>
-                    <form method="post" class="card" >
+                    <form method="post" class="card">
                         <img src="../hinh/<?php echo $fetch_products['image'] ?>" alt="">
                         <div class="name"><?php echo $fetch_products['name'] ?></div>
                         <div class="price"><?php echo $fetch_products['price'] ?> đ</div>

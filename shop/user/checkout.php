@@ -28,6 +28,11 @@ if (isset($_POST['order-btn'])) {
             $cart_total += $sub_total;
         }
     }
+    /**
+     *   $id_order = lấy id  của phần order để biết id của order của người đặt  
+     *  
+     */
+    $id_order =  $_POST['id_order'];
 
     $message[] = 'order placed successfully';
     $total_products = implode(',', $cart_product);
@@ -36,12 +41,8 @@ if (isset($_POST['order-btn'])) {
     header('location:checkout.php');
 
 
-
-    /**
-     *   $id_order = lấy id  của phần order để biết id của order của người đặt  
-     *  
-     */
-    $id_order =  $_POST['id_order'];
+    $id_order +=1;
+    
     foreach ($id_cart as $key => $value) {
         // $lấy value là lấy tât giá trị của nó ví dụ : name : 'mật ông', price : 2000;  key => name ; value : mật ông 
         // $product_select => lấy giá trị rỗng để trc

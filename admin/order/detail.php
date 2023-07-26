@@ -119,6 +119,8 @@ if (isset($_POST['update_hoathanh'])) {
                                         <th scope="col">Hinh</th>
                                         <th scope="col">Giá</th>
                                         <th scope="col">Số lượng</th>
+                                        <th scope="col">Số tiền</th>
+
 
                                         <!-- <th scope="col">TỔNG TIỀN</th>
                                         <th scope="col">THANH TOÁN</th>
@@ -129,6 +131,7 @@ if (isset($_POST['update_hoathanh'])) {
 
                                 <tbody>
                                     <?php
+                                    $tong = null;
                                     $stt = 1;
                                     if (isset($_GET['delail'])) {
                                         $edit_id = $_GET['delail'];
@@ -137,6 +140,7 @@ if (isset($_POST['update_hoathanh'])) {
                                         if (mysqli_num_rows($select_orders) > 0) {
 
                                             while ($fetch_orders = mysqli_fetch_assoc($select_orders)) {
+                                                $tt = $fetch_orders['price'] * $fetch_orders['quantity']; 
                                     ?>
 
                                                 <tr>
@@ -144,7 +148,8 @@ if (isset($_POST['update_hoathanh'])) {
                                                     <td class="td"><?php echo $fetch_orders['name']; ?></td>
                                                     <td class="td"><img src="../../hinh/<?php echo $fetch_orders['image_product']; ?>" alt="" style="width: 100%;height: 100%;"></td>
                                                     <td class="td"><?php echo $fetch_orders['price']; ?></td>
-                                                    <td class="td">222</td>
+                                                    <td class="td"><?php echo $fetch_orders['quantity']; ?></td>
+                                                    <td class="td"><?php echo  $tt ; ?></td>
                                                 </tr>
 
                                                 <tr>
@@ -155,13 +160,17 @@ if (isset($_POST['update_hoathanh'])) {
                                                 </td> -->
                                                 </tr>
                                     <?php
-                                            }
+                                              $tong += $tt;
                                         }
+                                           
+                                      
+                                        }
+                                        
                                     }
                                     ?>
                                     <tr>
                                         <td colspan="1">Tổng</td>
-                                        <td colspan="3">22222</td>
+                                        <td colspan="3"><?php echo $tong; ?></td>
                                         <form action="" method="post">
                                             <td>
                                                 <?php

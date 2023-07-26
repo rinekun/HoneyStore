@@ -96,9 +96,11 @@ if (isset($_POST['logout-btn'])) {
                     <tbody>
                         <?php
 
+
                         $STT = 1;
+
                         if (isset($_GET['detail'])) {
-                            $order_id_pay = $_GET['detail'];
+                            $order_id_pay = $_GET['detail'] + 1;
                             $select_orders = mysqli_query($conn, "SELECT*FROM `order_pay` WHERE id_order= '$order_id_pay'") or die('query failed');
                             if (mysqli_num_rows($select_orders) > 0) {
                                 while ($fetch_orders = mysqli_fetch_assoc($select_orders)) { ?>
@@ -114,7 +116,21 @@ if (isset($_POST['logout-btn'])) {
                                                                                             ?>" alt=""></h4>
                                             </td> -->
 
+
+                                        <!-- <?php
+                                        $view_product = null;
+                                        $select_products = mysqli_query($conn, "SELECT * FROM `product`") or die('query failed');
+                                        while ($fetch_products = mysqli_fetch_assoc($select_products)) {
+                                            $view_product = $fetch_products['id'];
+                                            $product_name = $fetch_products['name'];
+                                            
+                                            $product_url = "./user_view_page.php?pid=" .  $product_name;
+                                        }
+                                       
+                                        ?> -->
+
                                         <td class="col-sm-1 col-md-2 text-center">
+                                            <!-- <a href="<?php echo    $product_url  ?>"><strong><?php echo $fetch_orders['name'] ?></strong></a> -->
                                             <strong><?php echo $fetch_orders['name'] ?></strong>
                                         </td>
 

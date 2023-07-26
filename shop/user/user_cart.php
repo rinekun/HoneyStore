@@ -69,10 +69,13 @@ if (isset($_GET['delete_all'])) {
     header .user-box {
         margin-left: 94rem;
     }
+    /* .input-td{
+        padding: 200px;
+    } */
 </style>
 
 <body>
-    
+
     <?php
     include './user_header.php'; ?>
     <div class="banner">
@@ -103,104 +106,7 @@ if (isset($_GET['delete_all'])) {
 
     ?>
     <div class="container">
-        <!-- 
-        <div class="row">
-            <div class="col-sm-12 col-md-10 col-md-offset-1">
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th>Product</th>
-                            <th>Quantity</th>
-                            <th class="text-center">Price</th>
-                            <th class="text-center">Total</th>
-                            <th> </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                        $grand_total = 0;
-                        $select_cart = mysqli_query($conn, "SELECT * FROM `cart`") or die('query failed');
-                        if (mysqli_num_rows($select_cart) > 0) {
-                            while ($fetch_cart = mysqli_fetch_assoc($select_cart)) { ?>
-                                <tr>
-                                    <td class="col-sm-8 col-md-6">
-                                        <div class="media">
-                                            <a class="thumbnail pull-left" href="#"><img class="media-object" src="../hinh/<?php echo $fetch_cart['image'] ?>" style="width: 72px; height: 72px;"> </a>
-                                            <div class="media-body">
-                                                <h4 class="media-heading"><a href="#"><?php echo $fetch_cart['name'] ?></a></h4>
-                                                <h5 class="media-heading"> by <a href="#">Brand name</a></h5>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="col-sm-1 col-md-1" style="text-align: center">
-                                        <form method="post">
-                                            <input type="hidden" name="update_qty_id" value="<?php echo $fetch_cart['id']; ?>">
-                                            <div class="qty" style="display:flex">
-                                                <input class="cart-quantity-input" id="" type="number" min="0" max="9999" name="update_qty" value="<?php echo $fetch_cart['quantity']; ?>">
-                                                <input type="submit" name="update_qty_btn" value="update">
-                                            </div>
-                                        </form>
-
-                                    </td>
-                                    <td class="col-sm-1 col-md-2 text-center"><strong><?php echo $fetch_cart['price'] ?> đ</strong></td>
-                                    <td class="col-sm-1 col-md-1 text-center"><strong> <?php echo $total_amt = ($fetch_cart['price'] * $fetch_cart['quantity']) ?> đ</strong></td>
-                                    <td class="col-sm-1 col-md-1">
-                                        <button type="button" class="btn btn-danger">
-                                            <a style=" text-decoration: none;" class="glyphicon glyphicon-remove" href="user_cart.php?delete=<?php echo $fetch_cart['id']; ?>"> Remove</a>
-                                        </button>
-                                    </td>
-                                </tr>
-                            <?php
-                                $grand_total += $total_amt;
-                            }
-
-                            ?>
-                        <?php
-                        } else {
-                            echo '<p class="empty">no products added yet!</p>';
-                        }
-                        ?>
-
-                        </tr>
-                        <tr>
-                            <td>   </td>
-                            <td>   </td>
-                            <td>   </td>
-                            <td>
-                                <h3>Remove all</h3>
-                            </td>
-                            <td class="text-right">
-                                <h3><strong><a style=" text-decoration: none;" href="user_cart.php?delete_all" class="btn2" onclick="return confirm('do you want to delete all item in your cart?')">Delete all</a></strong></h3>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>   </td>
-                            <td>   </td>
-                            <td>   </td>
-                            <td>
-                                <h3>Total</h3>
-                            </td>
-                            <td class="text-right">
-                                <h3><strong><?php echo $grand_total; ?> đ</strong></h3>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>   </td>
-                            <td>   </td>
-                            <td>   </td>
-                            <td>
-                                <button type="button" class="btn btn-default">
-                                    <a style=" text-decoration: none;" href="./user_shop.php"><span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping</a>
-                                </button>
-                            </td>
-                            <td>
-                                <a href="./checkout.php" class="btn" <?php echo ($grand_total > 1) ? '' : 'disabled' ?>>procced to checkout</a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div> -->
+        
 
 
         <div class="row bootstrap snippets">
@@ -218,6 +124,7 @@ if (isset($_GET['delete_all'])) {
                                     <td>Tên Sản Phẩm</td>
 
                                     <td class="td-qty">Số lượng</td>
+
                                     <td>Giá tiền</td>
                                     <!-- <td>Tổng tiền</td> -->
 
@@ -234,9 +141,6 @@ if (isset($_GET['delete_all'])) {
                                 $select_cart = mysqli_query($conn, "SELECT * FROM `cart`") or die('query failed');
                                 if (mysqli_num_rows($select_cart) > 0) {
                                     while ($fetch_cart = mysqli_fetch_assoc($select_cart)) { ?>
-
-
-
                                         <tr>
                                             <td class="hidden-xs">
                                                 <a href="#">
@@ -245,26 +149,19 @@ if (isset($_GET['delete_all'])) {
                                             </td>
                                             <td><a href="#"><?php echo $fetch_cart['name'] ?></a>
                                             </td>
-
-
-                                            <td>
-
-
+                                            <td class="input-td">
                                                 <form method="post">
-
                                                     <div class="input-group bootstrap-touchspin">
-
                                                         <span class="input-group-btn">
                                                             <input type="hidden" name="update_qty_id" value="<?php echo $fetch_cart['id']; ?>">
 
-                                                            <!-- <button class="btn btn-default bootstrap-touchspin-down" id="tru" type="button">-</button> -->
                                                             <input type="submit" name="update_qty_btn" class="btn btn-default bootstrap-touchspin-down" id="tru" value="-">
                                                         </span>
                                                         <span class="input-group-addon bootstrap-touchspin-prefix" style="display: none;"></span>
-                                                        <input type="text" name="update_qty" value="<?php echo $fetch_cart['quantity'] ?>" class="input-qty form-control text-center" id="soluong" style="display: block;">
+                                                             <input type="text" name="update_qty" value="<?php echo $fetch_cart['quantity'] ?>" class="input-qty form-control text-center" id="soluong" style="display: block;">
                                                         <span class="input-group-addon bootstrap-touchspin-postfix" style="display: none;"></span>
+                                                        
                                                         <span class="input-group-btn">
-                                                            <!-- <button class="btn btn-default bootstrap-touchspin-up " id='cong' type="button">+</button> -->
                                                             <input type="submit" name="update_qty_btn" class="btn btn-default bootstrap-touchspin-down" id='cong' value="+">
                                                         </span>
                                                     </div>
@@ -311,7 +208,7 @@ if (isset($_GET['delete_all'])) {
                 </div>
 
             </div>
-        </div>
+        </div>p
 
 
 
