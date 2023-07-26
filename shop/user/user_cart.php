@@ -208,7 +208,7 @@ if (isset($_GET['delete_all'])) {
                 </div>
 
             </div>
-        </div>p
+        </div>
 
 
 
