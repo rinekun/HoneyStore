@@ -58,8 +58,12 @@ if (isset($_POST['add_to_cart'])) {
     <link rel="stylesheet" href="../css/main.css">
     <title>Home page</title>
 </head>
+<style>
+ 
+</style>
 
 <body>
+
     <?php
     include './user_header.php'; ?>
     <div class="banner">
@@ -95,7 +99,7 @@ if (isset($_POST['add_to_cart'])) {
             <?php
             // $select_products = null;
             // lấy url name = ? 
-            $search = isset($_GET['name']) ? $_GET['name']:'';
+            $search = isset($_GET['name']) ? $_GET['name'] : '';
             /**
              * nếu có search thì vào if
              * 
@@ -109,46 +113,49 @@ if (isset($_POST['add_to_cart'])) {
                 // % ->là tìm sản phẩm giá trị tương đối có thể tìm 2 hoặc 3 sản phẩm cùng tên ví dụ -> mật ong rừng -> mật ông rưng 2022 ,mật ông rừng 100%,.....
                 // còn ko có % -> tìm sản phẩm tuyệt đối tìm 1 sản phẩm có tên 100% ví dụ : mật ông uống là chết  -> nếu có tên là ra nêu ko là ko ta  
                 //$search -> tên đễ tìm sản phẩm 
-                $select_products = mysqli_query($conn, "SELECT * FROM `product` WHERE `name` LIKE '%".$search . "%'");
+                $select_products = mysqli_query($conn, "SELECT * FROM `product` WHERE `name` LIKE '%" . $search . "%'");
             } else {
-                
+
                 // $select_products lấy tất cả sản phẩm ra 
                 $select_products = mysqli_query($conn, "SELECT * FROM `product`");
             }
             ?>
+            <style>
+            
+            </style>
+
             <form action="" method="GET">
-                <div class="input-group">
-                    <div id="search-autocomplete" class="form-outline">
-                        <input type="search" id="form1" name='name' class="form-control" value="<?=isset($_GET['name']) ? $_GET['name']:''?>"/>
+                <div class="input-group" style="display:flex;width:100%;justify-content:right;margin-left:40px">
+                    <div id="search-autocomplete" class="form-outline" style="width:20%;">
+                        <input  type="search" id="form1" name='name' class="form-control" value="<?= isset($_GET['name']) ? $_GET['name'] : '' ?>" placeholder="Xin mời bạn nhập sản phẩm" >
                     </div>
 
-                    <input type="submit" class="form-outline" value="tim kiem"><i class='fas fa-search'></i>
+                    <input style="width:10%;margin-left:10px" type="submit"  class="bx bx-search-alt  " value="Tìm kiếm">
                 </div>
             </form>
+            <!--  -->
             <div class="sanpham">
                 <?php
-
-            
-                    while ($fetch_products = mysqli_fetch_assoc($select_products)) { ?>
-                        <form method="post" class="box" enctype="multipart/form-data">
-                            <img src="../hinh/<?php echo $fetch_products['image'] ?>" alt="">
-                            <div class="name"><?php echo $fetch_products['name'] ?></div>
-                            <div class="price"><?php echo $fetch_products['price'] ?> đ</div>
-                            <input type="hidden" name="product_id" value="<?php echo $fetch_products['id'] ?>">
-                            <input type="hidden" name="product_name" value="<?php echo $fetch_products['name'] ?>">
-                            <input type="hidden" name="product_price" value="<?php echo $fetch_products['price'] ?>">
-                            <input type="hidden" name="product_quantity" value="1" min="1">
-                            <input type="hidden" name="product_image" value="<?php echo $fetch_products['image']; ?>">
-                            <div class="icon">
-                                <a href="user_view_page.php?pid=<?php echo $fetch_products['id']; ?>" class="bi bi-eye-fill"></a>
-                                <button type="submit" name="add_to_wishlist" class="bi bi-heart"></button>
-                                <button type="submit" name="add_to_cart" class="bi bi-cart"></button>
-                            </div>
-                        </form>
+                while ($fetch_products = mysqli_fetch_assoc($select_products)) { ?>
+                    <form method="post" class="box" enctype="multipart/form-data">
+                        <img src="../hinh/<?php echo $fetch_products['image'] ?>" alt="">
+                        <div class="name"><?php echo $fetch_products['name'] ?></div>
+                        <div class="price"><?php echo $fetch_products['price'] ?> đ</div>
+                        <input type="hidden" name="product_id" value="<?php echo $fetch_products['id'] ?>">
+                        <input type="hidden" name="product_name" value="<?php echo $fetch_products['name'] ?>">
+                        <input type="hidden" name="product_price" value="<?php echo $fetch_products['price'] ?>">
+                        <input type="hidden" name="product_quantity" value="1" min="1">
+                        <input type="hidden" name="product_image" value="<?php echo $fetch_products['image']; ?>">
+                        <div class="icon">
+                            <a href="user_view_page.php?pid=<?php echo $fetch_products['id']; ?>" class="bi bi-eye-fill"></a>
+                            <button type="submit" name="add_to_wishlist" class="bi bi-heart"></button>
+                            <button type="submit" name="add_to_cart" class="bi bi-cart"></button>
+                        </div>
+                    </form>
                 <?php
-                
-                    }
-        
+
+                }
+
                 ?>
             </div>
 

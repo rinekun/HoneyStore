@@ -7,12 +7,25 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <title>Document</title>
 </head>
+<style>
+    .app-logo {
+  animation: app-logo-spin infinite 1s linear
+}
 
+@keyframes app-logo-spin {
+  to {
+    transform: rotate(0deg)
+  }
+  from {
+    transform: rotate(360deg)
+  }
+}
+</style>
 <body>
     <header class="header">
 
-        <a href="./index.php" class="logo">
-            <img src="../hinh/logo.png" alt="" width="30%">
+        <a href="./index.php" class="logo ">
+            <img class="app-logo" src="../hinh/logo.png" alt="" width="30% >
         </a>
 
         <nav class="navmenu">
