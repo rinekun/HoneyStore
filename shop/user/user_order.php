@@ -53,7 +53,7 @@ if (isset($_POST['logout-btn'])) {
     include './user_header.php'; ?>
     <div class="banner">
         <div class="detail">
-            <h1>ORDER</h1>
+            <h1>ĐƠN THANH TOÁN</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, tenetur.</p>
             <a href="">home</a>/<span> order</span>
         </div>

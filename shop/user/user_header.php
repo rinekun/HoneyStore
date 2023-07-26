@@ -7,12 +7,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <title>Document</title>
 </head>
-
+<style>
+   
+</style>
 <body>
     <header class="header">
 
-        <a href="./index.php" class="logo">
-            <img src="../hinh/logo.png" alt="" width="30%">
+        <a href="./index.php" class="logo ">
+            <img class="" src="../hinh/logo.png" alt="" width="30% >
         </a>
 
         <nav class="navmenu">
