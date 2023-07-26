@@ -38,7 +38,7 @@ sup {
 }
 
 .btn {
-    padding: .8rem 2.5em;
+    /* padding: .8rem 2.5em; */
     text-transform: uppercase;
     background-color: #fff;
     color: var(--orange);
@@ -66,6 +66,48 @@ sup {
     text-transform: uppercase;
     line-height: 2;
     color: var(--orange);
+}
+
+
+/* phần tìm kiếm  */
+
+.search {
+    display: flex;
+    width: 103%;
+    position: relative;
+}
+
+.search>.form-outline {
+    width: 100%;
+    display: flex;
+}
+
+.search .form-outline .form-search {
+    width: 100%;
+    border: 1px solid #f5b90f;
+    margin-left: 830px;
+    margin-right: 5px;
+}
+
+.search>.form-tim {
+    width: 100px;
+    height: 56px;
+    margin: 15px 0;
+    background-color: #f5b90f;
+    border: 1px solid #f5b90f;
+    border-radius: 10px;
+}
+
+.search>.form-tim>img {
+    width: 30px;
+    position: absolute;
+    left: 1206px;
+    top: 30px;
+    /* transition: background-color 0.3s ease;  */
+}
+
+.form-tim:hover {
+    background: #FF8C00;
 }
 
 .line,

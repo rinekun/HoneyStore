@@ -62,6 +62,8 @@ if (isset($_POST['add_to_cart'])) {
  
 </style>
 
+</style>
+
 <body>
 
     <?php
@@ -125,12 +127,13 @@ if (isset($_POST['add_to_cart'])) {
             </style>
 
             <form action="" method="GET">
-                <div class="input-group" style="display:flex;width:100%;justify-content:right;margin-left:40px">
-                    <div id="search-autocomplete" class="form-outline" style="width:20%;">
-                        <input  type="search" id="form1" name='name' class="form-control" value="<?= isset($_GET['name']) ? $_GET['name'] : '' ?>" placeholder="Xin mời bạn nhập sản phẩm" >
+                <div class="search">
+                    <div id="search-autocomplete" class="form-outline">
+                        <input type="search" id="form1" name='name' class="form-search" placeholder="Tìm Kiếm..." value="<?=isset($_GET['name']) ? $_GET['name']:''?>"/>
                     </div>
 
-                    <input style="width:10%;margin-left:10px" type="submit"  class="bx bx-search-alt  " value="Tìm kiếm">
+                    <button type="submit" class="form-tim"><img src="../../hinh/timkiem.png" alt=""></button>
+                  
                 </div>
             </form>
             <!--  -->

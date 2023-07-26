@@ -8,24 +8,13 @@
     <title>Document</title>
 </head>
 <style>
-    .app-logo {
-  animation: app-logo-spin infinite 1s linear
-}
-
-@keyframes app-logo-spin {
-  to {
-    transform: rotate(0deg)
-  }
-  from {
-    transform: rotate(360deg)
-  }
-}
+   
 </style>
 <body>
     <header class="header">
 
         <a href="./index.php" class="logo ">
-            <img class="app-logo" src="../hinh/logo.png" alt="" width="30% >
+            <img class="" src="../hinh/logo.png" alt="" width="30% >
         </a>
 
         <nav class="navmenu">

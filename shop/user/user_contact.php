@@ -45,7 +45,7 @@ if (isset($_POST['submit-btn'])) {
     include './user_header.php'; ?>
     <div class="banner">
         <div class="detail">
-            <h1>Liên hệ</h1>
+            <h1>LIÊN HỆ</h1>
             <p>Vui lòng liên hệ với chúng tôi nếu bạn có bất kỳ câu hỏi về các sản phẩm</p>
             <a href="">Trang chủ</a>/<span>Liên hệ</span>
         </div>
