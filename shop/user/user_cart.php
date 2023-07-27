@@ -45,31 +45,20 @@ if (isset($_GET['delete_all'])) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
     <!--  -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
     <link rel="stylesheet" href="../css/main.css">
     <title>Home page</title>
 </head>
-<style>
-    sup {
-        margin-top: 6.6rem;
-        margin-left: -3rem;
+<style type="text/css">
+    .rơ {
+        text-align: center;
     }
 
-    .row {
-        display: block;
-        grid-template-columns: repeat(auto-fit, minmax(25rem, 1rem));
-        justify-content: center;
-        align-items: center;
-    }
-
-    header .user-box {
-        margin-left: 94rem;
-    }
-    .input-group{
-    display: flex;
-    width: 88%;
+    .sl {
+        display: flex;
     }
 </style>
 
@@ -105,125 +94,85 @@ if (isset($_GET['delete_all'])) {
 
     ?>
     <div class="container">
-        <div class="row bootstrap snippets">
-            <div class="col-lg-12 col-md-12 col-sm-12">
+        <table id="cart" class="table table-hover table-condensed" style="border:1px solid black">
+            <thead>
+                <tr>
+                    <th style="width:10%">Hình</th>
+                    <th style="width:40%">Tên sản phẩm</th>
+                    <th style="width:10%">Giá</th>
+                    <th style="width:8%">Số lượng</th>
+                    <th style="width:22%" class="text-center">Thành tiền</th>
+                    <th style="width:0%">Option </th>
+                </tr>
+            </thead>
+            <tbody style=" text-align: center;">
+                <?php
+                $grand_total = 0;
+                $select_cart = mysqli_query($conn, "SELECT * FROM `cart`") or die('query failed');
+                if (mysqli_num_rows($select_cart) > 0) {
+                    while ($fetch_cart = mysqli_fetch_assoc($select_cart)) { ?>
 
-                <div class="col-lg-12 col-sm-12">
-                    <span class="title">SHOPPING CART</span>
-                </div>
-                <div class="col-lg-12 col-sm-12 hero-feature">
-                    <div class="table-responsive">
-                        <table class="table table-bordered tbl-cart">
-                            <thead>
-                                <tr style="text-align:center">
-                                    <td class="hidden-xs">Hình</td>
-                                    <td>Tên Sản Phẩm</td>
-                                    <td>Giá tiền</td>
-                                    <td class="td-qty">Số lượng</td>
+                        <tr>
+                            <td data-th="Product">
+                                <div class="row">
+                                    <div class="col-sm-2 hidden-xs"><img src="../hinh/<?php echo $fetch_cart['image'] ?>" alt="" class="img-responsive" width="100">
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="col-sm-10">
+                                    <h4 class="nomargin"><?php echo $fetch_cart['name'] ?></h4>
+                                </div>
+                            </td>
+                            <td data-th="Price"><?php echo $fetch_cart['price']  ?> đ</td>
+                            <td data-th="Quantity">
+                                <form method="post" name="sl">
 
-                                    <td>Tổng tiền</td>
+                                    <div class="bootstrap-touchspin" style="display:flex">
 
-                                    <td>Xóa</td>
-
-
-                                </tr>
-                            </thead>
-                            <tbody>
-
-
-                                <?php
-                                $grand_total = 0;
-                                $select_cart = mysqli_query($conn, "SELECT * FROM `cart`") or die('query failed');
-                                if (mysqli_num_rows($select_cart) > 0) {
-                                    while ($fetch_cart = mysqli_fetch_assoc($select_cart)) { ?>
-
-
-
-                                        <tr>
-                                            <td class="hidden-xs">
-                                                <a href="#">
-                                                    <img src="../hinh/<?php echo $fetch_cart['image'] ?>" alt="Age Of Wisdom Tan Graphic Tee" title="" width="47" height="47">
-                                                </a>
-                                            </td>
-                                            <td><a href="#"><?php echo $fetch_cart['name'] ?></a>
-                                            </td>
-
-                                            <td>
-                                               <?php echo $fetch_cart['price']  ?> đ
-                                            </td>
-
-                                            <td style="width:15%">
+                                        <span class="input-group-btn">
+                                            <input type="hidden" name="update_qty_id" value="<?php echo $fetch_cart['id']; ?>">
+                                            <input type="submit" name="update_qty_btn" class="btn btn-default bootstrap-touchspin-down form-tru" id="tru" value="-">
+                                        </span>
 
 
-                                                <form method="post" >
+                                        <input style="width:100px" type="text" name="update_qty" value="<?php echo $fetch_cart['quantity'] ?>" class="input-qty form-control text-center" id="soluong">
 
-                                                    <div class="input-group bootstrap-touchspin" >
-
-                                                        <span class="input-group-btn">
-                                                            <input type="hidden" name="update_qty_id" value="<?php echo $fetch_cart['id']; ?>">
-<<<<<<< HEAD
-                                                            <input type="submit" name="update_qty_btn" class="btn btn-default bootstrap-touchspin-down" id="tru" value="-">
-=======
-
-                                                            <!-- <button class="btn btn-default bootstrap-touchspin-down" id="tru" type="button">-</button> -->
-                                                            <input type="submit" name="update_qty_btn" class="btn btn-default bootstrap-touchspin-down form-tru" id="tru" value="-">
->>>>>>> d73228d4d703252cee2e6ff86b89220123c5b825
-                                                        </span>
-
-                                                       
-                                                        <input type="text" name="update_qty" value="<?php echo $fetch_cart['quantity'] ?>" class="input-qty form-control text-center" id="soluong" >
-                                                      
-                                                        <span class="input-group-btn">
-                                                            <input type="submit" name="update_qty_btn" class="btn btn-default bootstrap-touchspin-down" id='cong' value="+">
-                                                        </span>
-                                                    </div>
-                                                </form>
-                                            </td>
-                                            <input type="hidden" value="<?php echo $total_amt = ($fetch_cart['price'] * $fetch_cart['quantity']) ?>">
-                                            <td class="price">
-                                                <p id="price"><?= $fetch_cart['price'] * $fetch_cart['quantity'] ?> đ</p>
-                                            </td>
-                                            <!-- <td class="tong" id="tong"></td> -->
-
-                                            <td class="text-center">
-                                                <a href="user_cart.php?delete=<?php echo $fetch_cart['id'] ?>" class="remove_cart" rel="2">
-                                                    <i class="fa fa-trash-o"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                <?php
-                                        $grand_total += $total_amt;
-                                    }
-                                }
-                                ?>
-                                <tr>
-                                    <td colspan="2" align="right">Tổng</td>
-                                    <td class="total" colspan="2"><b><?php echo $grand_total ?> đ</b>
-                                    </td>
-                                    <td class="total" colspan="1" align="center"><b><a style=" text-decoration: none;" href="user_cart.php?delete_all" class="btn2" onclick="return confirm('do you want to delete all item in your cart?')">Xóa tất cả</a></b>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="btn-group btns-cart">
-                        <a href="./user_shop.php">
-                            <button type="button" class="btn btn-primary"><i class="fa fa-arrow-circle-left"></i> TIẾP TỤC MUA</button>
-                        </a>
-                     
-                        <a href="./checkout.php">
-                            <button type="button" class="btn btn-primary" <?php echo ($grand_total > 1) ? '' : 'disabled' ?>>THANH TOÁN <i class="fa fa-arrow-circle-right"></i></button>
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-
-
-
+                                        <span class="input-group-btn">
+                                            <input type="submit" name="update_qty_btn" class="btn btn-default bootstrap-touchspin-down" id='cong' value="+">
+                                        </span>
+                                    </div>
+                                </form>
+                            </td>
+                            <input type="hidden" value="<?php echo $total_amt = ($fetch_cart['price'] * $fetch_cart['quantity']) ?>">
+                            <td>
+                            <?php echo $total_amt ?> đ
+                            </td>
+                            <td class="text-center">
+                                <a href="user_cart.php?delete=<?php echo $fetch_cart['id'] ?>" class="remove_cart" rel="2">
+                                    <i class="fa fa-trash-o"></i>
+                                </a>
+                                
+                            </td>
+                        </tr>
+                <?php
+                        $grand_total += $total_amt;
+                    }
+                }
+                ?>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td><a href="./user_shop.php" class="btn btn-warning"><i class="fa fa-angle-left"></i> Tiếp tục mua hàng</a>
+                    </td>
+                    <td colspan="2" class="hidden-xs"> </td>
+                    <td class="hidden-xs text-center"><strong>Tổng tiền <?php echo $grand_total ?> đ</strong>
+                    </td>
+                    <td><a href="./checkout.php" class="btn btn-success btn-block">Thanh toán <i class="fa fa-angle-right"></i></a>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
     </div>
     <div class="line"></div>
     <?php include '../user/user_footer.php'; ?>

@@ -22,31 +22,11 @@ if (isset($_POST['logout-btn'])) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
     <!--  -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/main.css">
     <title>Home page</title>
 </head>
-<style>
-    sup {
-        margin-top: 6.6rem;
-        margin-left: -3rem;
-    }
 
-    .row {
-        display: block;
-        text-align: center;
-        width: 100%;
-    }
-
-    .banner .detail {
-        position: absolute;
-        padding: 7rem 0;
-        top: 4%;
-        left: 35%;
-        text-align: center;
-        z-index: 200;
-    }
-</style>
 
 <body>
     <?php

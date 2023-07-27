@@ -1,43 +1,11 @@
 <?php
 include_once '../../config/config.php';
+session_start();
 if (isset($_POST['dangky'])) {
     header('location:../../dang_ki.php');
 }
 if (isset($_POST['dangnhap'])) {
     header('location:../../dang_nhap.php');
-}
-//adding product in wishlist
-if (isset($_POST['add_to_wishlist'])) {
-    $product_id = $_POST['product_id'];
-    $product_name = $_POST['product_name'];
-    $product_price = $_POST['product_price'];
-    $product_image = $_POST['product_image'];
-
-    $wishlist_number = mysqli_query($conn, "SELECT * FROM `wishlist` WHERE name ='$product_name' AND user_id ='$user_id'") or die('query failed');
-    $cart_number = mysqli_query($conn, "SELECT * FROM `cart` WHERE name ='$product_name' AND user_id ='$user_id'") or die('query failed');
-    if (mysqli_num_rows($wishlist_number) > 0) {
-        $message[] = 'product alreary in wishlist';
-    } else if (mysqli_num_rows($cart_number) > 0) {
-        $message[] = 'product alreary in cart';
-    } else {
-        mysqli_query($conn, "INSERT INTO `wishlist`( `user_id`, `pid`, `name`, `price`, `image`) VALUES ('$user_id','$product_id','$product_name','$product_price','$product_image')");
-        $message[] = 'product successfuly added in your wishlist';
-    }
-}
-//adding product in cart
-if (isset($_POST['add_to_cart'])) {
-    $product_id = $_POST['product_id'];
-    $product_name = $_POST['product_name'];
-    $product_price = $_POST['product_price'];
-    $product_image = $_POST['product_image'];
-    $product_quantity = $_POST['product_quantity'];
-    $cart_number = mysqli_query($conn, "SELECT * FROM `cart` WHERE name ='$product_name' AND user_id ='$user_id'") or die('query failed');
-    if (mysqli_num_rows($cart_number) > 0) {
-        $message[] = 'product alreary in cart';
-    } else {
-        mysqli_query($conn, "INSERT INTO `cart`( `user_id`, `pid`, `name`, `price`, `quantity`,`image`) VALUES ('$user_id','$product_id','$product_name','$product_price','$product_quantity','$product_image')");
-        $message[] = 'product successfuly added in your cart';
-    }
 }
 
 ?>
@@ -52,11 +20,6 @@ if (isset($_POST['add_to_cart'])) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
     <!--  -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <style>
-        header .user-box {
-            margin-left: 100rem;
-        }
-    </style>
     <link rel="stylesheet" href="../css/main.css">
     <title>Trang chủ</title>
 </head>
@@ -64,54 +27,42 @@ if (isset($_POST['add_to_cart'])) {
 
 <body>
     <header class="header">
+        <div class="flex">
+            <a href="./index.php" class="logo">
+                <img src="../hinh/logo.png" alt="" width="30%">
+            </a>
 
-        <a href="./home.php" class="logo">
-            <img src="../hinh/logo.png" alt="" width="30%">
-        </a>
+            <nav class="navbar">
+                <a href="./index.php">Trang chủ</a>
+                <a href="./user_shop.php">Shop</a>
+                <a href="./user_about.php">Về chúng tôi</a>
+                <a href="./user_order.php">Đơn thanh toán</a>
+                <a href="./user_contact.php">Liên hệ</a>
+            </nav>
 
-        <nav class="navmenu">
-            <a href="">Trang chủ</a>
-            <a href="./user_shop.php">Shop</a>
-            <a href="./user_about.php">Về chúng tôi</a>
-            <a href="./user_order.php">Đơn thanh toán</a>
-            <a href="./user_contact.php">Liên hệ</a>
-        </nav>
+            <div class="icons">
+                <i class="bi bi-person" id="user-btn"></i>
+                <a href=""><i class="bi bi-heart"></i></a>
+                <a href=""><i class="bi bi-cart"></i></a>
+                <i class="bi bi-list" id="menu-btn"></i>
+            </div>
+            <div class="user-box">
 
-        <div class="nav-icon">
-            <i class="bi bi-person" id="user-btn"></i>
-            <a href=""><i class="bi bi-heart"></i></a>
-            <a href=""><i class="bi bi-cart"></i></a>
-            <i class="bi bi-list" id="menu-btn"></i>
+                <form method="post">
+                    <button type="submit" class="logout-btn" name="dangky">
+                        Đăng ký
+                    </button>
+
+                    <button type="submit" class="logout-btn" name="dangnhap">
+                        Đăng nhập
+                    </button>
+                </form>
+            </div>
+
         </div>
-
-        <div class="user-box">
-
-            <form method="post">
-                <button type="submit" class="logout-btn" name="dangky">
-                    Đăng ký
-                </button>
-
-                <button type="submit" class="logout-btn" name="dangnhap">
-                    Đăng nhập
-                </button>
-            </form>
-        </div>
-
 
     </header>
-
-    <!--home slider -->
-    <div class="container-fluid">
-        <div class="hero-slider">
-            <div class="slider-item">
-                <img src="../hinh/banner3.jpg" alt="">
-            </div>
-        </div>
-        <div class="controls">
-            <i class="bi bi-chevron-left prev"></i>
-            <i class="bi bi-chevron-right next"></i>
-        </div>
-    </div>
+    <!-- services -->
     <div class="services">
         <div class="row">
             <div class="box">
@@ -137,7 +88,8 @@ if (isset($_POST['add_to_cart'])) {
             </div>
         </div>
     </div>
-    <!-- <div class="line2"></div> -->
+    </div>
+    <!-- story -->
     <div class="story">
         <div class="row">
             <div class="box">
@@ -152,7 +104,6 @@ if (isset($_POST['add_to_cart'])) {
         </div>
     </div>
     <!-- testimonial lời chứng thực -->
-    <div class="line3"></div>
     <div class="testimonial-fluid">
         <h1 class="title">Thông tin về chúng tôi</h1>
         <div class="testimonial-slider">
@@ -227,4 +178,5 @@ if (isset($_POST['add_to_cart'])) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script type="text/javascript" src="../js/script2.js"></script>
 </body>
+
 </html>
