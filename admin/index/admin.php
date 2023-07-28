@@ -44,7 +44,15 @@ include 'nav.php';
                                             }
                                             ?>
                                             <h4>TỔNG SỐ TIỀN ĐÃ THÀNH CÔNG</h4>
+<<<<<<< HEAD
                                             <h3><span class="counter"><?php echo  $total_complete; ?></span>Đ</h3>
+=======
+<<<<<<< HEAD
+                                            <h3><span class="counter"><?php echo  $total_complete; ?></span> Đ </h3>
+=======
+                                            <h3><span class="counter"><?php echo  $total_complete; ?></span> Đ</h3>
+>>>>>>> f8a75fd3eb2b7fd02fdef742b0a4b932028361a3
+>>>>>>> 1e10f0dc33388bc45ea8f0928f45394fd737b99e
                                             <!-- <p>Saved 25%</p> -->
                                         </div>
 
@@ -63,7 +71,11 @@ include 'nav.php';
                                             // $tt=$total_complete + $total_pendings;
                                             ?>
                                             <h4>TỔNG SỐ TIỀN ĐANG CHỜ XỬ LÝ</h4>
+<<<<<<< HEAD
                                             <h3><span class="counter"><?php echo $total_pendings; ?></span>Đ</h3>
+=======
+                                            <h3><span class="counter"><?php echo $total_pendings; ?></span> Đ</h3>
+>>>>>>> 1e10f0dc33388bc45ea8f0928f45394fd737b99e
                                             <!-- <p>Saved 25%</p> -->
                                         </div>
 
@@ -81,7 +93,7 @@ include 'nav.php';
                                             $num_of_orders = mysqli_num_rows($select_orders);
                                             ?>
                                             <h4>TỐNG SỐ ĐẶT HÀNG</h4>  
-                                            <h3><span class="counter"><?php echo $num_of_orders; ?></span>Đơn</h3>
+                                            <h3><span class="counter"><?php echo $num_of_orders; ?></span> Đơn</h3>
                                             <!-- <p>Saved 25%</p> -->
                                         </div>
 
@@ -101,7 +113,7 @@ include 'nav.php';
                                             $num_of_users = mysqli_num_rows($select_users);
                                             ?>
                                             <h4>KHÁCH HÀNG</h4>
-                                            <h3><span class="counter"><?php echo $num_of_users; ?></span>Khách Hàng</h3>
+                                            <h3><span class="counter"><?php echo $num_of_users; ?></span> Khách Hàng</h3>
                                             <!-- <p>Saved 65%</p> -->
                                         </div>
 
@@ -111,7 +123,15 @@ include 'nav.php';
                                             $num_of_admin = mysqli_num_rows($select_admin);
                                             ?>
                                             <h4>TỔNG QUẢN TRỊ VIÊN</h4>
+<<<<<<< HEAD
                                             <h3><span class="counter"> <?php echo $num_of_admin; ?></span> Người</h3>
+=======
+<<<<<<< HEAD
+                                            <h3><span class="counter"> <?php echo $num_of_admin; ?></span> Người</h3>
+=======
+                                            <h3><span class="counter"> <?php echo $num_of_admin; ?></span> Admin</h3>
+>>>>>>> f8a75fd3eb2b7fd02fdef742b0a4b932028361a3
+>>>>>>> 1e10f0dc33388bc45ea8f0928f45394fd737b99e
                                             <!-- <p>Saved 65%</p> -->
                                         </div>
 
@@ -121,7 +141,15 @@ include 'nav.php';
                                             $num_of_users = mysqli_num_rows($select_users);
                                             ?>
                                             <h4>TỔNG SỐ NGƯỜI ĐÃ ĐĂNG KÝ</h4>
+<<<<<<< HEAD
                                             <h3><span class="counter"><?php echo $num_of_users; ?></span> Người</h3>
+=======
+<<<<<<< HEAD
+                                            <h3><span class="counter"><?php echo $num_of_users; ?></span> Người</h3>
+=======
+                                            <h3><span class="counter"><?php echo $num_of_users; ?></span> User</h3>
+>>>>>>> f8a75fd3eb2b7fd02fdef742b0a4b932028361a3
+>>>>>>> 1e10f0dc33388bc45ea8f0928f45394fd737b99e
                                             <!-- <p>Saved 65%</p> -->
                                         </div>
 
@@ -131,7 +159,15 @@ include 'nav.php';
                                             $num_of_message = mysqli_num_rows($select_message);
                                             ?>
                                             <h4>TỔNG TIN NHẮN</h4>
+<<<<<<< HEAD
                                             <h3><span class="counter"><?php echo $num_of_admin; ?></span> Tin</h3>
+=======
+<<<<<<< HEAD
+                                            <h3><span class="counter"><?php echo $num_of_admin; ?></span> Tin </h3>
+=======
+                                            <h3><span class="counter"><?php echo $num_of_admin; ?></span> Tin</h3>
+>>>>>>> f8a75fd3eb2b7fd02fdef742b0a4b932028361a3
+>>>>>>> 1e10f0dc33388bc45ea8f0928f45394fd737b99e
                                             <!-- <p>Saved 65%</p> -->
                                         </div>
                                     </div>

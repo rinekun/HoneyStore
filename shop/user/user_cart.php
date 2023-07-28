@@ -45,20 +45,19 @@ if (isset($_GET['delete_all'])) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
     <!--  -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <!-- <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script> -->
-    <!-- <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
+
     <link rel="stylesheet" href="../css/main.css">
     <title>Home page</title>
 </head>
-<style>
-    sup {
-        margin-top: 6.6rem;
-        margin-left: -3rem;
+<style type="text/css">
+    .rơ {
+        text-align: center;
     }
 
+<<<<<<< HEAD
     .row {
         display: block;
         grid-template-columns: repeat(auto-fit, minmax(25rem, 1rem));
@@ -68,6 +67,10 @@ if (isset($_GET['delete_all'])) {
 
     header .user-box {
         margin-left: 94rem;
+=======
+    .sl {
+        display: flex;
+>>>>>>> 1e10f0dc33388bc45ea8f0928f45394fd737b99e
     }
 </style>
 
@@ -77,7 +80,7 @@ if (isset($_GET['delete_all'])) {
     include './user_header.php'; ?>
     <div class="banner">
         <div class="detail">
-            <h1>MY CART</h1>
+            <h1 style="margin-top:40px">GIỎ HÀNG</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, tenetur.</p>
             <a href="">home</a>/<span> cart</span>
         </div>
@@ -103,6 +106,7 @@ if (isset($_GET['delete_all'])) {
 
     ?>
     <div class="container">
+<<<<<<< HEAD
         
 
 
@@ -210,6 +214,87 @@ if (isset($_GET['delete_all'])) {
 
 
 
+=======
+        <table id="cart" class="table table-hover table-condensed" style="border:1px solid black">
+            <thead>
+                <tr>
+                    <th style="width:10%">Hình</th>
+                    <th style="width:40%">Tên sản phẩm</th>
+                    <th style="width:10%">Giá</th>
+                    <th style="width:8%">Số lượng</th>
+                    <th style="width:22%" class="text-center">Thành tiền</th>
+                    <th style="width:0%">Option </th>
+                </tr>
+            </thead>
+            <tbody style=" text-align: center;">
+                <?php
+                $grand_total = 0;
+                $select_cart = mysqli_query($conn, "SELECT * FROM `cart`") or die('query failed');
+                if (mysqli_num_rows($select_cart) > 0) {
+                    while ($fetch_cart = mysqli_fetch_assoc($select_cart)) { ?>
+
+                        <tr>
+                            <td data-th="Product">
+                                <div class="row">
+                                    <div class="col-sm-2 hidden-xs"><img src="../hinh/<?php echo $fetch_cart['image'] ?>" alt="" class="img-responsive" width="100">
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="col-sm-10">
+                                    <h4 class="nomargin"><?php echo $fetch_cart['name'] ?></h4>
+                                </div>
+                            </td>
+                            <td data-th="Price"><?php echo $fetch_cart['price']  ?> đ</td>
+                            <td data-th="Quantity">
+                                <form method="post" name="sl">
+
+                                    <div class="bootstrap-touchspin" style="display:flex">
+
+                                        <span class="input-group-btn">
+                                            <input type="hidden" name="update_qty_id" value="<?php echo $fetch_cart['id']; ?>">
+                                            <input type="submit" name="update_qty_btn" class="btn btn-default bootstrap-touchspin-down form-tru" id="tru" value="-">
+                                        </span>
+
+
+                                        <input style="width:100px" type="text" name="update_qty" value="<?php echo $fetch_cart['quantity'] ?>" class="input-qty form-control text-center" id="soluong">
+
+                                        <span class="input-group-btn">
+                                            <input type="submit" name="update_qty_btn" class="btn btn-default bootstrap-touchspin-down" id='cong' value="+">
+                                        </span>
+                                    </div>
+                                </form>
+                            </td>
+                            <input type="hidden" value="<?php echo $total_amt = ($fetch_cart['price'] * $fetch_cart['quantity']) ?>">
+                            <td>
+                            <?php echo $total_amt ?> đ
+                            </td>
+                            <td class="text-center">
+                                <a href="user_cart.php?delete=<?php echo $fetch_cart['id'] ?>" class="remove_cart" rel="2">
+                                    <i class="fa fa-trash-o"></i>
+                                </a>
+                                
+                            </td>
+                        </tr>
+                <?php
+                        $grand_total += $total_amt;
+                    }
+                }
+                ?>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td><a href="./user_shop.php" class="btn btn-warning"><i class="fa fa-angle-left"></i> Tiếp tục mua hàng</a>
+                    </td>
+                    <td colspan="2" class="hidden-xs"> </td>
+                    <td class="hidden-xs text-center"><strong>Tổng tiền <?php echo $grand_total ?> đ</strong>
+                    </td>
+                    <td><a href="./checkout.php" class="btn btn-success btn-block">Thanh toán <i class="fa fa-angle-right"></i></a>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+>>>>>>> 1e10f0dc33388bc45ea8f0928f45394fd737b99e
     </div>
     <div class="line"></div>
     <?php include '../user/user_footer.php'; ?>

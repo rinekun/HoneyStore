@@ -175,19 +175,19 @@ if (isset($_POST['add_to_cart'])) {
 
     <div class="client">
         <div class="box">
-            <img src="../hinh/client1.png" alt="">
+            <img src="../hinh/client1.png" alt="" class="app-logo">
         </div>
         <div class="box">
-            <img src="../hinh/client2.png" alt="">
+            <img src="../hinh/client2.png" alt="" class="app-logo">
         </div>
         <div class="box">
-            <img src="../hinh/client1.png" alt="">
+            <img src="../hinh/client1.png" alt="" class="app-logo">
         </div>
         <div class="box">
-            <img src="../hinh/client1.png" alt="">
+            <img src="../hinh/client1.png" alt="" class="app-logo">
         </div>
         <div class="box">
-            <img src="../hinh/client2.png" alt="">
+            <img src="../hinh/client2.png" alt="" class="app-logo">
         </div>
     </div>
     <?php include './user_footer.php';

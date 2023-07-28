@@ -25,7 +25,7 @@ ul {
 
 sup {
     position: absolute;
-    margin-left: -1.6rem;
+    margin-left: -0.6rem;
     margin-top: -0.4rem;
     background: #000;
     color: #fff;
@@ -38,7 +38,7 @@ sup {
 }
 
 .btn {
-    padding: .8rem 2.5em;
+    /* padding: .8rem 2.5em; */
     text-transform: uppercase;
     background-color: #fff;
     color: var(--orange);
@@ -67,46 +67,53 @@ sup {
     line-height: 2;
     color: var(--orange);
 }
+
+
 /* phần tìm kiếm  */
-.input-group{
+
+.search {
     display: flex;
     width: 103%;
     position: relative;
 }
-.input-group>.form-outline{
+
+.search>.form-outline {
     width: 100%;
     display: flex;
-  
-}   
-.input-group>.form-outline>.form-search{
-    width: 100%;
+    <<<<<<< HEAD
+}
+
+.search .form-outline .form-search {
+    =======
+}
+
+.input-group>.form-outline>.form-search {
+    >>>>>>>d73228d4d703252cee2e6ff86b89220123c5b825 width: 100%;
     border: 1px solid #f5b90f;
     margin-left: 830px;
     margin-right: 5px;
-
-
 }
-.input-group>.form-tim{
+
+.search>.form-tim {
     width: 100px;
     height: 56px;
     margin: 15px 0;
     background-color: #f5b90f;
     border: 1px solid #f5b90f;
     border-radius: 10px;
-  
 }
-.input-group>.form-tim>img{
+
+.search>.form-tim>img {
     width: 30px;
     position: absolute;
-    left: 1253px;
-    top:27px;
+    left: 1206px;
+    top: 30px;
     /* transition: background-color 0.3s ease;  */
 }
-.form-tim:hover{
+
+.form-tim:hover {
     background: #FF8C00;
 }
-
-
 
 .line,
 .line4 {
@@ -187,6 +194,13 @@ input[type="submit"] {
     align-items: center;
 }
 
+.row1 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50rem, 1rem));
+    justify-content: center;
+    align-items: center;
+}
+
 
 /*.............................Banner......................... */
 
@@ -243,6 +257,7 @@ header {
 header.scrolled {
     background: #fff;
     box-shadow: 0 5px 20px 0.1px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
 }
 
 header.scrolled:hover {
@@ -253,58 +268,43 @@ header.scrolled:hover {
     width: 30%;
 }
 
-header {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    right: 0;
-    z-index: 1000;
+.flex {
+    max-width: 1400px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 20px 10%;
-}
-
-.logo img {
-    max-width: 120px;
-    height: auto;
-}
-
-.navmenu {
-    display: flex;
-}
-
-.navmenu a {
-    color: #2c2c2c;
-    font-size: 18px;
-    text-transform: capitalize;
-    padding: 10px 20px;
-    font-weight: 600;
-    transition: all .42s ease;
-}
-
-.navmenu a:hover {
-    font-weight: 600;
-    color: #8B4513;
-}
-
-.nav-icon {
-    display: flex;
     align-items: center;
+    position: relative;
+    margin: 0 auto;
 }
 
-.nav-icon i {
-    margin-right: 20px;
-    color: #2c2c2c;
-    font-size: 30px;
-    font-weight: 500;
-    transition: all .42s ease;
+.flex .navbar {
+    position: absolute;
+    left: 470px;
 }
 
-.nav-icon i:hover {
-    font-weight: 600;
-    transform: scale(1.1);
-    color: #8B4513;
+.navbar a {
+    margin: 1.5rem;
+    font-size: 1.1rem;
+    color: #3AA6B9;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.navbar a:hover,
+header .icons i:hover {
+    color: #FF9EAA;
+    text-decoration: none;
+}
+
+.header .icons {
+    display: flex;
+}
+
+.header .icons i {
+    margin-left: 10px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #BA90C6;
 }
 
 #menu-btn {
@@ -313,8 +313,8 @@ header {
 
 header .user-box {
     position: absolute;
-    top: 64%;
-    margin-left: 66rem;
+    top: 68%;
+    right: -1.5rem;
     background: rgb(255 255 255/80%);
     box-shadow: var(--box-shadow);
     border-radius: .5rem;
@@ -411,7 +411,8 @@ header .user-box {
 
 /*.............................services......................... */
 
-.services {
+
+/* .services {
     background-repeat: no-repeat;
     padding: 10% 5%;
     position: relative;
@@ -455,14 +456,84 @@ header .user-box {
     margin-bottom: .3rem;
 }
 
+@media (max-width: 768px) {
+    .services .row .box {
+        width: 100%;
+    }
+} */
+
+.services {
+    background-repeat: no-repeat;
+    padding: 10% 5%;
+    position: relative;
+}
+
+.services::before,
+.testimonial-fluid::before,
+.project::before {
+    content: '';
+    position: absolute;
+    background-image: url('../hinh/');
+    background-repeat: no-repeat;
+    top: 0;
+    left: 0;
+    width: 189px;
+    height: 409px;
+    z-index: 1;
+}
+
+.services .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.services .box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 1rem;
+}
+
+.services .box img {
+    background-color: var(--orange);
+    padding: 1rem;
+    border-radius: 50%;
+    max-width: 100%;
+    height: auto;
+}
+
+.services .box div {
+    margin-top: 1rem;
+}
+
+.services .box h1 {
+    font-size: 25px;
+    color: #555;
+    margin-bottom: 0.3rem;
+}
+
+.services .box p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+
+/* story */
+
 .story,
 .newslatter {
     padding: 3% 6%;
     background-color: #f5f5f5;
     background-image: url(../hinh/5639.jpg);
     background-repeat: no-repeat;
+    background-position: center;
     position: relative;
-    margin-top: -7.5rem;
+    margin-top: -3.5rem;
 }
 
 .story::before {
@@ -478,35 +549,42 @@ header .user-box {
     background-size: 169px;
 }
 
-.sroty .row {
-    grid-template-columns: repeat(auto-fit, minmax(40rem, 1rem));
+.story .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
 
-.story .row .box span {
+.story .box span {
     font-size: 40px;
     color: #FF8C00;
 }
 
-.story .row .box h1 {
+.story .box h1 {
     margin: 1rem 0;
     color: #510101fa;
 }
 
-.story .row .box p {
+.story .box p {
     color: #555;
-    line-height: 2;
+    line-height: 1.5;
     margin: 1rem 0;
     font-size: 18px;
 }
 
-.story .row .box .btn {
+.story .box .btn {
     background: var(--orange);
     color: #fff;
     font-family: 'object-fit: cover;';
+    font-size: 20px;
 }
 
-.story .row .box img {
+.story .box img {
     width: 100%;
+    max-width: 100%;
+    height: auto;
 }
 
 .testimonial-fluid {
