@@ -25,8 +25,8 @@ ul {
 
 sup {
     position: absolute;
-    margin-left: -0.6rem;
-    margin-top: -0.4rem;
+    margin-left: -1.6rem;
+    margin-top: -0.2rem;
     background: #000;
     color: #fff;
     border-radius: 50%;
@@ -127,13 +127,14 @@ sup {
     margin-bottom: -7rem;
 }
 
-.line2,
+
+/* .line2,
 .line3 {
     background-image: url('../hinh/');
     width: 100%;
     height: 100px;
     margin-top: -3.5rem;
-}
+} */
 
 .line3 {
     margin-top: -3.5rem;
@@ -279,7 +280,7 @@ header.scrolled:hover {
 
 .flex .navbar {
     position: absolute;
-    left: 470px;
+    left: 420px;
 }
 
 .navbar a {
@@ -301,10 +302,11 @@ header .icons i:hover {
 }
 
 .header .icons i {
-    margin-left: 10px;
+    margin-left: 2px;
     font-size: 2rem;
     cursor: pointer;
     color: #BA90C6;
+    margin-right: 16px;
 }
 
 #menu-btn {
@@ -314,7 +316,7 @@ header .icons i:hover {
 header .user-box {
     position: absolute;
     top: 68%;
-    right: -1.5rem;
+    right: -3.5rem;
     background: rgb(255 255 255/80%);
     box-shadow: var(--box-shadow);
     border-radius: .5rem;
@@ -411,57 +413,6 @@ header .user-box {
 
 /*.............................services......................... */
 
-
-/* .services {
-    background-repeat: no-repeat;
-    padding: 10% 5%;
-    position: relative;
-}
-
-.services::before,
-.testimonial-fluid::before,
-.project::before {
-    content: '';
-    position: absolute;
-    background-image: url('../hinh/');
-    background-repeat: no-repeat;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 189px;
-    height: 409px;
-    z-index: 1;
-}
-
-.services .row .box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 1rem;
-}
-
-.services .row .box img {
-    background-color: var(--orange);
-    padding: 1rem;
-    border-radius: 50%;
-}
-
-.services .row .box div {
-    margin-left: 2rem;
-}
-
-.services .row .box h1 {
-    font-size: 25px;
-    color: #555;
-    margin-bottom: .3rem;
-}
-
-@media (max-width: 768px) {
-    .services .row .box {
-        width: 100%;
-    }
-} */
-
 .services {
     background-repeat: no-repeat;
     padding: 10% 5%;
@@ -533,7 +484,7 @@ header .user-box {
     background-repeat: no-repeat;
     background-position: center;
     position: relative;
-    margin-top: -3.5rem;
+    margin-top: -1.5rem;
 }
 
 .story::before {
@@ -587,12 +538,15 @@ header .user-box {
     height: auto;
 }
 
+
+/* testimonial-fluid */
+
 .testimonial-fluid {
     position: relative;
     margin: 0;
     padding: 0;
     width: 100%;
-    max-height: 450px;
+    height: 80%;
     background: var(--orange);
     margin-top: -3rem;
 }
@@ -627,8 +581,8 @@ header .user-box {
     background-image: url('../hinh/3.png');
     position: absolute;
     background-repeat: no-repeat;
-    bottom: -60px;
-    width: 330px;
+    bottom: 10px;
+    width: 450px;
     height: 226px;
     right: -5%;
     background-size: 330px;
@@ -876,15 +830,20 @@ header .user-box {
 }
 
 .client {
-    max-width: 1200px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1rem));
-    margin: 2rem auto;
-    padding-bottom: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.client .box {
+    width: 20%;
+    margin-bottom: 5rem;
+    text-align: center;
 }
 
 .client .box img {
-    width: 60%;
+    width: 30%;
 }
 
 
@@ -1533,7 +1492,51 @@ footer .bottom-footer {
     .header .flex .navbar a:hover {
         color: var(--orange);
     }
+    header .user-box {
+        right: 3.5rem;
+    }
     .banner .detail {
         left: 10%;
+    }
+    /* testimonial-fluid */
+    .testimonial-fluid::before {
+        display: none;
+    }
+    .testimonial-fluid::after {
+        display: none;
+    }
+    /* newslatter */
+    .newslatter::after {
+        display: none;
+    }
+    .newslatter::before {
+        display: none;
+    }
+    .thongtin {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .newslatter input {
+        width: 50%;
+    }
+    .newslatter button {
+        width: 40%;
+    }
+    /* client */
+    .client .box {
+        width: 20%;
+        padding-bottom: 10px;
+    }
+    .client .box img {
+        width: 100%;
+    }
+    /* address  */
+    .address::after {
+        display: none;
+    }
+    .banner::after {
+        display: none;
     }
 }

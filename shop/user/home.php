@@ -32,7 +32,7 @@ if (isset($_POST['dangnhap'])) {
                 <img src="../hinh/logo.png" alt="" width="30%">
             </a>
 
-            <nav class="navbar">
+            <nav class="navbar>
                 <a href="./index.php">Trang chủ</a>
                 <a href="./user_shop.php">Shop</a>
                 <a href="./user_about.php">Về chúng tôi</a>
@@ -103,6 +103,7 @@ if (isset($_POST['dangnhap'])) {
             </div>
         </div>
     </div>
+
     <!-- testimonial lời chứng thực -->
     <div class="testimonial-fluid">
         <h1 class="title">Thông tin về chúng tôi</h1>
@@ -146,14 +147,15 @@ if (isset($_POST['dangnhap'])) {
         </div>
     </div>
     <?php include './user_homeshop.php'; ?>
-    <div class="line"></div>
     <div class="newslatter">
         <h1 class="title">Tham gia bản tin của chúng tôi</h1>
         <p>Vui lòng liên hệ với chúng tôi nếu bạn có thắc mắc về các vấn đề bạn gặp phải với sản phẩm</p>
-        <input type="text" name="" placeholder="your email address...">
-        <button>Theo dõi ngay</button>
+        <div class="thongtin">
+            <input type="text" name="" placeholder="your email address...">
+            <button>Theo dõi ngay</button>
+        </div>
     </div>
-    <div class="line"></div>
+   
     <div class="client">
         <div class="box">
             <img src="../hinh/client1.png" alt="">

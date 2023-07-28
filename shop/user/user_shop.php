@@ -49,23 +49,15 @@ if (isset($_POST['add_to_cart'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- slick slider link -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+   <!-- slick slider link -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
     <!--  -->
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
     <link rel="stylesheet" href="../css/main.css">
     <title>Home page</title>
 </head>
-<style>
- 
-</style>
-
-</style>
 
 <body>
-
     <?php
     include './user_header.php'; ?>
     <div class="banner">
@@ -167,11 +159,7 @@ if (isset($_POST['add_to_cart'])) {
     <div class="line"></div>
     <?php include '../user/user_footer.php'; ?>
 
-    <!-- slick slider link -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <script type="text/javascript" src="../js/script.js"></script>
-
+    
     <script>
         const basicAutocomplete = document.querySelector('#search-autocomplete');
         const data = ['One', 'Two', 'Three', 'Four', 'Five'];
@@ -186,5 +174,9 @@ if (isset($_POST['add_to_cart'])) {
         });
     </script>
 </body>
+<!-- slick slider link -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script type="text/javascript" src="../js/script.js"></script>
 
 </html>
