@@ -58,6 +58,7 @@ if (isset($_GET['delete_all'])) {
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     .row {
         display: block;
         grid-template-columns: repeat(auto-fit, minmax(25rem, 1rem));
@@ -71,6 +72,10 @@ if (isset($_GET['delete_all'])) {
     .sl {
         display: flex;
 >>>>>>> 1e10f0dc33388bc45ea8f0928f45394fd737b99e
+=======
+    .sl {
+        display: flex;
+>>>>>>> refs/remotes/origin/main
     }
 </style>
 
@@ -106,6 +111,7 @@ if (isset($_GET['delete_all'])) {
 
     ?>
     <div class="container">
+<<<<<<< HEAD
 <<<<<<< HEAD
         
 
@@ -215,6 +221,8 @@ if (isset($_GET['delete_all'])) {
 
 
 =======
+=======
+>>>>>>> refs/remotes/origin/main
         <table id="cart" class="table table-hover table-condensed" style="border:1px solid black">
             <thead>
                 <tr>
@@ -294,7 +302,10 @@ if (isset($_GET['delete_all'])) {
                 </tr>
             </tfoot>
         </table>
+<<<<<<< HEAD
 >>>>>>> 1e10f0dc33388bc45ea8f0928f45394fd737b99e
+=======
+>>>>>>> refs/remotes/origin/main
     </div>
     <div class="line"></div>
     <?php include '../user/user_footer.php'; ?>
