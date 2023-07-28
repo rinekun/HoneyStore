@@ -59,7 +59,7 @@ if (isset($_POST['submit-btn'])) {
             }
         }
         ?>
-        <form method="post" enctype="multipart/form-data">
+        <form method="post" enctype="multipart/form-data" >
             <h1>Đăng nhập ngay</h1>
             <div class="input-field">
                 <label>Your email</label><br>

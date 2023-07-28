@@ -1,473 +1,474 @@
-* {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-}
-
-:root {
-    --box-shadow: 0px 0px 0px 6px rgb(255 255 255/40%);
-    --orange: #fcc927;
-    --mau1: #EEE2DE;
-    --mau2: #DBDFEA;
-}
-
-a {
-    text-decoration: none;
-}
-
-ul {
-    list-style: none;
-}
-
-.btn {
-    padding: .8rem 2.5em;
-    text-transform: uppercase;
-    background-color: #fff;
-    color: var(--orange);
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-.btn:hover {
-    background: black;
-}
-
-.title {
-    text-align: center;
-    margin-bottom: 1rem;
-    color: #510101fa;
-}
-
-.title h1 {
-    font-size: 3rem;
-    text-transform: uppercase;
-}
-
-.title span {
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    line-height: 2;
-    color: var(--orange);
-}
-
-.line,
-.line4 {
-    background-image: url('../hinh/dep.jpg');
-    width: 100%;
-    height: 100px;
-    margin-top: -3.5rem;
-}
-
-.line {
-    margin-bottom: 10rem;
-}
-
-.line2,
-.line3 {
-    background-image: url('../hinh/dep1.jpg');
-    width: 100%;
-    height: 100px;
-    margin-top: -3.5rem;
-}
-
-.line3 {
-    margin-top: -3.5rem;
-    margin-bottom: 7rem;
-}
-
-.message,
-.empty {
-    text-align: center;
-    text-transform: capitalize;
-    margin: 0 auto;
-    margin-bottom: 2rem;
-    width: 59%;
-    padding: .5rem 1.5rem;
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-between;
-    background: #000;
-    color: #fff;
-}
-
-.message i {
-    cursor: pointer;
-}
-
-.empty {
-    text-align: center;
-    padding: 1rem;
-    justify-content: center;
-    padding: 1rem;
-}
-
-input,
-text,
-textarea,
-select {
-    outline: none;
-    border: 1px solid #55555544;
-    background: transparent;
-    width: 100%;
-    padding: 1rem 1.5rem;
-    border-radius: 10px;
-    margin: 1rem 0;
-}
-
-button {
-    cursor: pointer;
-}
-
-input[type="submit"] {
-    cursor: pointer;
-}
-
-
-/*.............................Forms containers ......................... */
-
-.form-container {
-    background: var(--mau1);
-    width: 100%;
-    min-height: 100vh;
-    padding: 4rem 0;
-    position: relative;
-    min-height: 100vh;
-}
-
-.form-container::before {
-    content: '';
-    position: absolute;
-    background: url("../hinh/hinh1.png");
-    top: -5%;
-    left: -10px;
-    width: 255px;
-    height: 650px;
-    background-size: 225px;
-    background-repeat: no-repeat;
-    z-index: 100;
-}
-
-.form-container::after {
-    content: '';
-    position: absolute;
-    background: url("../hinh/hinh23.png");
-    bottom: 0;
-    right: 0;
-    width: 255px;
-    height: 220px;
-    background-size: 225px;
-    background-repeat: no-repeat;
-    z-index: 1;
-}
-
-.form-container h1 {
-    text-transform: uppercase;
-    margin: 2rem 0;
-    font-size: 2.3rem;
-    text-align: center;
-}
-
-.form-container form {
-    width: 60%;
-    margin: 1rem auto;
-    background: rgb(255 255 255/80%);
-    box-shadow: var(--box-shadow);
-    padding: 2rem;
-    position: relative;
-    border-radius: 5px;
-}
-
-.form-container form label {
-    text-transform: uppercase;
-    width: 100%;
-}
-
-.form-container form input {
-    width: 85%;
-}
-
-.form-container form textarea {
-    width: 85%;
-    height: 200px;
-}
-
-.form-container form button {
-    width: 85%;
-    background: var(--orange);
-    border: none;
-}
-
-
-/*.............................Banner......................... */
-
-.banner {
-    background: var(--mau2);
-    width: 100%;
-    height: 50vh;
-    position: relative;
-    z-index: 1;
-}
-
-.banner .detail {
-    position: absolute;
-    padding: 7rem 0;
-    left: 35%;
-    text-align: center;
-    z-index: 200;
-}
-
-.banner .detail h1 {
-    font-size: 4rem;
-    color: #FF78C4;
-    text-transform: capitalize;
-}
-
-.banner .detail p {
-    font-size: 18px;
-    line-height: 2;
-}
-
-.banner .detail a {
-    text-transform: uppercase;
-    color: #000;
-}
-
-.banner .detail span {
-    color: #fff;
-}
-
-
-/*.............................Header......................... */
-
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 101;
-    transition: .3s;
-}
-
-header.scrolled {
-    background: #fff;
-    box-shadow: 0 5px 20px 0.1px rgba(0, 0, 0, 0.1);
-}
-
-header.scrolled:hover {
-    color: var(--orange);
-}
-
-.logo {
-    width: 30%;
-}
-
-.flex {
-    max-width: 1200px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    margin: 0 auto;
-}
-
-.flex .navbar {
-    position: absolute;
-    left: 340px;
-}
-
-.navbar a {
-    margin: 1.5rem;
-    font-size: 1.1rem;
-    color: #3AA6B9;
-    text-transform: uppercase;
-    text-decoration: none;
+    * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
     
-}
-
-.navbar a:hover,
-header .icons i:hover {
-    color: #FF9EAA;
-    text-decoration: none;
-}
-
-.header .icons {
-    display: flex;
-}
-
-.header .icons i {
-    margin-left: 10px;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: #BA90C6;
-}
-
-#menu-btn {
-    display: none;
-}
-
-header .user-box {
-    position: absolute;
-    top: 90%;
-    right: 0.5rem;
-    background: rgb(255 255 255/80%);
-    box-shadow: var(--box-shadow);
-    border-radius: .5rem;
-    padding: 1rem;
-    text-align: center;
-    width: 25Srem;
-    transform: scale(0);
-    transform-origin: top right;
-    line-height: 2;
-}
-
-.logout-btn {
-    background: #000;
-    color: #fff;
-    text-transform: uppercase;
-    width: 10rem;
-    border-radius: 4px;
-}
-
-.header .user-box.active {
-    transform: scale(1.0);
-    transition: .2s linear;
-}
-
-
-/*.............................media screen......................... */
-
-@media (max-width: 991px) {
-    #menu-btn {
-        display: block;
+     :root {
+        --box-shadow: 0px 0px 0px 6px rgb(255 255 255/40%);
+        --orange: #fcc927;
+        --mau1: #EEE2DE;
+        --mau2: #DBDFEA;
     }
-    .header .flex .navbar {
-        position: absolute;
-        top: 149%;
-        left: 0;
-        display: block;
-        right: 0;
-        border-top: 1px solid #000;
-        background: #fff;
-        transition: .3s ease;
-        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    
+    a {
+        text-decoration: none;
     }
-    .header .flex .navbar.active {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    
+    ul {
+        list-style: none;
     }
-    .header .flex .navbar a {
-        display: block;
-        margin: 2rem;
+    
+    .btn {
+        padding: .8rem 2.5em;
+        text-transform: uppercase;
+        background-color: #fff;
+        color: var(--orange);
+        border-radius: 10px;
+        cursor: pointer;
     }
-    .header .flex .navbar a:hover {
+    
+    .btn:hover {
+        background: black;
+    }
+    
+    .title {
+        text-align: center;
+        margin-bottom: 1rem;
+        color: #510101fa;
+    }
+    
+    .title h1 {
+        font-size: 3rem;
+        text-transform: uppercase;
+    }
+    
+    .title span {
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        line-height: 2;
         color: var(--orange);
     }
-    .banner .detail {
-        left: 10%;
+    
+    .line,
+    .line4 {
+        background-image: url('../hinh/dep.jpg');
+        width: 100%;
+        height: 100px;
+        margin-top: -3.5rem;
     }
-}
-
-
-/*.............................Admin Dasboard......................... */
-
-.dashboard {
-    background: var(--orange);
-    padding: 3rem;
-    margin-top: -3.5rem;
-    position: relative;
-}
-
-.box-container {
-    padding: 2% 8%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-}
-
-.box-container .box {
-    background: #fff;
-    box-shadow: var(--box-shadow);
-    padding: 2rem;
-    text-align: center;
-    border-radius: 5px;
-    margin: 1rem;
-}
-
-.dashboard h3 {
-    text-align: center;
-    font-size: 2rem;
-}
-
-.dashboard p {
-    font-size: 20px;
-    text-transform: capitalize;
-    margin: .5rem 0;
-}
-
-
-/*.............................Admin product page......................... */
-
-.add-products {
-    margin-top: -3.5em;
-    height: auto;
-    background: #FFCDA8;
-    position: relative;
-}
-
-.show-products {
-    position: relative;
-    background: var(--orange);
-    margin-top: -3.5rem;
-}
-
-.show-products .box-container {
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-}
-
-.box-container .box img {
-    width: 100%;
-    height: 50%;
-    margin-bottom: 1rem;
-}
-
-.edit,
-.delete {
-    color: black;
-    background: white;
-    padding: .5rem 1.5rem;
-    text-transform: capitalize;
-    line-height: 2;
-}
-
-.update-container {
-    position: relative;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-    overflow-y: auto;
-    background: var(--orange);
-    z-index: 1100;
-    padding: 2rem;
-    align-items: center;
-    justify-content: center;
-    display: block;
-}
-
-.update-container form {
-    box-shadow: var(--box-shadow);
-    width: 50%;
-    background: #fff;
-    padding: 1rem;
-    margin: 2rem auto;
-    text-align: center;
-}
-
-.update-container .edit,
-.update-container .btn {
-    width: 40%;
-    cursor: pointer;
-}
-
-.update-container form img {
-    width: 60%;
-}
+    
+    .line {
+        margin-bottom: 10rem;
+    }
+    
+    .line2,
+    .line3 {
+        background-image: url('../hinh/dep1.jpg');
+        width: 100%;
+        height: 100px;
+        margin-top: -3.5rem;
+    }
+    
+    .line3 {
+        margin-top: -3.5rem;
+        margin-bottom: 7rem;
+    }
+    
+    .message,
+    .empty {
+        text-align: center;
+        text-transform: capitalize;
+        margin: 0 auto;
+        margin-bottom: 2rem;
+        width: 59%;
+        padding: .5rem 1.5rem;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+        background: #000;
+        color: #fff;
+    }
+    
+    .message i {
+        cursor: pointer;
+    }
+    
+    .empty {
+        text-align: center;
+        padding: 1rem;
+        justify-content: center;
+        padding: 1rem;
+    }
+    
+    input,
+    text,
+    textarea,
+    select {
+        outline: none;
+        border: 1px solid #55555544;
+        background: transparent;
+        width: 100%;
+        padding: 1rem 1.5rem;
+        border-radius: 10px;
+        margin: 1rem 0;
+    }
+    
+    button {
+        cursor: pointer;
+    }
+    
+    input[type="submit"] {
+        cursor: pointer;
+    }
+    /*.............................Forms containers ......................... */
+    
+    .form-container {
+        background: var(--mau1);
+        width: 100%;
+        min-height: 100vh;
+        padding: 4rem 0;
+        position: relative;
+        min-height: 100vh;
+    }
+    
+    .form-container::before {
+        content: '';
+        position: absolute;
+        background: url("../hinh/hinh1.png");
+        top: -5%;
+        left: -10px;
+        width: 255px;
+        height: 650px;
+        background-size: 225px;
+        background-repeat: no-repeat;
+        z-index: 100;
+    }
+    
+    .form-container::after {
+        content: '';
+        position: absolute;
+        background: url("../hinh/hinh23.png");
+        bottom: 0;
+        right: 0;
+        width: 255px;
+        height: 220px;
+        background-size: 225px;
+        background-repeat: no-repeat;
+        z-index: 1;
+    }
+    
+    .form-container h1 {
+        text-transform: uppercase;
+        margin: 2rem 0;
+        font-size: 2.3rem;
+        text-align: center;
+    }
+    
+    .form-container form {
+        width: 60%;
+        margin: 1rem auto;
+        background: rgb(255 255 255/80%);
+        box-shadow: var(--box-shadow);
+        padding: 2rem;
+        position: relative;
+        border-radius: 5px;
+    }
+    
+    .form-container form label {
+        text-transform: uppercase;
+        width: 100%;
+    }
+    
+    .form-container form input {
+        width: 85%;
+    }
+    
+    .form-container form textarea {
+        width: 85%;
+        height: 200px;
+    }
+    
+    .form-container form button {
+        width: 85%;
+        background: var(--orange);
+        border: none;
+    }
+    /*.............................Banner......................... */
+    
+    .banner {
+        background: var(--mau2);
+        width: 100%;
+        height: 50vh;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .banner .detail {
+        position: absolute;
+        padding: 7rem 0;
+        left: 35%;
+        text-align: center;
+        z-index: 200;
+    }
+    
+    .banner .detail h1 {
+        font-size: 4rem;
+        color: #FF78C4;
+        text-transform: capitalize;
+    }
+    
+    .banner .detail p {
+        font-size: 18px;
+        line-height: 2;
+    }
+    
+    .banner .detail a {
+        text-transform: uppercase;
+        color: #000;
+    }
+    
+    .banner .detail span {
+        color: #fff;
+    }
+    /*.............................Header......................... */
+    
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 101;
+        transition: .3s;
+    }
+    
+    header.scrolled {
+        background: #fff;
+        box-shadow: 0 5px 20px 0.1px rgba(0, 0, 0, 0.1);
+    }
+    
+    header.scrolled:hover {
+        color: var(--orange);
+    }
+    
+    .logo {
+        width: 30%;
+    }
+    
+    .flex {
+        max-width: 1200px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        margin: 0 auto;
+    }
+    
+    .flex .navbar {
+        position: absolute;
+        left: 340px;
+    }
+    
+    .navbar a {
+        margin: 1.5rem;
+        font-size: 1.1rem;
+        color: #3AA6B9;
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+    
+    .navbar a:hover,
+    header .icons i:hover {
+        color: #FF9EAA;
+        text-decoration: none;
+    }
+    
+    .header .icons {
+        display: flex;
+    }
+    
+    .header .icons i {
+        margin-left: 10px;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: #BA90C6;
+    }
+    
+    #menu-btn {
+        display: none;
+    }
+    
+    header .user-box {
+        position: absolute;
+        top: 90%;
+        right: 0.5rem;
+        background: rgb(255 255 255/80%);
+        box-shadow: var(--box-shadow);
+        border-radius: .5rem;
+        padding: 1rem;
+        text-align: center;
+        width: 25Srem;
+        transform: scale(0);
+        transform-origin: top right;
+        line-height: 2;
+    }
+    
+    .logout-btn {
+        background: #000;
+        color: #fff;
+        text-transform: uppercase;
+        width: 10rem;
+        border-radius: 4px;
+    }
+    
+    .header .user-box.active {
+        transform: scale(1.0);
+        transition: .2s linear;
+    }
+    /*.............................media screen......................... */
+    
+    @media (max-width: 991px) {
+        #menu-btn {
+            display: block;
+        }
+        .header .flex .navbar {
+            position: absolute;
+            top: 149%;
+            left: 0;
+            display: block;
+            right: 0;
+            border-top: 1px solid #000;
+            background: #fff;
+            transition: .3s ease;
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        }
+        .header .flex .navbar.active {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+        .header .flex .navbar a {
+            display: block;
+            margin: 2rem;
+        }
+        .header .flex .navbar a:hover {
+            color: var(--orange);
+        }
+        .banner .detail {
+            left: 10%;
+        }
+    }
+    /*.............................Admin Dasboard......................... */
+    
+    .dashboard {
+        background: var(--orange);
+        padding: 3rem;
+        margin-top: -3.5rem;
+        position: relative;
+    }
+    
+    .box-container {
+        padding: 2% 8%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    }
+    
+    .box-container .box {
+        background: #fff;
+        box-shadow: var(--box-shadow);
+        padding: 2rem;
+        text-align: center;
+        border-radius: 5px;
+        margin: 1rem;
+    }
+    
+    .dashboard h3 {
+        text-align: center;
+        font-size: 2rem;
+    }
+    
+    .dashboard p {
+        font-size: 20px;
+        text-transform: capitalize;
+        margin: .5rem 0;
+    }
+    /*.............................Admin product page......................... */
+    
+    .add-products {
+        margin-top: -3.5em;
+        height: auto;
+        background: #FFCDA8;
+        position: relative;
+    }
+    
+    .show-products {
+        position: relative;
+        background: var(--orange);
+        margin-top: -3.5rem;
+    }
+    
+    .show-products .box-container {
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    }
+    
+    .box-container .box img {
+        width: 100%;
+        height: 50%;
+        margin-bottom: 1rem;
+    }
+    
+    .edit,
+    .delete {
+        color: black;
+        background: white;
+        padding: .5rem 1.5rem;
+        text-transform: capitalize;
+        line-height: 2;
+    }
+    
+    .update-container {
+        position: relative;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        overflow-y: auto;
+        background: var(--orange);
+        z-index: 1100;
+        padding: 2rem;
+        align-items: center;
+        justify-content: center;
+        display: block;
+    }
+    
+    .update-container form {
+        box-shadow: var(--box-shadow);
+        width: 50%;
+        background: #fff;
+        padding: 1rem;
+        margin: 2rem auto;
+        text-align: center;
+    }
+    
+    .update-container .edit,
+    .update-container .btn {
+        width: 40%;
+        cursor: pointer;
+    }
+    
+    .update-container form img {
+        width: 60%;
+    }
+    /* responsive */
+    /* responsive cho form dang nhap */
+    
+    @media (max-width: 991px) {
+        .form-container form {
+            width: 90%;
+        }
+        .form-container::before {
+            display: none;
+        }
+        .form-container::after {
+            display: none;
+        }
+    }

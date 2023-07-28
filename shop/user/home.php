@@ -32,12 +32,12 @@ if (isset($_POST['dangnhap'])) {
                 <img src="../hinh/logo.png" alt="" width="30%">
             </a>
 
-            <nav class="navbar>
-                <a href="./index.php">Trang chủ</a>
-                <a href="./user_shop.php">Shop</a>
-                <a href="./user_about.php">Về chúng tôi</a>
-                <a href="./user_order.php">Đơn thanh toán</a>
-                <a href="./user_contact.php">Liên hệ</a>
+            <nav class="navbar">
+            <a href="./index.php">Trang chủ</a>
+            <a href="./user_shop.php">Shop</a>
+            <a href="./user_about.php">Về chúng tôi</a>
+            <a href="./user_order.php">Đơn thanh toán</a>
+            <a href="./user_contact.php">Liên hệ</a>
             </nav>
 
             <div class="icons">
@@ -62,6 +62,19 @@ if (isset($_POST['dangnhap'])) {
         </div>
 
     </header>
+    <!--home slider -->
+    <div class="container-fluid">
+        <div class="hero-slider">
+            <div class="slider-item">
+                <img src="../hinh/banner3.jpg" alt="">
+            </div>
+
+        </div>
+        <div class="controls">
+            <i class="bi bi-chevron-left prev"></i>
+            <i class="bi bi-chevron-right next"></i>
+        </div>
+    </div>
     <!-- services -->
     <div class="services">
         <div class="row">
@@ -103,7 +116,7 @@ if (isset($_POST['dangnhap'])) {
             </div>
         </div>
     </div>
-
+<div class="line"></div>
     <!-- testimonial lời chứng thực -->
     <div class="testimonial-fluid">
         <h1 class="title">Thông tin về chúng tôi</h1>
@@ -146,6 +159,7 @@ if (isset($_POST['dangnhap'])) {
             <i class="bi bi-chevron-right next1"></i>
         </div>
     </div>
+    <div class="line"></div>
     <?php include './user_homeshop.php'; ?>
     <div class="newslatter">
         <h1 class="title">Tham gia bản tin của chúng tôi</h1>
@@ -155,7 +169,7 @@ if (isset($_POST['dangnhap'])) {
             <button>Theo dõi ngay</button>
         </div>
     </div>
-   
+
     <div class="client">
         <div class="box">
             <img src="../hinh/client1.png" alt="">

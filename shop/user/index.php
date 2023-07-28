@@ -44,11 +44,7 @@ if (isset($_POST['add_to_cart'])) {
 }
 
 ?>
-<style type="text/css">
-    <?php
-    // include './shop/';
-    ?>
-</style>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -72,9 +68,7 @@ if (isset($_POST['add_to_cart'])) {
             <div class="slider-item">
                 <img src="../hinh/banner3.jpg" alt="">
             </div>
-            <!-- <div class="slider-item">
-                <img src="../hinh/slide.jpg" alt="">
-            </div> -->
+
         </div>
         <div class="controls">
             <i class="bi bi-chevron-left prev"></i>
@@ -169,8 +163,10 @@ if (isset($_POST['add_to_cart'])) {
     <div class="newslatter">
         <h1 class="title">Tham gia bản tin của chúng tôi</h1>
         <p>Vui lòng liên hệ với chúng tôi nếu bạn có thắc mắc về các vấn đề bạn gặp phải với sản phẩm</p>
-        <input type="text" name="" placeholder="your email address...">
-        <button>Theo dõi ngay</button>
+        <div class="thongtin">
+            <input type="text" name="" placeholder="your email address...">
+            <button>Theo dõi ngay</button>
+        </div>
     </div>
 
     <div class="client">

@@ -22,7 +22,9 @@
             <i class="bi bi-chevron-left left"></i>
             <i class="bi bi-chevron-right right"></i>
         </div>
+       <br>
         <div class="popular-brands-content">
+       
             <?php
             $select_products = mysqli_query($conn, "SELECT * FROM `product`") or die('query failed');
             if (mysqli_num_rows($select_products) > 0) {
