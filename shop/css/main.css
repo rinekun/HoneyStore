@@ -25,13 +25,8 @@ ul {
 
 sup {
     position: absolute;
-<<<<<<< HEAD
-    margin-left: -0.6rem;
-    margin-top: -0.4rem;
-=======
     margin-left: -1.6rem;
     margin-top: -0.2rem;
->>>>>>> refs/remotes/origin/main
     background: #000;
     color: #fff;
     border-radius: 50%;
@@ -285,11 +280,7 @@ header.scrolled:hover {
 
 .flex .navbar {
     position: absolute;
-<<<<<<< HEAD
-    left: 470px;
-=======
     left: 420px;
->>>>>>> refs/remotes/origin/main
 }
 
 .navbar a {
@@ -311,18 +302,11 @@ header .icons i:hover {
 }
 
 .header .icons i {
-<<<<<<< HEAD
-    margin-left: 10px;
-    font-size: 2rem;
-    cursor: pointer;
-    color: #BA90C6;
-=======
     margin-left: 2px;
     font-size: 2rem;
     cursor: pointer;
     color: #BA90C6;
     margin-right: 16px;
->>>>>>> refs/remotes/origin/main
 }
 
 #menu-btn {
@@ -332,11 +316,7 @@ header .icons i:hover {
 header .user-box {
     position: absolute;
     top: 68%;
-<<<<<<< HEAD
-    right: -1.5rem;
-=======
     right: -3.5rem;
->>>>>>> refs/remotes/origin/main
     background: rgb(255 255 255/80%);
     box-shadow: var(--box-shadow);
     border-radius: .5rem;
@@ -488,69 +468,6 @@ header .user-box {
     margin-bottom: 0.3rem;
 }
 
-<<<<<<< HEAD
-@media (max-width: 768px) {
-    .services .row .box {
-        width: 100%;
-    }
-} */
-
-.services {
-    background-repeat: no-repeat;
-    padding: 10% 5%;
-    position: relative;
-}
-
-.services::before,
-.testimonial-fluid::before,
-.project::before {
-    content: '';
-    position: absolute;
-    background-image: url('../hinh/');
-    background-repeat: no-repeat;
-    top: 0;
-    left: 0;
-    width: 189px;
-    height: 409px;
-    z-index: 1;
-}
-
-.services .row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-}
-
-.services .box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin: 1rem;
-}
-
-.services .box img {
-    background-color: var(--orange);
-    padding: 1rem;
-    border-radius: 50%;
-    max-width: 100%;
-    height: auto;
-}
-
-.services .box div {
-    margin-top: 1rem;
-}
-
-.services .box h1 {
-    font-size: 25px;
-    color: #555;
-    margin-bottom: 0.3rem;
-}
-
-=======
->>>>>>> refs/remotes/origin/main
 .services .box p {
     font-size: 16px;
     color: #555;
@@ -568,11 +485,7 @@ header .user-box {
     background-repeat: no-repeat;
     background-position: center;
     position: relative;
-<<<<<<< HEAD
-    margin-top: -3.5rem;
-=======
     margin-top: -1.5rem;
->>>>>>> refs/remotes/origin/main
 }
 
 .story::before {
