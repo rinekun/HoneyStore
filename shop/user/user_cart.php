@@ -45,20 +45,15 @@ if (isset($_GET['delete_all'])) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
     <!--  -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"> -->
 
 
     <link rel="stylesheet" href="../css/main.css">
     <title>Home page</title>
 </head>
 <style type="text/css">
-    .rơ {
-        text-align: center;
-    }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
     .row {
         display: block;
         grid-template-columns: repeat(auto-fit, minmax(25rem, 1rem));
@@ -68,15 +63,13 @@ if (isset($_GET['delete_all'])) {
 
     header .user-box {
         margin-left: 94rem;
-=======
+
     .sl {
         display: flex;
->>>>>>> 1e10f0dc33388bc45ea8f0928f45394fd737b99e
-=======
-    .sl {
-        display: flex;
->>>>>>> refs/remotes/origin/main
+
     }
+   
+    
 </style>
 
 <body>
@@ -111,8 +104,8 @@ if (isset($_GET['delete_all'])) {
 
     ?>
     <div class="container">
-<<<<<<< HEAD
-<<<<<<< HEAD
+
+
         
 
 
@@ -220,10 +213,10 @@ if (isset($_GET['delete_all'])) {
 
 
 
-=======
-=======
->>>>>>> refs/remotes/origin/main
-        <table id="cart" class="table table-hover table-condensed" style="border:1px solid black">
+
+
+
+        <!-- <table id="cart" class="table table-hover table-condensed" style="border:1px solid black">
             <thead>
                 <tr>
                     <th style="width:10%">Hình</th>
@@ -301,11 +294,11 @@ if (isset($_GET['delete_all'])) {
                     </td>
                 </tr>
             </tfoot>
-        </table>
-<<<<<<< HEAD
->>>>>>> 1e10f0dc33388bc45ea8f0928f45394fd737b99e
-=======
->>>>>>> refs/remotes/origin/main
+        </table> -->
+
+
+
+
     </div>
     <div class="line"></div>
     <?php include '../user/user_footer.php'; ?>

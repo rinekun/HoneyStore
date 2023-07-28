@@ -80,15 +80,15 @@ sup {
 .search>.form-outline {
     width: 100%;
     display: flex;
-    <<<<<<< HEAD
+    
 }
 
 .search .form-outline .form-search {
-    =======
+    
 }
 
 .input-group>.form-outline>.form-search {
-    >>>>>>>d73228d4d703252cee2e6ff86b89220123c5b825 width: 100%;
+     width: 100%;
     border: 1px solid #f5b90f;
     margin-left: 830px;
     margin-right: 5px;

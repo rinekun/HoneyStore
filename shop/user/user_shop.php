@@ -50,22 +50,15 @@ if (isset($_POST['add_to_cart'])) {
     <meta charset="UTF-8">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <!-- slick slider link -->
+   
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
-    <!--  -->
+    
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../css/main.css">
     <title>Home page</title>
 </head>
-<style>
-<<<<<<< HEAD
-    /* /* .app-logo {
-  animation: app-logo-spin infinite 1s linear
-} */
-=======
- 
-</style>
->>>>>>> 1e10f0dc33388bc45ea8f0928f45394fd737b99e
+
+    
 
 <body>
 
@@ -79,7 +72,7 @@ if (isset($_POST['add_to_cart'])) {
         </div>
     </div>
     <div class="line"></div>
-    <!-- about us -->
+    
     <section class="shop">
         <h1 class="title">SHOP BEST SELLERS</h1>
         <?php
@@ -125,9 +118,6 @@ if (isset($_POST['add_to_cart'])) {
                 $select_products = mysqli_query($conn, "SELECT * FROM `product`");
             }
             ?>
-            <style>
-            
-            </style>
 
             <form action="" method="GET">
                 <div class="search">
@@ -139,8 +129,8 @@ if (isset($_POST['add_to_cart'])) {
                   
                 </div>
             </form>
-<<<<<<< HEAD
-<<<<<<< HEAD
+
+
             <div class="sanpham ">
                 <?php
 
@@ -161,50 +151,9 @@ if (isset($_POST['add_to_cart'])) {
                                 <button type="submit" name="add_to_cart" class="bi bi-cart"></button>
                             </div>
                         </form>
-=======
-            <!--  -->
-            <div class="sanpham">
+
                 <?php
-                while ($fetch_products = mysqli_fetch_assoc($select_products)) { ?>
-                    <form method="post" class="box" enctype="multipart/form-data">
-                        <img src="../hinh/<?php echo $fetch_products['image'] ?>" alt="">
-                        <div class="name"><?php echo $fetch_products['name'] ?></div>
-                        <div class="price"><?php echo $fetch_products['price'] ?> đ</div>
-                        <input type="hidden" name="product_id" value="<?php echo $fetch_products['id'] ?>">
-                        <input type="hidden" name="product_name" value="<?php echo $fetch_products['name'] ?>">
-                        <input type="hidden" name="product_price" value="<?php echo $fetch_products['price'] ?>">
-                        <input type="hidden" name="product_quantity" value="1" min="1">
-                        <input type="hidden" name="product_image" value="<?php echo $fetch_products['image']; ?>">
-                        <div class="icon">
-                            <a href="user_view_page.php?pid=<?php echo $fetch_products['id']; ?>" class="bi bi-eye-fill"></a>
-                            <button type="submit" name="add_to_wishlist" class="bi bi-heart"></button>
-                            <button type="submit" name="add_to_cart" class="bi bi-cart"></button>
-                        </div>
-                    </form>
->>>>>>> 1e10f0dc33388bc45ea8f0928f45394fd737b99e
-                <?php
-=======
-            <!--  -->
-            <div class="sanpham">
-                <?php
-                while ($fetch_products = mysqli_fetch_assoc($select_products)) { ?>
-                    <form method="post" class="box" enctype="multipart/form-data">
-                        <img src="../hinh/<?php echo $fetch_products['image'] ?>" alt="">
-                        <div class="name"><?php echo $fetch_products['name'] ?></div>
-                        <div class="price"><?php echo $fetch_products['price'] ?> đ</div>
-                        <input type="hidden" name="product_id" value="<?php echo $fetch_products['id'] ?>">
-                        <input type="hidden" name="product_name" value="<?php echo $fetch_products['name'] ?>">
-                        <input type="hidden" name="product_price" value="<?php echo $fetch_products['price'] ?>">
-                        <input type="hidden" name="product_quantity" value="1" min="1">
-                        <input type="hidden" name="product_image" value="<?php echo $fetch_products['image']; ?>">
-                        <div class="icon">
-                            <a href="user_view_page.php?pid=<?php echo $fetch_products['id']; ?>" class="bi bi-eye-fill"></a>
-                            <button type="submit" name="add_to_wishlist" class="bi bi-heart"></button>
-                            <button type="submit" name="add_to_cart" class="bi bi-cart"></button>
-                        </div>
-                    </form>
-                <?php
->>>>>>> refs/remotes/origin/main
+
 
                 }
 
@@ -216,17 +165,17 @@ if (isset($_POST['add_to_cart'])) {
     <div class="line"></div>
     <?php include '../user/user_footer.php'; ?>
 
-<<<<<<< HEAD
-    <!-- slick slider link -->
+
+    
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script type="text/javascript" src="../js/script.js"></script>
 
     <!-- <script>
-=======
+
     
     <script>
->>>>>>> refs/remotes/origin/main
+
         const basicAutocomplete = document.querySelector('#search-autocomplete');
         const data = ['One', 'Two', 'Three', 'Four', 'Five'];
         const dataFilter = (value) => {
@@ -240,7 +189,7 @@ if (isset($_POST['add_to_cart'])) {
         });
     </script> -->
 </body>
-<!-- slick slider link -->
+
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script type="text/javascript" src="../js/script.js"></script>
