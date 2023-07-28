@@ -9,7 +9,33 @@ if (isset($_POST['logout-btn'])) {
     session_destroy();
     header('location:../dang_nhap.php');
 }
+// click s
+if (isset($_POST['submit_receive_order'])) {
+    $id_orders = mysqli_real_escape_string($conn, $_POST['id_order']);
 
+    $receive = $_POST['receive'];
+
+    mysqli_query($conn, "UPDATE `order` SET payment_status='$receive' WHERE id = $id_orders");
+
+    header('location:./user_order.php');
+}
+
+
+if (isset($_POST['submit_cancel_order'])) {
+    $id_orders = mysqli_real_escape_string($conn, $_POST['id_order']);
+
+    $cancel_order = $_POST['cancel_order'];
+
+    mysqli_query($conn, "UPDATE `order` SET payment_status='$cancel_order' WHERE id = $id_orders") or die('query failed');
+
+    header('location:./user_order.php');
+}
+
+if (isset($_POST['comback_order'])) {
+
+
+    header('location:./user_order.php');
+}
 
 ?>
 <!DOCTYPE html>
@@ -96,7 +122,9 @@ if (isset($_POST['logout-btn'])) {
                     <tbody>
                         <?php
 
+
                         $STT = 1;
+
                         if (isset($_GET['detail'])) {
                             $order_id_pay = $_GET['detail'];
                             $select_orders = mysqli_query($conn, "SELECT*FROM `order_pay` WHERE id_order= '$order_id_pay'") or die('query failed');
@@ -114,7 +142,21 @@ if (isset($_POST['logout-btn'])) {
                                                                                             ?>" alt=""></h4>
                                             </td> -->
 
+
+                                        <!-- <?php
+                                                // $view_product = null;
+                                                // $select_products = mysqli_query($conn, "SELECT * FROM `product`") or die('query failed');
+                                                // while ($fetch_products = mysqli_fetch_assoc($select_products)) {
+                                                //     $view_product = $fetch_products['id'];
+                                                //     $product_name = $fetch_products['name'];
+
+                                                //     $product_url = "./user_view_page.php?pid=" .  $product_name;
+                                                // }
+
+                                                ?> -->
+
                                         <td class="col-sm-1 col-md-2 text-center">
+                                            <!-- <a href="<?php echo    $product_url  ?>"><strong><?php echo $fetch_orders['name'] ?></strong></a> -->
                                             <strong><?php echo $fetch_orders['name'] ?></strong>
                                         </td>
 
@@ -134,9 +176,43 @@ if (isset($_POST['logout-btn'])) {
                     </tbody>
 
                 </table>
-                <a href="./user_order.php">
-                    <input type="submit" value="Quay lại">
-                </a>
+                <form method="post">
+
+
+                    <?php
+                    // $fetch_orders = null;
+                    if (isset($_GET['detail'])) {
+                        $order_id = $_GET['detail'];
+                        $select_orders = mysqli_query($conn, "SELECT * FROM `order` WHERE id=$order_id") or die('query failed');
+
+                        while ($fetch_orders = mysqli_fetch_assoc($select_orders)) {
+                            $order_ids = $fetch_orders['id'];?>
+
+                            <input type="hidden" name="id_order" value="<?php echo $order_ids ?>">
+                            <input type="hidden" name="receive" value="receive">
+                            <input type="hidden" name="cancel_order" value="cancelorder">
+
+                        <?php
+                        if ($fetch_orders['payment_status'] == "complete") { ?>
+                            <!-- đã nhận hàng -->
+                            <input type="submit" value="Đã Nhận Hàng" name="submit_receive_order">
+                            <a href="./user_order.php">
+                                <input type="submit" value="Quay lại" name ='comback_order'>
+                            </a>
+                            <!-- hủy đơn hàng -->
+                            <input type="submit" value="Hủy Đơn" name="submit_cancel_order">
+                        <?php
+                        } else if ($fetch_orders['payment_status'] =="receive" || $fetch_orders['payment_status'] == "cancelorder") {
+                        ?>
+                            <a href="./user_order.php">
+                                <input type="submit" value="Quay lại" name ='comback_order'>
+                            </a>
+                    <?php
+                        }     }
+                    }
+                    ?>
+                   
+                </form>
             </div>
         </div>
         <?php

@@ -58,16 +58,17 @@ if (isset($_POST['logout-btn'])) {
     ?>
     <div class="order-section">
         <h1 class="title">SHOP ORDER</h1>
-        <div class="row" style="margin-left:20rem">
-            <div class="col-sm-8 col-md-7 col-md-offset-1">
+        <div class="" style="padding: 0 10%;">
+            <!-- <div class="col-sm-8 col-md-7 col-md-offset-1"> -->
+            <div class="col-xl-10 col-lg-10 col-md-12 col-12">
                 <table class="table table-hover" style="border:1px solid black;">
                     <thead style="margin:auto;text-align:center">
                         <tr>
                             <th>Stt</th>
                             <th class="text-center">NGƯỜI NHẬN</th>
                             <th class="text-center">SỐ ĐIỆN THOẠI</th>
-                            <th class="text-center">GIÁ TIỀN</th>
                             <th class="text-center">TRẠNG THÁI</th>
+                            <th class="text-center">GIÁ TIỀN</th>
                             <th class="text-center">ĐÃ MUA</th>
 
 
@@ -110,9 +111,17 @@ if (isset($_POST['logout-btn'])) {
                                         <?php
                                         $pending = 'Chưa Giải Quyết';
                                         if ($fetch_orders['payment_status'] === 'complete') {
-                                            $complete = 'Đã Giải Quyết';
+                                            $complete = 'Vận chuyển';
                                         ?>
                                             <strong> <?php echo  $complete ?></strong>
+                                        <?php } else if ($fetch_orders['payment_status'] === 'receive') {
+                                            $complete = 'Đã Nhận Hàng';
+                                        ?>
+                                            <strong> <?php echo '<p style="color:blue;">' . $complete . '</p>' ?></strong>
+                                        <?php } else if ($fetch_orders['payment_status'] === 'cancelorder') {
+                                            $complete = 'Đơn Bị Hủy';
+                                        ?>
+                                            <strong> <?php echo '<p style="color:red;">' . $complete . '</p>' ?></strong>
                                         <?php } else { ?>
                                             <strong> <?php echo   $pending ?></strong>
                                         <?php
@@ -123,7 +132,7 @@ if (isset($_POST['logout-btn'])) {
                                         <strong> <?php echo $fetch_orders['total_price'] ?></strong>
                                     </td>
                                     <td class="col-sm-1 col-md-1">
-                                        <a href="./user_order_detail.php?detail=<?php echo $fetch_orders['id']-1?>">Xem Chi Tiết</a>
+                                        <a href="./user_order_detail.php?detail=<?php echo $fetch_orders['id'] ?>">Xem Chi Tiết</a>
                                     </td>
                                 </tr>
                         <?php
@@ -133,9 +142,30 @@ if (isset($_POST['logout-btn'])) {
                         }
                         ?>
 
+
                         </tr>
                     </tbody>
                 </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             </div>
         </div>
 

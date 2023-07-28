@@ -37,7 +37,11 @@ if (isset($_POST['update_order'])) {
 }
 ?>
 
-
+<style>
+    .input_list_order {
+        margin: 0px 1vh;
+    }
+</style>
 <section class="main_content dashboard_part">
     <?php
     include '../index/userAdmin.php';
@@ -88,7 +92,7 @@ if (isset($_POST['update_order'])) {
                                 </thead>
                                 <?php
                                 $stt = 1;
-                                $select_orders=null;
+                                $select_orders = null;
                                 $select_order_pay = mysqli_query($conn, "SELECT * FROM `order_pay`") or die('query failed');
 
                                 while ($select_order_pays = mysqli_fetch_assoc($select_order_pay)) {
@@ -111,11 +115,31 @@ if (isset($_POST['update_order'])) {
                                                 <!-- <td class="td"><?php echo $fetch_orders['total_price']; ?></td> -->
                                                 <td class="td"><?php echo $fetch_orders['method']; ?></td>
                                                 <td class="td"><?php echo $fetch_orders['address']; ?></td>
-                                                <td class="td"><?php echo $fetch_orders['payment_status']; ?></td>
+                                                <td>
+                                                    <?php
+                                                    $pending = 'Chưa Giải Quyết';
+                                                    if ($fetch_orders['payment_status'] === 'complete') {
+                                                        $complete = 'Vận chuyển';
+                                                    ?>
+                                                        <strong> <?php echo  $complete ?></strong>
+                                                    <?php } else if ($fetch_orders['payment_status'] === 'receive') {
+                                                        $complete = 'Đã Nhận Hàng';
+                                                    ?>
+                                                        <strong> <?php echo '<p style="color:blue;">' . $complete . '</p>' ?></strong>
+                                                    <?php } else if ($fetch_orders['payment_status'] === 'cancelorder') {
+                                                        $complete = 'Đơn Bị Hủy';
+                                                    ?>
+                                                        <strong> <?php echo '<p style="color:red;">' . $complete . '</p>' ?></strong>
+                                                    <?php } else { ?>
+                                                        <strong> <?php echo   $pending ?></strong>
+                                                    <?php
+                                                    }
+                                                    ?>
+                                                </td>
 
                                                 <td>
                                                     <a href="listOrder.php?delete=<?php echo $fetch_orders['id']; ?>" class="status_btn" style="background-color: red;">Xóa</a>
-                                                    <a href="detail.php?delail=<?php echo $fetch_orders['id']-1?>" class="status_btn" style="background-color: blue;">Chi Tiết</a>
+                                                    <a href="detail.php?delail=<?php echo $fetch_orders['id'] ?>" class="status_btn" style="background-color: blue;">Chi Tiết</a>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -126,9 +150,23 @@ if (isset($_POST['update_order'])) {
                                 ?>
 
                             </table>
+
                         </div>
+
+
+                        <div class="mb-12">
+                            <div class="mb-3 ">
+                                <input type="submit" name="update_product" class="btn btn-info input_list_order" id="inputGroupFile01" style="float:right; background-color: red;" value="Đơn Bị Hủy">
+                            </div>
+                            <div class="mb-3">
+                                <input type="submit" name="update_product" class="btn btn-info input_list_order" id="inputGroupFile01" style="float:right" value="Đơn Nhận Hàng">
+                            </div>
+                        </div>
+
                     </div>
+
                 </div>
             </div>
+
         </div>
         <?php include '../index/footer.php' ?>

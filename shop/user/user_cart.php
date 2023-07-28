@@ -45,21 +45,31 @@ if (isset($_GET['delete_all'])) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
     <!--  -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"> -->
 
 
     <link rel="stylesheet" href="../css/main.css">
     <title>Home page</title>
 </head>
 <style type="text/css">
-    .rơ {
-        text-align: center;
+
+    .row {
+        display: block;
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 1rem));
+        justify-content: center;
+        align-items: center;
     }
+
+    header .user-box {
+        margin-left: 94rem;
 
     .sl {
         display: flex;
+
     }
+   
+    
 </style>
 
 <body>
@@ -94,7 +104,119 @@ if (isset($_GET['delete_all'])) {
 
     ?>
     <div class="container">
-        <table id="cart" class="table table-hover table-condensed" style="border:1px solid black">
+
+
+        
+
+
+        <div class="row bootstrap snippets">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+
+                <div class="col-lg-12 col-sm-12">
+                    <span class="title">SHOPPING CART</span>
+                </div>
+                <div class="col-lg-12 col-sm-12 hero-feature">
+                    <div class="table-responsive">
+                        <table class="table table-bordered tbl-cart">
+                            <thead>
+                                <tr>
+                                    <td class="hidden-xs">Hình</td>
+                                    <td>Tên Sản Phẩm</td>
+
+                                    <td class="td-qty">Số lượng</td>
+
+                                    <td>Giá tiền</td>
+                                    <!-- <td>Tổng tiền</td> -->
+
+                                    <td>Xóa</td>
+
+
+                                </tr>
+                            </thead>
+                            <tbody>
+
+
+                                <?php
+                                $grand_total = 0;
+                                $select_cart = mysqli_query($conn, "SELECT * FROM `cart`") or die('query failed');
+                                if (mysqli_num_rows($select_cart) > 0) {
+                                    while ($fetch_cart = mysqli_fetch_assoc($select_cart)) { ?>
+                                        <tr>
+                                            <td class="hidden-xs">
+                                                <a href="#">
+                                                    <img src="../hinh/<?php echo $fetch_cart['image'] ?>" alt="Age Of Wisdom Tan Graphic Tee" title="" width="47" height="47">
+                                                </a>
+                                            </td>
+                                            <td><a href="#"><?php echo $fetch_cart['name'] ?></a>
+                                            </td>
+                                            <td class="input-td">
+                                                <form method="post">
+                                                    <div class="input-group bootstrap-touchspin">
+                                                        <span class="input-group-btn">
+                                                            <input type="hidden" name="update_qty_id" value="<?php echo $fetch_cart['id']; ?>">
+
+                                                            <!-- <button class="btn btn-default bootstrap-touchspin-down" id="tru" type="button">-</button> -->
+                                                            <input type="submit" name="update_qty_btn" class="btn btn-default bootstrap-touchspin-down" id="tru" value="-">
+                                                        </span>
+                                                        <span class="input-group-addon bootstrap-touchspin-prefix" style="display: none;"></span>
+                                                             <input type="text" name="update_qty" value="<?php echo $fetch_cart['quantity'] ?>" class="input-qty form-control text-center" id="soluong" style="display: block;">
+                                                        <span class="input-group-addon bootstrap-touchspin-postfix" style="display: none;"></span>
+                                                        
+                                                        <span class="input-group-btn">
+                                                            <input type="submit" name="update_qty_btn" class="btn btn-default bootstrap-touchspin-down" id='cong' value="+">
+                                                        </span>
+                                                    </div>
+                                                </form>
+                                            </td>
+                                            <input type="hidden" value="<?php echo $total_amt = ($fetch_cart['price'] * $fetch_cart['quantity']) ?>">
+                                            <td class="price">
+                                                <p id="price"><?= $fetch_cart['price'] * $fetch_cart['quantity'] ?></p>
+                                            </td>
+                                            <!-- <td class="tong" id="tong"></td> -->
+
+                                            <td class="text-center">
+                                                <a href="user_cart.php?delete=<?php echo $fetch_cart['id'] ?>" class="remove_cart" rel="2">
+                                                    <i class="fa fa-trash-o"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                <?php
+                                        $grand_total += $total_amt;
+                                    }
+                                }
+                                ?>
+                                <tr>
+                                    <td colspan="2" align="right">Tổng</td>
+                                    <td class="total" colspan="2"><b><?php echo $grand_total ?></b>
+                                    </td>
+                                    <td class="total" colspan="1" align="center"><b><a style=" text-decoration: none;" href="user_cart.php?delete_all" class="btn2" onclick="return confirm('do you want to delete all item in your cart?')">Xóa tất cả</a></b>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="btn-group btns-cart">
+                        <a href="./user_shop.php">
+                            <button type="button" class="btn btn-primary"><i class="fa fa-arrow-circle-left"></i> TIẾP TỤC MUA</button>
+                        </a>
+                        <!-- <button type="button" class="btn btn-primary">Update Cart</button> -->
+                        <a href="./checkout.php">
+                            <button type="button" class="btn btn-primary" <?php echo ($grand_total > 1) ? '' : 'disabled' ?>>THANH TOÁN <i class="fa fa-arrow-circle-right"></i></button>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+
+        <!-- <table id="cart" class="table table-hover table-condensed" style="border:1px solid black">
             <thead>
                 <tr>
                     <th style="width:10%">Hình</th>
@@ -172,7 +294,11 @@ if (isset($_GET['delete_all'])) {
                     </td>
                 </tr>
             </tfoot>
-        </table>
+        </table> -->
+
+
+
+
     </div>
     <div class="line"></div>
     <?php include '../user/user_footer.php'; ?>

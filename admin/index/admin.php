@@ -44,7 +44,18 @@ include 'nav.php';
                                             }
                                             ?>
                                             <h4>TỔNG SỐ TIỀN ĐÃ THÀNH CÔNG</h4>
+<<<<<<< HEAD
                                             <h3><span class="counter"><?php echo  $total_complete; ?></span> Đ</h3>
+=======
+
+
+                                            <h3><span class="counter"><?php echo  $total_complete; ?></span>Đ</h3>
+
+
+
+
+
+>>>>>>> c8542b8351fb9e5fa52570ee7bbdb745ec513b45
                                             <!-- <p>Saved 25%</p> -->
                                         </div>
 
@@ -63,7 +74,10 @@ include 'nav.php';
                                             // $tt=$total_complete + $total_pendings;
                                             ?>
                                             <h4>TỔNG SỐ TIỀN ĐANG CHỜ XỬ LÝ</h4>
-                                            <h3><span class="counter"><?php echo $total_pendings; ?></span> Đ</h3>
+
+
+                                            <h3><span class="counter"><?php echo $total_pendings; ?></span>Đ</h3>
+
                                             <!-- <p>Saved 25%</p> -->
                                         </div>
 
@@ -111,7 +125,13 @@ include 'nav.php';
                                             $num_of_admin = mysqli_num_rows($select_admin);
                                             ?>
                                             <h4>TỔNG QUẢN TRỊ VIÊN</h4>
+<<<<<<< HEAD
                                             <h3><span class="counter"> <?php echo $num_of_admin; ?></span> Admin</h3>
+=======
+
+                                            <h3><span class="counter"> <?php echo $num_of_admin; ?></span> Người</h3>
+
+>>>>>>> c8542b8351fb9e5fa52570ee7bbdb745ec513b45
                                             <!-- <p>Saved 65%</p> -->
                                         </div>
 
@@ -121,7 +141,13 @@ include 'nav.php';
                                             $num_of_users = mysqli_num_rows($select_users);
                                             ?>
                                             <h4>TỔNG SỐ NGƯỜI ĐÃ ĐĂNG KÝ</h4>
+<<<<<<< HEAD
                                             <h3><span class="counter"><?php echo $num_of_users; ?></span> User</h3>
+=======
+
+                                            <h3><span class="counter"><?php echo $num_of_users; ?></span> Người</h3>
+
+>>>>>>> c8542b8351fb9e5fa52570ee7bbdb745ec513b45
                                             <!-- <p>Saved 65%</p> -->
                                         </div>
 
@@ -131,7 +157,23 @@ include 'nav.php';
                                             $num_of_message = mysqli_num_rows($select_message);
                                             ?>
                                             <h4>TỔNG TIN NHẮN</h4>
+<<<<<<< HEAD
                                             <h3><span class="counter"><?php echo $num_of_admin; ?></span> Tin</h3>
+=======
+
+
+
+
+
+
+
+                                            <h3><span class="counter"><?php echo $num_of_admin; ?></span> Tin</h3>
+
+
+
+
+
+>>>>>>> c8542b8351fb9e5fa52570ee7bbdb745ec513b45
                                             <!-- <p>Saved 65%</p> -->
                                         </div>
                                     </div>

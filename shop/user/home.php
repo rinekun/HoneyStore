@@ -15,6 +15,8 @@ if (isset($_POST['dangnhap'])) {
 
 <head>
     <meta charset="UTF-8">
+   
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- slick slider link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
@@ -32,12 +34,25 @@ if (isset($_POST['dangnhap'])) {
                 <img src="../hinh/logo.png" alt="" width="30%">
             </a>
 
+<<<<<<< HEAD
             <nav class="navbar">
             <a href="./index.php">Trang chủ</a>
             <a href="./user_shop.php">Shop</a>
             <a href="./user_about.php">Về chúng tôi</a>
             <a href="./user_order.php">Đơn thanh toán</a>
             <a href="./user_contact.php">Liên hệ</a>
+=======
+<<<<<<< HEAD
+            <nav class="navbar">
+=======
+            <nav class="navbar>
+>>>>>>> refs/remotes/origin/main
+                <a href="./index.php">Trang chủ</a>
+                <a href="./user_shop.php">Shop</a>
+                <a href="./user_about.php">Về chúng tôi</a>
+                <a href="./user_order.php">Đơn thanh toán</a>
+                <a href="./user_contact.php">Liên hệ</a>
+>>>>>>> c8542b8351fb9e5fa52570ee7bbdb745ec513b45
             </nav>
 
             <div class="icons">

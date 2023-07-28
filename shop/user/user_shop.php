@@ -48,16 +48,26 @@ if (isset($_POST['add_to_cart'])) {
 
 <head>
     <meta charset="UTF-8">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <!-- slick slider link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
     <!--  -->
+=======
+   
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    
+>>>>>>> c8542b8351fb9e5fa52570ee7bbdb745ec513b45
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../css/main.css">
     <title>Home page</title>
 </head>
 
+    
+
 <body>
+
     <?php
     include './user_header.php'; ?>
     <div class="banner">
@@ -67,7 +77,12 @@ if (isset($_POST['add_to_cart'])) {
             <a href="index.php">Trang chủ</a>/<span>SHOP</span>
         </div>
     </div>
+<<<<<<< HEAD
     <!-- about us -->
+=======
+    <div class="line"></div>
+    
+>>>>>>> c8542b8351fb9e5fa52570ee7bbdb745ec513b45
     <section class="shop">
         <h1 class="title">SHOP BEST SELLERS</h1>
         <?php
@@ -113,9 +128,12 @@ if (isset($_POST['add_to_cart'])) {
                 $select_products = mysqli_query($conn, "SELECT * FROM `product`");
             }
             ?>
+<<<<<<< HEAD
             <style>
 
             </style>
+=======
+>>>>>>> c8542b8351fb9e5fa52570ee7bbdb745ec513b45
 
             <form action="" method="GET">
                 <div class="search">
@@ -127,13 +145,21 @@ if (isset($_POST['add_to_cart'])) {
 
                 </div>
             </form>
-            <!--  -->
-            <div class="sanpham">
+
+
+            <div class="sanpham ">
                 <?php
+<<<<<<< HEAD
                 while ($fetch_products = mysqli_fetch_assoc($select_products)) { ?>
                     <div class="list_sanpham">
 
                         <form method="post" class="box" enctype="multipart/form-data">
+=======
+
+            
+                    while ($fetch_products = mysqli_fetch_assoc($select_products)) { ?>
+                        <form method="post" class="box app-logo" enctype="multipart/form-data">
+>>>>>>> c8542b8351fb9e5fa52570ee7bbdb745ec513b45
                             <img src="../hinh/<?php echo $fetch_products['image'] ?>" alt="">
                             <div class="name"><?php echo $fetch_products['name'] ?></div>
                             <div class="price"><?php echo $fetch_products['price'] ?> đ</div>
@@ -149,8 +175,12 @@ if (isset($_POST['add_to_cart'])) {
                             </div>
                         </form>
 
+<<<<<<< HEAD
                     </div>
+=======
+>>>>>>> c8542b8351fb9e5fa52570ee7bbdb745ec513b45
                 <?php
+
 
                 }
 
@@ -163,7 +193,19 @@ if (isset($_POST['add_to_cart'])) {
     <?php include '../user/user_footer.php'; ?>
 
 
+<<<<<<< HEAD
+=======
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script type="text/javascript" src="../js/script.js"></script>
+
+    <!-- <script>
+
+    
+>>>>>>> c8542b8351fb9e5fa52570ee7bbdb745ec513b45
     <script>
+
         const basicAutocomplete = document.querySelector('#search-autocomplete');
         const data = ['One', 'Two', 'Three', 'Four', 'Five'];
         const dataFilter = (value) => {
@@ -175,9 +217,9 @@ if (isset($_POST['add_to_cart'])) {
         new mdb.Autocomplete(basicAutocomplete, {
             filter: dataFilter
         });
-    </script>
+    </script> -->
 </body>
-<!-- slick slider link -->
+
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 <script type="text/javascript" src="../js/script.js"></script>
